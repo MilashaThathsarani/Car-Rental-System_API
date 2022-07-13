@@ -62,4 +62,9 @@ public class CustomerController {
     public ResponseUtil findCustomerByUsernameAndPassword(@PathVariable String username, @PathVariable String password) {
         return new ResponseUtil(200, "Ok", service.findCustomerByUsernameAndPassword(username, password));
     }
+
+    @GetMapping(path = "/generateCustomerId", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil generateCustomerId() {
+        return new ResponseUtil(200, "Ok", service.generateCustomerId());
+    }
 }
