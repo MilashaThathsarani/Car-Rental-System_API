@@ -24,4 +24,10 @@ public class DriverController {
         service.saveDriver(dto);
         return new ResponseUtil(200, "Saved", null);
     }
+
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateCustomer(@RequestBody DriverDTO dto) {
+        service.updateDriver(dto);
+        return new ResponseUtil(200, "Updated", null);
+    }
 }
