@@ -30,4 +30,19 @@ public class DriverController {
         service.updateDriver(dto);
         return new ResponseUtil(200, "Updated", null);
     }
+
+    @GetMapping(path = "/getAllAvailableDrivers",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllAvailableDrivers(){
+        return new ResponseUtil(200,"Ok",service.getAllAvailableDrivers());
+    }
+
+    @GetMapping(path = "/getAllNonAvailableDrivers",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllNonAvailableDrivers(){
+        return new ResponseUtil(200,"Ok",service.getAllNonAvailableDrivers());
+    }
+
+    @GetMapping(path = "/count/{availability}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getCountOfCustomersByAvailability(@PathVariable boolean availability){
+        return new ResponseUtil(200,"Ok",service.getCountOfDriversByStatus(availability));
+    }
 }
