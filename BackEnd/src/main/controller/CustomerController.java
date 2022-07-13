@@ -33,4 +33,10 @@ public class CustomerController {
         service.updateCustomer(dto);
         return new ResponseUtil(200, "Updated", null);
     }
+
+    @DeleteMapping(params = {"id"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteCustomer(@RequestParam String id) {
+        service.deleteCustomer(id);
+        return new ResponseUtil(200, "Deleted", null);
+    }
 }
