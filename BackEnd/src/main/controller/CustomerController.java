@@ -44,4 +44,17 @@ public class CustomerController {
     public ResponseUtil searchCustomer(@PathVariable String id) {
         return new ResponseUtil(200, "Ok", service.searchCustomer(id));
     }
+
+    @GetMapping(path = "/{username}/{password}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil searchCustomerByUsernameAndPassword(@PathVariable String username, @PathVariable String password) {
+        if (service.findCustomerByUsername(username)) {
+            if (service.findCustomerByPassword(password)) {
+                return new ResponseUtil(200, "Login Successful", null);
+            } else {
+                return new ResponseUtil(404, "Incorrect Password", null);
+            }
+        } else {
+            return new ResponseUtil(404, "Incorrect Username", null);
+        }
+    }
 }
