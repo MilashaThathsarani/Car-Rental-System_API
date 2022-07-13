@@ -57,4 +57,9 @@ public class CustomerController {
             return new ResponseUtil(404, "Incorrect Username", null);
         }
     }
+
+    @GetMapping(path = "/set/{username}/{password}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil findCustomerByUsernameAndPassword(@PathVariable String username, @PathVariable String password) {
+        return new ResponseUtil(200, "Ok", service.findCustomerByUsernameAndPassword(username, password));
+    }
 }
