@@ -1,15 +1,14 @@
 package main.repo;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
-@ToString
-public class AdminDTO {
-    private String adminId;
-    private String name;
-    private String address;
-    private String contact;
-    private String email;
-    private String username;
-    private String password;
+import main.entity.Admin;
+
+import java.util.Optional;
+
+public interface AdminRepo extends JpaRepository<Admin, String> {
+    Optional<Admin> findAdminByUsername(String username);
+    Optional<Admin> findAdminByPassword(String password);
+
+    @Query(value = "SELECT adminId FROM Admin ORDER BY adminId DESC LIMIT 1",nativeQuery = true)
+    String generateAdminId();
 }
+
