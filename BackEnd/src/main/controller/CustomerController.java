@@ -67,4 +67,10 @@ public class CustomerController {
     public ResponseUtil generateCustomerId() {
         return new ResponseUtil(200, "Ok", service.generateCustomerId());
     }
+
+    @PutMapping(path = "/updateStatus/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateCustomerStatus(@PathVariable String id) {
+        service.updateCustomerStatus(id);
+        return new ResponseUtil(200, "Updated Status", null);
+    }
 }
