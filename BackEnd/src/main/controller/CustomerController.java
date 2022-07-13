@@ -73,4 +73,9 @@ public class CustomerController {
         service.updateCustomerStatus(id);
         return new ResponseUtil(200, "Updated Status", null);
     }
+
+    @GetMapping(path = "/pending", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllPendingCustomers() {
+        return new ResponseUtil(200, "Ok", service.getAllPendingCustomers());
+    }
 }
