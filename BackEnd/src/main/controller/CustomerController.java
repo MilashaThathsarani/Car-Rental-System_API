@@ -78,4 +78,9 @@ public class CustomerController {
     public ResponseUtil getAllPendingCustomers() {
         return new ResponseUtil(200, "Ok", service.getAllPendingCustomers());
     }
+
+    @GetMapping(path = "/accepted", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllAcceptedCustomers() {
+        return new ResponseUtil(200, "Ok", service.getAllAcceptedCustomers());
+    }
 }
