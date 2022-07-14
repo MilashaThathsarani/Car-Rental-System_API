@@ -4,13 +4,13 @@
     <root id="archive" name="backend.war">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="BackEnd" />
+          <element id="module-output" name="sss" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="spring" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="BackEnd/web/Web" />
+      <element id="javaee-facet-resources" facet="sss/web/Web" />
     </root>
   </artifact>
 </component>
