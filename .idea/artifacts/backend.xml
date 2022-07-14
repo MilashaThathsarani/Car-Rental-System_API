@@ -10,7 +10,6 @@
           <element id="library" level="project" name="spring" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="sss/web/Web" />
     </root>
   </artifact>
 </component>
