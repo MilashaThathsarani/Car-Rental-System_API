@@ -29,10 +29,10 @@ public class VehicleRent {
     private Customer customer;
 
     @ManyToOne
-    @JoinColumn(name = "registrationNO", referencedColumnName = "registrationNO", nullable = false)
+    @JoinColumn(name = "vehicleId", referencedColumnName = "vehicleId", nullable = false)
     private Vehicle vehicle;
 
     @ManyToOne
-    @JoinColumn(name = "licenceNo", referencedColumnName = "licenceNo", nullable = false)
+    @JoinColumn(name = "driverId", referencedColumnName = "driverId", nullable = false)
     private Driver driver;
 }

@@ -24,7 +24,7 @@ public class Payment {
     private double amount;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "rentID", referencedColumnName = "rentID",nullable = false)
+    @JoinColumn(name = "rentId", referencedColumnName = "rentId",nullable = false)
     private VehicleRent rental;
 
     @ManyToOne
