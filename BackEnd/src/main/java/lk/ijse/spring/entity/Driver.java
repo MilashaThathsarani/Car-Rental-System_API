@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -13,4 +14,12 @@ import javax.persistence.Entity;
 @ToString
 @Entity
 public class Driver {
+    @Id
+    private String driverId;
+    private String name;
+    private String address;
+    private int age;
+    private String contact;
+    private String drivingLicenseNo;
+
 }
