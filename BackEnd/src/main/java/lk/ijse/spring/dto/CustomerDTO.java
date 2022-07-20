@@ -20,4 +20,5 @@ public class CustomerDTO {
     private String email;
     private String nicImg;
     private String drivingLicenseImg;
+    private final String status = "Pending";
 }

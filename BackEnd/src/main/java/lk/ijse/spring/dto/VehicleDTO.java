@@ -28,5 +28,6 @@ public class VehicleDTO {
     private double freeMileageForDuration;
     private double price;
     private String priceForExtraKM;
+    private final String status = "Available";
 
 }

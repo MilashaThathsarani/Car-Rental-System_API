@@ -11,12 +11,9 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Data
 @ToString
-public class PaymentDTO {
-    private String paymentId;
+public class MaintenanceDTO {
+    private String maintenanceId;
     private LocalDate date;
-    private String accountNo;
-    private String accountHolderName;
-    private String bankName;
-    private String branchName;
-    private double amount;
+    private String details;
+    private final double cost = 0.0;
 }

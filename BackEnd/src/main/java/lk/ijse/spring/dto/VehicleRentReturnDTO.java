@@ -11,12 +11,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Data
 @ToString
-public class PaymentDTO {
-    private String paymentId;
+public class VehicleRentReturnDTO {
+    private String returnId;
     private LocalDate date;
-    private String accountNo;
-    private String accountHolderName;
-    private String bankName;
-    private String branchName;
-    private double amount;
+    private double noOfKm;
 }
