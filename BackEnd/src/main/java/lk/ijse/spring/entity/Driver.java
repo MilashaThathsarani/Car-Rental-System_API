@@ -25,6 +25,8 @@ public class Driver {
     private int age;
     private String contact;
     private String drivingLicenseNo;
+    private String username;
+    private String password;
 
     @OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)
     private List<VehicleRent> rentals = new ArrayList<>();

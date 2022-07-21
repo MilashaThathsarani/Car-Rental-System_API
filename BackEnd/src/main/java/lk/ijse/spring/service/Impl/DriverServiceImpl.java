@@ -59,4 +59,44 @@ public class DriverServiceImpl implements DriverService {
         return modelMapper.map(all,new TypeToken<List<DriverDTO>>(){
         }.getType());
     }
+
+    @Override
+    public boolean findDriverByUsername(String username) {
+        return false;
+    }
+
+    @Override
+    public boolean findDriverByPassword(String password) {
+        return false;
+    }
+
+    @Override
+    public DriverDTO findDriverByUsernameAndPassword(String username, String password) {
+        return null;
+    }
+
+    @Override
+    public void updateDriverNonAvailable(String driverId) {
+
+    }
+
+    @Override
+    public void updateDriverAvailable(String driverId) {
+
+    }
+
+    @Override
+    public List<DriverDTO> getAllAvailableDrivers() {
+        return null;
+    }
+
+    @Override
+    public List<DriverDTO> getAllNonAvailableDrivers() {
+        return null;
+    }
+
+    @Override
+    public int getCountOfDriversByStatus(boolean availability) {
+        return 0;
+    }
 }

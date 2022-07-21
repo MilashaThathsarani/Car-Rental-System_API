@@ -63,4 +63,24 @@ public class VehicleServiceImpl implements VehicleService {
         return modelMapper.map(all,new TypeToken<List<VehicleDTO>>(){
         }.getType());
     }
+
+    @Override
+    public void updateVehicleStatus(String vehicleId, String status) {
+
+    }
+
+    @Override
+    public void updateVehicleFilePaths(String frontImg, String backImg, String interImg, String sideImg, String registrationID) {
+
+    }
+
+    @Override
+    public List<VehicleDTO> getAllVehiclesByStatus(String status) {
+        return null;
+    }
+
+    @Override
+    public int getCountOfVehiclesByStatus(String status) {
+        return 0;
+    }
 }

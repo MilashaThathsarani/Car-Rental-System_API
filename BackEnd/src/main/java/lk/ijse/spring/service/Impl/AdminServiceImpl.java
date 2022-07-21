@@ -66,4 +66,14 @@ public class AdminServiceImpl implements AdminService {
         return modelMapper.map(all,new TypeToken<List<AdminDTO>>(){
         }.getType());
     }
+
+    @Override
+    public boolean findAdminByUserName(String username) {
+        return false;
+    }
+
+    @Override
+    public boolean findAdminByPassWord(String password) {
+        return false;
+    }
 }

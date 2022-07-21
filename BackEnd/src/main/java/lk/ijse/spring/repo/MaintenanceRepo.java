@@ -1,4 +1,7 @@
 package lk.ijse.spring.repo;
 
-public interface MaintenanceRepo {
+import lk.ijse.spring.entity.Maintenance;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MaintenanceRepo extends JpaRepository<Maintenance,String> {
 }

@@ -12,5 +12,7 @@ public interface PaymentService {
 
     public PaymentDTO searchPayment(String id);
 
-    public List<PaymentDTO> getAllDrivers();
+    List<PaymentDTO> getAllPayments();
+
+    //public List<PaymentDTO> getAllDrivers();
 }
