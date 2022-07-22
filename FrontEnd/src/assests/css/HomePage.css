@@ -11,7 +11,7 @@ body {
 /*-- Inspiration taken from abdo steif -->
 /* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
 
-/* Navbar section */
+/* Navbar*/
 
 .nav {
     width: 100%;
@@ -20,21 +20,21 @@ body {
     line-height: 65px;
     text-align: center;
     z-index: 3;
-    color: #0a53be;
 }
 
 .nav div.logo {
     float: left;
     width: auto;
     height: auto;
-    padding-left: 3rem;
+    top: 3px;
+    position: relative;
 
 }
 
 .nav div.logo a {
     text-decoration: none;
-    color: #00ba37;
-    font-size: 2.5rem;
+    color: lightslategray;
+    font-size: 30px;
     font-weight: bold;
 }
 
@@ -71,11 +71,11 @@ body {
 }
 
 .nav div.main_list ul li a:hover {
-    color: #00E676;
+    color: darkblue;
 }
 
 
-/* Home section */
+/* Home*/
 
 .home {
     width: 100%;
@@ -99,7 +99,9 @@ body {
 }
 
 
-/* Media qurey section */
+
+
+/* Media qurey*/
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .container {
