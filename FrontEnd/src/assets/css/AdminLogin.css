@@ -28,12 +28,12 @@
     --balck-color         : rgb(0, 0, 0);
     --body-BG-color       : rgb(225, 232, 255);
     --wrapper-shadow-color: rgba(255, 255, 255, 0.439);
-    --aside-area-BG-color : rgb(82, 116, 255);
+    --aside-area-BG-color : rgb(26, 30, 54);
     --aside-area-width    : 330px;
-    --error-color         : rgb(231, 76, 60);
+    --error-color         : rgb(26, 30, 54);
     --success-color       : rgb(46, 204, 113);
     --primary-light-gray  : rgb(184, 180, 180);
-    --primary-color       : rgb(0, 161, 189);
+    --primary-color       : rgb(26, 30, 54);
     --light-blue-color    : rgb(141 162 246);
     --input-border-color  : rgb(152, 169, 192);
     --paragraph-color     : rgb(231, 231, 231);

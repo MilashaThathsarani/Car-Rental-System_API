@@ -28,12 +28,12 @@
     --balck-color         : rgb(0, 0, 0);
     --body-BG-color       : rgb(225, 232, 255);
     --wrapper-shadow-color: rgba(255, 255, 255, 0.439);
-    --aside-area-BG-color : rgb(82, 116, 255);
+    --aside-area-BG-color : rgb(85, 85, 114);
     --aside-area-width    : 330px;
     --error-color         : rgb(231, 76, 60);
     --success-color       : rgb(46, 204, 113);
     --primary-light-gray  : rgb(184, 180, 180);
-    --primary-color       :rgb(82, 116, 255);
+    --primary-color       : rgb(85, 85, 114);
     --light-blue-color    : rgb(141 162 246);
     --input-border-color  : rgb(152, 169, 192);
     --paragraph-color     : rgb(231, 231, 231);
@@ -91,10 +91,10 @@ form.sign-up__form{ /* Hide The Sign Up */
 }
 /* Form Title */
 form .form__title{
-    font-size: 45px;
+    font-size: 30px;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 40px;
+    margin-bottom: 200px;
 }
 .sign-up__form .form__title{ /* Sign Up Form Title */
     margin-bottom: 25px;
@@ -411,8 +411,11 @@ form.sign-up__form{
     left: 24px;
 }
 .aside__area > div img{
-    width: 100%;
+    top: 130px;
+    width: 180px;
+    height: 185px;
     pointer-events: none;
+    position: relative;
 }
 .aside__area > div p{
     color: var(--paragraph-color);
@@ -435,6 +438,8 @@ form.sign-up__form{
     font-weight: 600;
     letter-spacing: 2px;
     transition: 0.5s ease-in-out;
+    top: 272px;
+    position: relative;
 }
 .aside__area > div button:hover{
     border-color: var(--white-color);
