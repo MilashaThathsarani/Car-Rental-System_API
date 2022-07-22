@@ -1,10 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Car Rental System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" href="assests/css/HomePage.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.typekit.net/gwb0rvj.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Easy Car Rental | Home Page</title>
 </head>
-<body>
 
+<body>
+<nav class="nav">
+    <div class="container">
+        <div class="logo">
+            <a href="#">Easy Car Rental</a>
+        </div>
+        <div id="mainListDiv" class="main_list">
+            <ul class="navlinks">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#about-us">About us</a></li>
+                <li><a href="#cars">Cars</a></li>
+                <li><a href="tel:0773521340">Contact</a></li>
+                <li><a href="#">Login</a>
+                    <div class="sub-list">
+                        <ul>
+                            <li><a href="userLogin.html">User</a></li>
+                            <li><a href="adminLogin.html"> Admin</a></li>
+                            <li><a href="driverLogin.html">Driver</a></li>
+                        </ul>
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+        <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+    </div>
+</nav>
+
+<section class="home">
+    <h1 class="title">OUR LUXURY CARS FROM</h1>
+    <h1 class="header">$90 DAY</h1>
+    <br>
+    <br>
+    <br>
+    <h1 class="text">we have taken the necessary steps to make sure that all our customers travelling in our rental cars are well taken care of. stay safe</h1>
+    <div >
+        <a href="userLogin.html">
+            <span class="btn-rent-now">RENT NOW!</span>
+        </a>
+    </div>
+</section>
+<section id="about-us" class="about-us-section">
+    <h2 class="about-us-text-one">LEARN A LITTLE ABOUT US OUR</h2>
+    <br>
+    <br>
+    <h1 class="about-us-text-two">PERFECT <span class="highlight">CARS</span></h1>
+    <p class="about-prg">Mauris nec interdum ipsum. Proin gravida nisi non magna lacinia, tristique turpis venenatis. Mauris venenatis nulla turpis amet sodales eros consequatnec Donec scelerisque nunc in urna imperdiet, quisy congue nicondimentum. Morbi gravida ligula sit amet odio luctus tincidunt. Maecenas dictum risus tempor arcu portain viverra porta quisy congue nicondimentum.</p>
+    <img class="img-about-us" src="assests/image/1-2-ferrari-png.png">
+
+</section>
+
+<section id="cars">
+    <div class="text-center">
+        <h1 class="car-header" >Our Cars</h1>
+        <!--    <span>Create With <i class="zmdi zmdi-favorite red"></i>  By: <strong>Deni Kurniawan</strong> From: <i><a href="http://blog.wingerdstok.com" class="wsk-btn">Wingerdstok</a></i></span>-->
+    </div>
+    <div class="shell">
+        <div id="car" class="container">
+            <h2 class="car-title"><span class="car-title-text"> General Cars</span></h2>
+            <hr>
+            <br>
+            <div class="Slider-Container">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div class="row">
+                <div class="container">
+                    <div class="carousel slide multi-item-carousel" id="theCarousel">
+                        <div class="carousel-inner row w-100 mx-auto">
+                            <div class="col-md-4 car-box">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assests/image/1.png" alt="Product" class="img-responsive"  width="240px" height="330px"/>
+                                    </div>
+
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Suzuki Alto</h3>
+                                        </div>
+                                        <hr>
+                                        <h2 class="car-price">$33 DAY <span class="car-rent"> RENT NOW</span></h2>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assests/image/Suzuki%20Alto%20K10.jpg" alt="Product" class="img-responsive"  width="240px" height="330px"/>
+                                    </div>
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Suzuki Alto K10</h3>
+                                        </div>
+                                        <hr>
+                                        <h2 class="car-price">$40 DAY <span class="car-rent"> RENT NOW</span></h2>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assests/image/Suzuki%20Celerio.png" alt="Product" class="img-responsive"  width="240px" height="330px"/>
+                                    </div>
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Suzuki Celerio</h3>
+                                        </div>
+                                        <hr>
+                                        <h2 class="car-price">$44 DAY <span class="car-rent"> RENT NOW</span></h2>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 car-box">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assests/image/Perodua%20(Daihatsu)%20Axia.jpg" alt="Product" class="img-responsive"  width="240px" height="330px"/>
+                                    </div>
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Perodua (Daihatsu) Axia</h3>
+                                        </div>
+                                        <hr>
+                                        <h2 class="car-price">$51 DAY <span class="car-rent"> RENT NOW</span></h2>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 car-box">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assests/image/Toyota%20Prius.png" alt="Product" class="img-responsive"  width="240px" height="330px"/>
+                                    </div>
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Toyota Prius C/ Aqua</h3>
+                                        </div>
+                                        <hr>
+                                        <h2 class="car-price">$67 DAY <span class="car-rent"> RENT NOW</span></h2>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <h2 class="car-title"><span class="car-title-text">Premium Cars</span> </h2>
+            <hr>
+            <br>
+            <div class="Slider-Container">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div class="row">
+                <div class="container">
+                    <div class="carousel slide multi-item-carousel" id="theCarousel2">
+                        <div class="carousel-inner row w-100 mx-auto">
+                            <div class="col-md-4 ">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assests/image/Toyota%20Corolla%20Axio2.png" alt="Product" class="img-responsive"  width="240px" height="330px"/>
+                                    </div>
+
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Toyota Corolla Axio/ NZE141</h3>
+                                        </div>
+                                        <hr>
+                                        <h2 class="car-price">$74 DAY<span class="car-rent"> RENT NOW</span></h2>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assests/image/Perodua%20Bezza%20Prime%20Sedan.jpg" alt="Product" class="img-responsive"  width="240px" height="330px"/>
+                                    </div>
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Perodua Bezza Prime Sedan</h3>
+                                        </div>
+                                        <hr>
+                                        <h2 class="car-price">$74 DAY <span class="car-rent"> RENT NOW</span></h2>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assests/image/Toyota%20Allion%20NZT%20260.jpg" alt="Product" class="img-responsive"  width="240px" height="330px"/>
+                                    </div>
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Toyota Allion NZT 260</h3>
+                                        </div>
+                                        <hr>
+                                        <h2 class="car-price">$78 DAY <span class="car-rent"> RENT NOW</span></h2>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 car-box">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assests/image/Toyota%20Axio%20NKR%20165.jpg" alt="Product" class="img-responsive"  width="240px" height="330px"/>
+                                    </div>
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Toyota Axio NKR 165</h3>
+                                        </div>
+                                        <hr>
+                                        <h2 class="car-price">$80 DAY <span class="car-rent"> RENT NOW</span></h2>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <h2 class="car-title"><span class="car-title-text"> Luxury Cars</span></h2>
+            <hr>
+            <br>
+            <!--            <div class="Slider-Container">-->
+            <!--                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>-->
+            <!--                <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
+            <!--            </div>-->
+            <div class="row">
+                <div class="container">
+                    <div class="carousel slide multi-item-carousel" id="theCarousel3">
+                        <div class="carousel-inner row w-100 mx-auto">
+                            <div class="col-md-4">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assests/image/Toyota%20Premio.jpg" alt="Product" class="img-responsive"  width="240px" height="330px"/>
+                                    </div>
+
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Toyota Premio</h3>
+                                        </div>
+                                        <hr>
+                                        <h2 class="car-price">$50 DAY <span class="car-rent"> RENT NOW</span></h2>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assests/image/Mercedes.png" alt="Product" class="img-responsive"  width="240px" height="330px"/>
+                                    </div>
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Mercedes</h3>
+                                        </div>
+                                        <hr>
+                                        <h2 class="car-price">$90 DAY <span class="car-rent"> RENT NOW</span></h2>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assests/image/BMW%20i8.jpg" alt="Product" class="img-responsive"  width="240px" height="330px"/>
+                                    </div>
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>BMW i8 </h3>
+                                        </div>
+                                        <hr>
+                                        <h2 class="car-price">$90 DAY<span class="car-rent"> RENT NOW</span></h2>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+            <br>
+        </div>
+    </div>
+</section>
+
+<footer class="container py-5 ft">
+    <div class="row">
+        <div class="col-12 col-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
+            <small class="d-block mb-3 text-muted">© 2017-2018</small>
+        </div>
+
+    </div>
+</footer>
+
+<!-- scripts -->
+
+<script src="assests/js/HomePage.js"></script>
+<script src="assests/js/jquery-3.6.0.min.js"></script>
+<!-- Jquery needed -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="js/scripts.js"></script>
+
+<!-- Function used to shrink nav bar removing paddings and adding black background -->
+
+<script>
+    $(window).scroll(function() {
+        if ($(document).scrollTop() > 50) {
+            $('.nav').addClass('affix');
+            console.log("OK");
+        } else {
+            $('.nav').removeClass('affix');
+        }
+    });
+</script>
 </body>
+
 </html>
