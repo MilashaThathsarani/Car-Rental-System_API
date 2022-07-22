@@ -67,13 +67,4 @@ public class AdminServiceImpl implements AdminService {
         }.getType());
     }
 
-    @Override
-    public boolean findAdminByUserName(String username) {
-        return false;
-    }
-
-    @Override
-    public boolean findAdminByPassWord(String password) {
-        return false;
-    }
 }

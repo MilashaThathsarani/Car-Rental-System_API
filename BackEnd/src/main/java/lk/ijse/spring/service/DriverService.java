@@ -14,19 +14,5 @@ public interface DriverService {
 
     public List<DriverDTO> getAllDrivers();
 
-    boolean findDriverByUsername(String username);
 
-    boolean findDriverByPassword(String password);
-
-    DriverDTO findDriverByUsernameAndPassword(String username, String password);
-
-    void updateDriverNonAvailable(String driverId);
-
-    void updateDriverAvailable(String driverId);
-
-    List<DriverDTO> getAllAvailableDrivers();
-
-    List<DriverDTO> getAllNonAvailableDrivers();
-
-    int getCountOfDriversByStatus(boolean availability);
 }

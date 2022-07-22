@@ -14,11 +14,4 @@ public interface VehicleService {
 
     public List<VehicleDTO> getAllVehicles();
 
-    void updateVehicleStatus(String vehicleId, String status);
-
-    void updateVehicleFilePaths(String frontImg, String backImg, String interImg, String sideImg, String registrationID);
-
-    List<VehicleDTO> getAllVehiclesByStatus(String status);
-
-    int getCountOfVehiclesByStatus(String status);
 }

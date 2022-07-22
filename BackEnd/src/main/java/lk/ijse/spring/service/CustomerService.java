@@ -15,21 +15,4 @@ public interface CustomerService {
 
     public List<CustomerDTO> getAllCustomers();
 
-    boolean findCustomerByUsername(String username);
-
-    boolean findCustomerByPassword(String password);
-
-    CustomerDTO findCustomerByUsernameAndPassword(String username, String password);
-
-    String generateCustomerId();
-
-    void updateCustomerStatus(String id);
-
-    List<CustomerDTO> getAllPendingCustomers();
-
-    List<CustomerDTO> getAllAcceptedCustomers();
-
-    void uploadCustomerImages(String nicFrontImg, String nicBackImg, String licenceImgPath, String id);
-
-    int getCountOfCustomersRegistered();
 }

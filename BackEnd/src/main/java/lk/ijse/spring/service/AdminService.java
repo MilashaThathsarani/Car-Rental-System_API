@@ -15,7 +15,4 @@ public interface AdminService {
 
     public List<AdminDTO> getAllAdmins();
 
-    boolean findAdminByUserName(String username);
-
-    boolean findAdminByPassWord(String password);
 }
