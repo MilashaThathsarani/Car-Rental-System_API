@@ -1,4 +1,7 @@
 package lk.ijse.spring.repo;
 
-public interface BookingRepo {
+import lk.ijse.spring.entity.Booking;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BookingRepo extends JpaRepository<Booking,String> {
 }
