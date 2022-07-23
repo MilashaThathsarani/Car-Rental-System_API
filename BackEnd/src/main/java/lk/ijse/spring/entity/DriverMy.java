@@ -5,21 +5,30 @@
 //import lombok.NoArgsConstructor;
 //import lombok.ToString;
 //
+//import javax.persistence.CascadeType;
 //import javax.persistence.Entity;
 //import javax.persistence.Id;
+//import javax.persistence.OneToMany;
+//import java.util.ArrayList;
+//import java.util.List;
 //
-//@AllArgsConstructor
 //@NoArgsConstructor
+//@AllArgsConstructor
 //@Data
 //@ToString
 //@Entity
-//public class Admin {
+//public class Driver {
 //    @Id
-//    private String adminId;
+//    private String driverId;
 //    private String name;
 //    private String address;
+//    private int age;
 //    private String contact;
-//    private String email;
+//    private String drivingLicenseNo;
 //    private String username;
 //    private String password;
+//
+//    @OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)
+//    private List<VehicleRent> rentals = new ArrayList<>();
+//
 //}
