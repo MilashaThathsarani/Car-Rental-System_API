@@ -140,6 +140,7 @@ form {
 .file-input-wrapper {
     display: inline-block;
     overflow-y: hidden;
+}
 
 .file-input-button {
     color: white;
@@ -161,15 +162,15 @@ form {
     -webkit-transition: color 500ms, background-color 500ms;
     -o-transition: color 500ms, background-color 500ms;
     -ie-transition: color 500ms, background-color 500ms;
+}
 
-&:hover {
+hover {
      color: #000000;
      background: rgba(68, 68, 68, 0.2);
      text-decoration: none;
- }
 }
 input {
     display: none;
 }
-}
+
 

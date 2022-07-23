@@ -753,7 +753,7 @@ a {
     border-bottom-width: 2px;
 }
 .table td, .table th {
-    font-size: 14px;
+    font-size: 12px;
     border-color: #ebedf2 !important;
     padding: 0.75rem !important;
 }
@@ -808,7 +808,7 @@ a {
 }
 
 .table-head-bg-success {
-    border: 1px solid #59d05d !important;
+    border: 1px solid black !important;
 }
 
 .table-head-bg-warning {
@@ -838,7 +838,7 @@ a {
 }
 
 .table-head-bg-success thead th, .table-striped-bg-success tbody tr:nth-of-type(odd) {
-    background: #59d05d !important;
+    background:grey !important;
     color: #ffffff !important;
     border: 0px !important;
 }
@@ -1364,6 +1364,7 @@ a {
     /*display: none;*/
 }
 .tblCus{
+    width: 500px;
     height: 323px;
     overflow-y: scroll;
 }
