@@ -253,14 +253,14 @@ body {
     background: #0e344e;
     position: fixed;
     z-index: 1001;
-    border-bottom: 1px solid #f1c40f;
+    border-bottom: 1px solid white;
 }
 .main-header .logo-header {
     float: left;
     width: 260px;
     height: 55px;
     line-height: 55px;
-    border-right: 1px solid #f1c40f;
+    border-right: 1px solid white;
     color: #ececec;
     z-index: 1001;
     font-size: 18px;
@@ -275,7 +275,7 @@ a {
     text-decoration: none;
 }
 .main-header .logo-header a.logo {
-    color: #f1c40f;
+    color: white;
 }
 .main-header .logo-header .navbar-toggler {
     padding-left: 0px;
@@ -307,7 +307,7 @@ a {
     z-index: 1;
     color: #ffffff;
     font-weight: 200;
-    background: #37474F;
+    background: #0e344e;
     background-size: cover;
     background-position: center center;
     border-right: 1px solid #eee;
@@ -379,7 +379,7 @@ a {
 }
 .sidebar .nav .nav-item a:hover, .sidebar .nav .nav-item a:focus {
     text-decoration: none;
-    background: #fd00d5;
+    background: #5c636a;
 }
 .sidebar .nav .nav-item:hover a:before {
     background: #1d7af3;
