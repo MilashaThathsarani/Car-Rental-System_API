@@ -1,12 +1,21 @@
 package lk.ijse.spring.service.Impl;
 
 import lk.ijse.spring.dto.BookingDTO;
+import lk.ijse.spring.repo.BookingRepo;
 import lk.ijse.spring.service.BookingService;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.Date;
 
 public class BookingServiceImpl implements BookingService {
+
+    @Autowired
+    BookingRepo bookingRepo;
+
+    @Autowired
+    ModelMapper modelMapper;
     @Override
     public void addBooking(BookingDTO bookingDTO) {
 
