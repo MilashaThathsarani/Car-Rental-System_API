@@ -1,6 +1,7 @@
 package lk.ijse.spring.service;
 
 import lk.ijse.spring.dto.AdminAccountDTO;
+import lk.ijse.spring.entity.AdminAccount;
 
 import java.util.List;
 
