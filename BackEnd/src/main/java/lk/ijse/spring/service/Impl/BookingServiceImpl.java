@@ -68,6 +68,16 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public String getLastID() {
-        return null;
+        String lastId = bookingRepo.getLastID();
+        if (lastId != null) {
+            String[] split = lastId.split("R");
+            int id = Integer.parseInt(split[1]);
+            id++;
+            if (id < 10) return "R00" + id;
+            else if (id < 100) return "R0" + id;
+            else return "R" + id;
+        }else {
+            return "R001";
+        }
     }
 }
