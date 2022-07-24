@@ -8,7 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/v1/admin")
+@RequestMapping("/api/v1/adminaccount")
 @CrossOrigin
 public class AdminAccountController {
     @Autowired

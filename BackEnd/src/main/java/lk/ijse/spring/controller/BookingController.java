@@ -1,6 +1,5 @@
 package lk.ijse.spring.controller;
 
-import lk.ijse.spring.dto.AdminAccountDTO;
 import lk.ijse.spring.dto.BookingDTO;
 import lk.ijse.spring.service.BookingService;
 import lk.ijse.spring.util.ResponseUtil;
@@ -8,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+@RestController
+@RequestMapping("api/v1/admin")
+@CrossOrigin
 public class BookingController {
     @Autowired
     BookingService bookingService;

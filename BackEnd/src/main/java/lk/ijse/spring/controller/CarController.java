@@ -13,6 +13,9 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
+@RestController
+@RequestMapping("/api/v1/car")
+@CrossOrigin
 public class CarController {
     @Autowired
     private CarService carService;
