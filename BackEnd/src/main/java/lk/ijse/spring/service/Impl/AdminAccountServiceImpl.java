@@ -19,11 +19,20 @@ public class AdminAccountServiceImpl implements AdminAccountService {
     ModelMapper modelMapper;
 
     @Override
-    public void saveAdmin(AdminAccountDTO dto) {
-        if (!adminAccountRepo.existsById(dto.getUsername())) {
-            adminAccountRepo.save(modelMapper.map(dto, AdminAccount.class));
+    public void saveAdmin(AdminAccountDTO adminAccountDTO) {
+        if (!adminAccountRepo.existsById(adminAccountDTO.getUsername())) {
+            adminAccountRepo.save(modelMapper.map(adminAccountDTO, AdminAccount.class));
         } else {
             throw new RuntimeException("Customer Already Exist..!");
+        }
+    }
+
+    @Override
+    public void updateAdmin(AdminAccountDTO adminAccountDTO) {
+        if (adminAccountRepo.existsById(adminAccountDTO.getUsername())) {
+            adminAccountRepo.save(modelMapper.map(adminAccountDTO,AdminAccount.class));
+        } else {
+            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
         }
     }
 
@@ -33,15 +42,6 @@ public class AdminAccountServiceImpl implements AdminAccountService {
             adminAccountRepo.deleteById(id);
         }else{
             throw new RuntimeException("Please check the Customer ID.. No Such Customer..!");
-        }
-    }
-
-    @Override
-    public void updateAdmin(AdminAccountDTO dto) {
-        if (adminAccountRepo.existsById(dto.getUsername())) {
-            adminAccountRepo.save(modelMapper.map(dto,AdminAccount.class));
-        } else {
-            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
         }
     }
 

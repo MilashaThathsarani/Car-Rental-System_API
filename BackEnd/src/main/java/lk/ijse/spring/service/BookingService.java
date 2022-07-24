@@ -2,18 +2,19 @@ package lk.ijse.spring.service;
 
 import lk.ijse.spring.dto.BookingDTO;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public interface BookingService {
     public void addBooking(BookingDTO bookingDTO);
 
-    public void deleteBooking(String s);
+    public void updateBooking(BookingDTO bookingDTO);
 
-    public BookingDTO searchBooking(String s);
+    public void deleteBooking(String id);
 
-    java.util.ArrayList<BookingDTO> getAllBookings();
+    public BookingDTO searchBooking(String id);
 
-    void updateBooking(BookingDTO bookingDTO);
+    ArrayList<BookingDTO> getAllBookings();
 
     Long countDate(Date date, Date date1);
 

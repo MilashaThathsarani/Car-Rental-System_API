@@ -17,11 +17,20 @@ public class CarServiceImpl implements CarService {
     @Autowired
     ModelMapper modelMapper;
     @Override
-    public void saveCar(CarDTO dto) {
-        if (!carRepo.existsById(dto.getCarNumber())) {
-            carRepo.save(modelMapper.map(dto, Car.class));
+    public void saveCar(CarDTO carDTO) {
+        if (!carRepo.existsById(carDTO.getCarNumber())) {
+            carRepo.save(modelMapper.map(carDTO, Car.class));
         } else {
             throw new RuntimeException("Customer Already Exist..!");
+        }
+    }
+
+    @Override
+    public void updateCar(CarDTO carDTO) {
+        if (carRepo.existsById(carDTO.getCarNumber())) {
+            carRepo.save(modelMapper.map(carDTO,Car.class));
+        } else {
+            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
         }
     }
 
@@ -34,14 +43,6 @@ public class CarServiceImpl implements CarService {
         }
     }
 
-    @Override
-    public void updateCar(CarDTO dto) {
-        if (carRepo.existsById(dto.getCarNumber())) {
-            carRepo.save(modelMapper.map(dto,Car.class));
-        } else {
-            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
-        }
-    }
 
     @Override
     public CarDTO searchCar(String id) {

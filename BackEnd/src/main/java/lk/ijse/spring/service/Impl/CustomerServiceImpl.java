@@ -17,11 +17,20 @@ public class CustomerServiceImpl implements CustomerService {
     ModelMapper modelMapper;
 
     @Override
-    public void saveCustomer(CustomerDTO dto) {
-        if (!customerRepo.existsById(dto.getCusId())) {
-            customerRepo.save(modelMapper.map(dto, Customer.class));
+    public void saveCustomer(CustomerDTO customerDTO) {
+        if (!customerRepo.existsById(customerDTO.getCusId())) {
+            customerRepo.save(modelMapper.map(customerDTO, Customer.class));
         } else {
             throw new RuntimeException("Customer Already Exist..!");
+        }
+    }
+
+    @Override
+    public void updateCustomer(CustomerDTO customerDTO) {
+        if (customerRepo.existsById(customerDTO.getCusId())) {
+            customerRepo.save(modelMapper.map(customerDTO,Customer.class));
+        } else {
+            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
         }
     }
 
@@ -31,15 +40,6 @@ public class CustomerServiceImpl implements CustomerService {
             customerRepo.deleteById(id);
         }else{
             throw new RuntimeException("Please check the Customer ID.. No Such Customer..!");
-        }
-    }
-
-    @Override
-    public void updateCustomer(CustomerDTO dto) {
-        if (customerRepo.existsById(dto.getCusId())) {
-            customerRepo.save(modelMapper.map(dto,Customer.class));
-        } else {
-            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
         }
     }
 

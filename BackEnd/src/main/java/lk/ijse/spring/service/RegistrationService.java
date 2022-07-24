@@ -7,17 +7,17 @@ import java.util.ArrayList;
 public interface RegistrationService {
     public void saveRegistration(RegistrationDTO registrationDTO);
 
-    public void deleteRegistration(String s);
+    public void updateRegistration(RegistrationDTO registrationDTO);
 
-    RegistrationDTO searchRegistration(String s);
+    public void deleteRegistration(String id);
+
+    RegistrationDTO searchRegistration(String id);
 
     ArrayList<RegistrationDTO> getAllRegistrations();
 
-    public void updateRegistration(RegistrationDTO registrationDTO);
-
     RegistrationDTO findEmailAndPassword(String s, String s1);
 
-    boolean findUser(String s);
+    boolean findUser(String id);
 
-    RegistrationDTO findNic(String s);
+    RegistrationDTO findNic(String id);
 }

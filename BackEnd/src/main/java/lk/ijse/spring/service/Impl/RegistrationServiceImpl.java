@@ -31,20 +31,29 @@ public class RegistrationServiceImpl implements RegistrationService {
     }
 
     @Override
-    public void deleteRegistration(String s) {
-        if (registrationRepo.existsById(s)){
-            registrationRepo.deleteById(s);
+    public void updateRegistration(RegistrationDTO registrationDTO) {
+        if (registrationRepo.existsById(registrationDTO.getEmail())) {
+            registrationRepo.save(modelMapper.map(registrationDTO,Registration.class));
+        } else {
+            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
+        }
+    }
+
+    @Override
+    public void deleteRegistration(String id) {
+        if (registrationRepo.existsById(id)){
+            registrationRepo.deleteById(id);
         }else{
             throw new RuntimeException("Please check the Customer ID.. No Such Customer..!");
         }
     }
 
     @Override
-    public RegistrationDTO searchRegistration(String s) {
-        if (registrationRepo.existsById(s)){
-            return modelMapper.map(registrationRepo.findById(s).get(), RegistrationDTO.class);
+    public RegistrationDTO searchRegistration(String id) {
+        if (registrationRepo.existsById(id)){
+            return modelMapper.map(registrationRepo.findById(id).get(), RegistrationDTO.class);
         }else{
-            throw new RuntimeException("No Customer For "+s+" ..!");
+            throw new RuntimeException("No Customer For "+id+" ..!");
         }
     }
 
@@ -56,26 +65,17 @@ public class RegistrationServiceImpl implements RegistrationService {
     }
 
     @Override
-    public void updateRegistration(RegistrationDTO registrationDTO) {
-        if (registrationRepo.existsById(registrationDTO.getEmail())) {
-            registrationRepo.save(modelMapper.map(registrationDTO,Registration.class));
-        } else {
-            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
-        }
-    }
-
-    @Override
     public RegistrationDTO findEmailAndPassword(String s, String s1) {
         return null;
     }
 
     @Override
-    public boolean findUser(String s) {
+    public boolean findUser(String id) {
         return false;
     }
 
     @Override
-    public RegistrationDTO findNic(String s) {
+    public RegistrationDTO findNic(String id) {
         return null;
     }
 }

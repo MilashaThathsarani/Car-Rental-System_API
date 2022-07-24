@@ -28,20 +28,29 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public void deleteBooking(String s) {
-        if (bookingRepo.existsById(s)){
-            bookingRepo.deleteById(s);
+    public void updateBooking(BookingDTO bookingDTO) {
+        if (bookingRepo.existsById(bookingDTO.getRequestNumber())) {
+            bookingRepo.save(modelMapper.map(bookingDTO,Booking.class));
+        } else {
+            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
+        }
+    }
+
+    @Override
+    public void deleteBooking(String id) {
+        if (bookingRepo.existsById(id)){
+            bookingRepo.deleteById(id);
         }else{
             throw new RuntimeException("Please check the Customer ID.. No Such Customer..!");
         }
     }
 
     @Override
-    public BookingDTO searchBooking(String s) {
-        if (bookingRepo.existsById(s)){
-            return modelMapper.map(bookingRepo.findById(s).get(), BookingDTO.class);
+    public BookingDTO searchBooking(String id) {
+        if (bookingRepo.existsById(id)){
+            return modelMapper.map(bookingRepo.findById(id).get(), BookingDTO.class);
         }else{
-            throw new RuntimeException("No Customer For "+s+" ..!");
+            throw new RuntimeException("No Customer For "+id+" ..!");
         }
     }
 
@@ -50,15 +59,6 @@ public class BookingServiceImpl implements BookingService {
         List<Booking> all = bookingRepo.findAll();
         return modelMapper.map(all,new TypeToken<List<BookingDTO>>(){
         }.getType());
-    }
-
-    @Override
-    public void updateBooking(BookingDTO bookingDTO) {
-        if (bookingRepo.existsById(bookingDTO.getRequestNumber())) {
-            bookingRepo.save(modelMapper.map(bookingDTO,Booking.class));
-        } else {
-            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
-        }
     }
 
     @Override
