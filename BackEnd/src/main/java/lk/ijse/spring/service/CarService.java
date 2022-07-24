@@ -15,5 +15,5 @@ public interface CarService {
 
     public List<CarDTO> getAllCars();
 
-    CarDTO findBrand(String id);
+    CarDTO findBrand(String brand);
 }

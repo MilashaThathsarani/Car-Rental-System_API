@@ -8,6 +8,7 @@ import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.Optional;
 
 public class CarServiceImpl implements CarService {
 
@@ -61,7 +62,11 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public CarDTO findBrand(String id) {
+    public CarDTO findBrand(String brand) {
+        Optional<Car> carBrand = carRepo.findByBrand(brand);
+        if (carBrand.isPresent()) {
+            return modelMapper.map(carBrand.get(), CarDTO.class);
+        }
         return null;
     }
 }
