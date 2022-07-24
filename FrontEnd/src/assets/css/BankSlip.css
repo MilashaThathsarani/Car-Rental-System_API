@@ -11,7 +11,7 @@
     border-radius: 2px;
     box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    background: linear-gradient(to top right, darkmagenta 0%, hotpink 100%);
+    background-color: #0e344e;
     color: #333;
     font-family: "Open Sans", Helvetica, sans-serif;
 }
@@ -70,16 +70,16 @@ h1 {
     display: block;
     width: 140px;
     height: 40px;
-    background: darkmagenta;
+    background: gray;
     color: #fff;
     border-radius: 3px;
     border: 0;
-    box-shadow: 0 3px 0 0 hotpink;
+    box-shadow: 0 3px 0 0 black;
     transition: all 0.3s ease-in-out;
     font-size: 14px;
 }
 
 .btn:hover {
-    background: rebeccapurple;
-    box-shadow: 0 3px 0 0 deeppink;
+    background: black;
+    box-shadow: 0 3px 0 0 white;
 }
