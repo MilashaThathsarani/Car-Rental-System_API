@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$/FrontEnd" libraries="{boxicons}" />
+    <file url="file://$PROJECT_DIR$/FrontEnd" libraries="{all, bootstrap, boxicons, gwb0rvj, jquery, twitter-bootstrap, w3}" />
   </component>
 </project>
