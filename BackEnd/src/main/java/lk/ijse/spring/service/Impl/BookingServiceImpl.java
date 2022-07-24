@@ -1,8 +1,5 @@
 package lk.ijse.spring.service.Impl;
-
-import lk.ijse.spring.dto.AdminAccountDTO;
 import lk.ijse.spring.dto.BookingDTO;
-import lk.ijse.spring.entity.AdminAccount;
 import lk.ijse.spring.entity.Booking;
 import lk.ijse.spring.repo.BookingRepo;
 import lk.ijse.spring.service.BookingService;
