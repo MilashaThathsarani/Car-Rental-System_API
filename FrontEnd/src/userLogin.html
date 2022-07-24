@@ -154,7 +154,7 @@
             var data = new FormData(); //setup form data object to send file data
             data.append("myFile", fileObject, fileName); //append data
             $.ajax({
-                url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/regisration",
+                url: "http://localhost:8080/BackEnd_war/api/v1/regisration",
                 method: "POST",
                 async: true,
                 processData: false, //stop processing data of request body
@@ -170,7 +170,7 @@
                     var dataL = new FormData(); //setup form data object to send file data
                     dataL.append("myFile", fileObjectL, fileNameL); //append data
                     $.ajax({
-                        url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/regisration",
+                        url: "http://localhost:8080/BackEnd_war/api/v1/regisration",
                         method: "POST",
                         async: true,
                         processData: false, //stop processing data of request body
@@ -190,7 +190,7 @@
 
                             $.ajax({
                                 method: "POST",
-                                url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/regisration",
+                                url: "http://localhost:8080/BackEnd_war/api/v1/regisration",
                                 contentType: 'application/json',
                                 async: true,
                                 data: JSON.stringify({
@@ -237,7 +237,7 @@
         let re_pass = $("#loginPassword").val()
         $.ajax({
             method: "POST",
-            url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/regisration/login",
+            url: "http://localhost:8080/BackEnd_war/api/v1/regisration/login",
             contentType: 'application/json',
             async: true,
             data: JSON.stringify({
@@ -246,7 +246,7 @@
             }),
             success: function (data) {
                 if(data.code=="200"){
-                    window.location.href="http://localhost:63342/Easy_Car_Rental_BachEnd/Easy_Car_Rental_ForntEnd/userPage.html?_ijt=1308adrt9d1ornrtksuk5tgauq#mybooking_panel"
+                    window.location.href="http://localhost:63342/Easy_Car_Rental_BacEnd/Easy_Car_Rental_ForntEnd/userPage.html?_ijt=1308adrt9d1ornrtksuk5tgauq#mybooking_panel"
 
                 }
             },
@@ -288,7 +288,7 @@
     function loadAllRegistrations() {
         $("#tblUser").empty();
         $.ajax({
-            url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/regisration",
+            url: "http://localhost:8080/BackEnd_war/api/v1/regisration",
             method: "GET",
             async: true,
             dataType: "json",
@@ -359,11 +359,6 @@
         }
 
     }
-
-
-
-
-
 </script>
 
 

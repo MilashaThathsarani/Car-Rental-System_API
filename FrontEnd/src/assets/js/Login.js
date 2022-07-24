@@ -102,31 +102,6 @@ function chnageFormMode(e) {
     });
 })();
 
-// Login Form Validation Function
-// function loginFormValidation() {
-//     // Loop On All The Inputs
-//     allLoginFormFields.forEach(input => {
-//         // Input Targte Field Name Value
-//         const inputAttribueValueName = input.attributes.name.value;
-//         // Input Value Without Spaces
-//         const inputValue = input.value.trim();
-//         // Input Regex Validation Response [ True || False ] :)
-//         const inputRegex = patterns[inputAttribueValueName].test(inputValue);
-//
-//         // Check If The Input Value Is Empty
-//         if(inputValue === ''){
-//             // Call Function Set Error For
-//             setErrorFor(input, `${inputAttribueValueName} is required. Please enter your response.`);
-//         }else if(inputRegex === false){ // Else If: If The InputRegext Response Is False
-//             // Call Function Set Error For
-//             setErrorFor(input, `${inputAttribueValueName} Is Invalid .`);
-//         }else{ // Else
-//             // Call Function Set Success For
-//             setSuccessFor(input);
-//         };
-//     });
-// };
-
 // Sign-Up Form Validation Function
 function signUpFormValidation() {
     // Loop On All The Inputs
@@ -152,18 +127,6 @@ function signUpFormValidation() {
             // Call Function Set Success For
             setSuccessFor(input);
         };
-
-        // Validation The Confirm Password
-        // if(conifrmPassValue === ''){ // Check If The Confirm Password Value Is Empty
-        //     // Call Function Set Error For
-        //     setErrorFor(confirmPassword, `Confirm password is required. Please enter your response.`);
-        // }else if(conifrmPassValue !== passwordFieldValue){ // Check If The Confirm Password Value Is Dose Not Match The Password Filed
-        //     // Call Function Set Error For
-        //     setErrorFor(confirmPassword, `Confirm password does not match`);
-        // }else{ // Eles
-        //     // Call Function Set Success For
-        //     setSuccessFor(confirmPassword);
-        // };
 
     });
 };
