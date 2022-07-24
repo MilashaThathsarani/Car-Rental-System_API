@@ -9,6 +9,7 @@ import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.Optional;
 
 public class DriverServiceImpl implements DriverService {
 
@@ -62,7 +63,11 @@ public class DriverServiceImpl implements DriverService {
     }
 
     @Override
-    public DriverDTO findName(String id) {
+    public DriverDTO findName(String dName) {
+        Optional<Driver> driver = driverRepo.findByDriverName(dName);
+        if (driver.isPresent()) {
+            return modelMapper.map(driver.get(), DriverDTO.class);
+        }
         return null;
     }
 }

@@ -15,5 +15,5 @@ public interface DriverService {
 
     public List<DriverDTO> getAllDrivers();
 
-    DriverDTO findName(String id);
+    DriverDTO findName(String name);
 }
