@@ -321,58 +321,58 @@
                                 <form id="driverform">
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="did"
-                                               placeholder="Did" name="dId" type="text">
+                                               placeholder="Did" name="driverId" type="text">
                                         <label for="did">Driver Id
                                         </label>
                                     </div>
 
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="d_name"
-                                               placeholder="Name" name="dName" type="text">
+                                               placeholder="Name" name="name" type="text">
                                         <label for="d_name">Driver Name</label>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="d_email"
-                                               placeholder="d_email" name="driverEmail" type="text">
+                                               placeholder="d_email" name="email" type="text">
                                         <label for="d_email">Email</label>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="d_password"
-                                               placeholder="Password" name="driverPassword" type="text">
+                                               placeholder="Password" name="password" type="text">
                                         <label for="d_password">Password</label>
                                     </div>
 
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="driver_nic"
-                                               placeholder="Driver_Nic" name="driverNic" type="text">
+                                               placeholder="Driver_Nic" name="nic" type="text">
                                         <label for="driver_nic"> Driver Nic</label>
                                     </div>
 
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="driver_license"
-                                               placeholder="Driver_license" name="driverLicense" type="text">
+                                               placeholder="Driver_license" name="drivingLicenseNo" type="text">
                                         <label for="driver_license">Driver License</label>
                                     </div>
                                 </form>
                             </div>
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="d_address"
-                                               placeholder="Address" name="dAddress" type="text">
+                                               placeholder="Address" name="address" type="text">
                                         <label for="d_address">Address</label>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="d_contactNo"
-                                               placeholder="contactNo" name="dContactNo" type="text">
+                                               placeholder="contactNo" name="contact" type="text">
                                         <label for="d_contactNo">Contact No</label>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="d_age"
-                                               placeholder="Age" name="dAge" type="text">
+                                               placeholder="Age" name="age" type="text">
                                         <label for="d_age">Age</label>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="d_gender"
-                                               placeholder="Gender" name="dGender" type="text">
+                                               placeholder="Gender" name="gender" type="text">
                                         <label for="d_gender">Gender</label>
                                     </div>
 
@@ -435,129 +435,129 @@
 <script src="assets/bootsrap/js/bootstrap.min.js"></script>
 <script >
 
-    $("#btnAddDriver").click(function () {
-        if (checkvalidationDriver()) {
-            let dr_id = $("#did").val();
-            let dr_name = $("#d_name").val();
-            let dr_email = $("#d_email").val();
-            let dr_password = $("#d_password").val();
-            let dr_driver_nic = $("#driver_nic").val();
-            let dr_driver_license = $("#driver_license").val();
-            let dr_address = $("#d_address").val();
-            let dr_contactNo = $("#d_contactNo").val();
-            let dr_age = $("#d_age").val();
-            let dr_gender = $("#d_gender").val();
+    // $("#btnAddDriver").click(function () {
+    //     if (checkvalidationDriver()) {
+    //         let dr_id = $("#did").val();
+    //         let dr_name = $("#d_name").val();
+    //         let dr_email = $("#d_email").val();
+    //         let dr_password = $("#d_password").val();
+    //         let dr_driver_nic = $("#driver_nic").val();
+    //         let dr_driver_license = $("#driver_license").val();
+    //         let dr_address = $("#d_address").val();
+    //         let dr_contactNo = $("#d_contactNo").val();
+    //         let dr_age = $("#d_age").val();
+    //         let dr_gender = $("#d_gender").val();
+    //
+    //         $.ajax({
+    //             method: "POST",
+    //             url: "http://localhost:8080/BackEnd_war/api/v1/driver",
+    //             contentType: 'application/json',
+    //             async: true,
+    //             data: JSON.stringify({
+    //                 driverId: dr_id,
+    //                 driverName: dr_name,
+    //                 driverEmail: dr_email,
+    //                 driverPassword: dr_password,
+    //                 driverNic: dr_driver_nic,
+    //                 driverLicense: dr_driver_license,
+    //                 driverAddress: dr_address,
+    //                 driverContactNo: dr_contactNo,
+    //                 driverAge: dr_age,
+    //                 driverGender: dr_gender
+    //             }),
+    //             success: function (data) {
+    //                 if(data.message=='Success'){
+    //                     alert('Added Successful');
+    //                 }
+    //                 console.log(data);
+    //             //     loadAllDrivers();
+    //             //     clearAllDriverText();
+    //              },
+    //             error: function (ob, textStatus, error) {
+    //                 console.log("error from : " + ob + " " + textStatus + " " + error);
+    //                 if(data.message!=='Success'){
+    //                     alert('Added UnSuccessful! Try again');
+    //                 }
+    //             }
+    //         });
+    //     }
+    // });
+    //
+    // function checkvalidationDriver() {
+    //
+    //     let dr_id = $("#did").val();
+    //     let dr_name = $("#d_name").val();
+    //     let dr_email = $("#d_email").val();
+    //     let dr_password = $("#d_password").val();
+    //     let dr_driver_nic = $("#driver_nic").val();
+    //     let dr_driver_license = $("#driver_license").val();
+    //     let dr_address = $("#d_address").val();
+    //     let dr_contactNo = $("#d_contactNo").val();
+    //     let dr_age = $("#d_age").val();
+    //     let dr_gender = $("#d_gender").val();
+    //
+    //     if (dr_id!=""){
+    //         if (dr_name!=""){
+    //             if(dr_email!=""){
+    //                 if (dr_password!=""){
+    //                     if (dr_driver_nic!=""){
+    //                         if (dr_driver_license!=""){
+    //                             if (dr_address!=""){
+    //                                 if (dr_contactNo!=""){
+    //                                     if (dr_age!=""){
+    //                                         if (dr_gender){
+    //                                             return true;
+    //                                         }else{
+    //                                             alert("Please Add Gender");
+    //                                             return false;
+    //                                         }
+    //                                     }else{
+    //                                         alert("Please Add Age");
+    //                                         return false;
+    //                                     }
+    //                                 }else{
+    //                                     alert("Please Add Contact Number");
+    //                                     return false;
+    //                                 }
+    //                             }else{
+    //                                 alert("Please Add Address");
+    //                                 return false;
+    //                             }
+    //                         }else{
+    //                             alert("Please Add Driver License");
+    //                             return false;
+    //                         }
+    //                     }else{
+    //                         alert("Please Add Driver NIC Number");
+    //                         return false;
+    //                     }
+    //                 }else {
+    //                     alert("Please Add Password");
+    //                     return false;
+    //                 }
+    //             }else{
+    //                 alert("Please Add Email");
+    //                 return false;
+    //             }
+    //         }else{
+    //             alert("Please Add Name");
+    //             return false;
+    //         }
+    //     }else{
+    //         alert("Please Add id");
+    //         return false;
+    //     }
+    //
+    // }
 
-            $.ajax({
-                method: "POST",
-                url: "http://localhost:8080/BackEnd_war/api/v1/driver",
-                contentType: 'application/json',
-                async: true,
-                data: JSON.stringify({
-                    driverId: dr_id,
-                    driverName: dr_name,
-                    driverEmail: dr_email,
-                    driverPassword: dr_password,
-                    driverNic: dr_driver_nic,
-                    driverLicense: dr_driver_license,
-                    driverAddress: dr_address,
-                    driverContactNo: dr_contactNo,
-                    driverAge: dr_age,
-                    driverGender: dr_gender
-                }),
-                success: function (data) {
-                    if(this.data.message=='Success'){
-                        alert('Added Successful');
-                    }
-                    console.log(data);
-                //     loadAllDrivers();
-                //     clearAllDriverText();
-                 },
-                error: function (ob, textStatus, error) {
-                    console.log("error from : " + ob + " " + textStatus + " " + error);
-                    if(this.data.message!=='Success'){
-                        alert('Added UnSuccessful! Try again');
-                    }
-                }
-            });
-        }
+    $("#btnAddDriver").click(function () {
+        saveDriver();
     });
 
-    function checkvalidationDriver() {
-
-        let dr_id = $("#did").val();
-        let dr_name = $("#d_name").val();
-        let dr_email = $("#d_email").val();
-        let dr_password = $("#d_password").val();
-        let dr_driver_nic = $("#driver_nic").val();
-        let dr_driver_license = $("#driver_license").val();
-        let dr_address = $("#d_address").val();
-        let dr_contactNo = $("#d_contactNo").val();
-        let dr_age = $("#d_age").val();
-        let dr_gender = $("#d_gender").val();
-
-        if (dr_id!=""){
-            if (dr_name!=""){
-                if(dr_email!=""){
-                    if (dr_password!=""){
-                        if (dr_driver_nic!=""){
-                            if (dr_driver_license!=""){
-                                if (dr_address!=""){
-                                    if (dr_contactNo!=""){
-                                        if (dr_age!=""){
-                                            if (dr_gender){
-                                                return true;
-                                            }else{
-                                                alert("Please Add Gender");
-                                                return false;
-                                            }
-                                        }else{
-                                            alert("Please Add Age");
-                                            return false;
-                                        }
-                                    }else{
-                                        alert("Please Add Contact Number");
-                                        return false;
-                                    }
-                                }else{
-                                    alert("Please Add Address");
-                                    return false;
-                                }
-                            }else{
-                                alert("Please Add Driver License");
-                                return false;
-                            }
-                        }else{
-                            alert("Please Add Driver NIC Number");
-                            return false;
-                        }
-                    }else {
-                        alert("Please Add Password");
-                        return false;
-                    }
-                }else{
-                    alert("Please Add Email");
-                    return false;
-                }
-            }else{
-                alert("Please Add Name");
-                return false;
-            }
-        }else{
-            alert("Please Add id");
-            return false;
-        }
-
-    }
-
-    // Methods
-    loadAllCustomers();
-
-    //Save Customer
-    function saveDriver(){
+    function saveDriver() {
         var data = $("#driverform").serialize(); // return query string of form with name:type-value
         $.ajax({
-            url: baseUrl,
+            url:"http://localhost:8080/BackEnd_war/api/v1/driver",
             method: "POST",
             data: data,// if we send data with the request
             success: function (res) {
@@ -573,112 +573,8 @@
         });
     }
 
-    //Load All Customers
-    function loadAllCustomers() {
-        $("#tblCustomerJson").empty();
-        $.ajax({
-            url: baseUrl,
-            method: "GET",
-            // dataType:"json", // please convert the response into JSON
-            success: function (resp) {
 
-                for (const customer of resp.data) {
-                    let row = `<tr><td>${customer.id}</td><td>${customer.name}</td><td>${customer.address}</td><td>${customer.salary}</td></tr>`;
-                    $("#tblCustomerJson").append(row);
-                }
-                bindClickEvents();
-                clearForm();
-            },
-            error: function (ob) {
-                alert(ob.responseJSON.message);
-            }
-        });
-    }
-
-    //Update Customer
-    function updateCustomer() {
-        //creating a js object with relevant data which you wanna send to the server
-        var cusOb = {
-            id: $("#cusID").val(),
-            name: $("#cusName").val(),
-            address: $("#cusAddress").val(),
-            salary: $("#cusSalary").val()
-        }
-
-        $.ajax({
-            url: baseUrl,
-            method: "PUT",
-            contentType: "application/json", //You should state request's content type using MIME types
-            data: JSON.stringify(cusOb), // format js object to valid json string
-            success: function (res) {
-                if (res.code == 200) { // process is  ok
-                    alert("Successfully Updated");
-                    loadAllCustomers();
-                    clearForm();
-                }
-            },
-            error: function (ob) {
-                alert(ob.responseJSON.message);
-            }
-        });
-    }
-
-    //Delete Customer
-    function deleteCustomer() {
-        // Get the customer id
-        let customerID = $("#cusID").val();
-
-        // initiate the request
-        $.ajax({
-            url: baseUrl + "?id=" + customerID,// viya query string
-            method: "DELETE",
-            //data:data,// application/x-www-form-urlencoded
-            success: function (res) {
-                if (res.code == 200) {
-                    alert("Customer Successfully Deleted");
-                    loadAllCustomers();
-                    clearForm();
-                }
-            },
-            error: function (ob) {
-                alert(ob.responseJSON.message);
-            }
-        });
-    }
-
-    //Search Customer
-    function searchCustomer() {
-        var customerID = $("#cusID").val();
-
-        $.ajax({
-            url: baseUrl + "/" + customerID,
-            method: "GET",
-            success: function (res) {
-                if (res.code = 200) {
-                    var customer = res.data;
-                    $("#cusID").val(customer.id);
-                    $("#cusName").val(customer.name);
-                    $("#cusAddress").val(customer.address);
-                    $("#cusSalary").val(customer.salary);
-                } else {
-                    clearForm();
-                }
-            },
-            error:function (ob){
-                alert(ob.responseJSON.message);
-            }
-        });
-    }
-
-    //Clear Customer Input Fields
-    function clearForm() {
-        $("#cusID").val("");
-        $("#cusName").val("");
-        $("#cusAddress").val("");
-        $("#cusSalary").val("");
-        $("#cusID").focus();
-    }
-
+    // Methods
     //----------car input field validations----------------------
 
     function checkvalidationCar() {

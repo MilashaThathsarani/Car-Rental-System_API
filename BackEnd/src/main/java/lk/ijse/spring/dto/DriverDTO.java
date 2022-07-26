@@ -15,5 +15,9 @@ public class DriverDTO {
     private String address;
     private int age;
     private String contact;
+    private String gender;
+    private String nic;
     private String drivingLicenseNo;
+    private String email;
+    private String password;
 }

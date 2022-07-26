@@ -4,15 +4,15 @@ import lk.ijse.spring.dto.DriverDTO;
 import java.util.List;
 
 public interface DriverService {
-    public void saveDriver(DriverDTO dto);
+     void saveDriver(DriverDTO dto);
 
-    public void deleteDriver(String id);
+     void deleteDriver(String id);
 
-    public void updateDriver(DriverDTO dto);
+     void updateDriver(DriverDTO dto);
 
-    public DriverDTO searchDriver(String id);
+     DriverDTO searchDriver(String id);
 
-    public List<DriverDTO> getAllDrivers();
+     List<DriverDTO> getAllDrivers();
 
 
 }

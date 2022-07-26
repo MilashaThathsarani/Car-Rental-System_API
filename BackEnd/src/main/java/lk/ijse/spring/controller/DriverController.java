@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("api/v1/driver")
 @CrossOrigin
 public class DriverController {
+
     @Autowired
-    DriverService driverService;
+    private DriverService driverService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllDrivers() {
