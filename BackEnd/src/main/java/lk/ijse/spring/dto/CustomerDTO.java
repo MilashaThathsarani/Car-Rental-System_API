@@ -10,14 +10,15 @@ import lombok.ToString;
 @Data
 @ToString
 public class CustomerDTO {
-    private String cusId;
-    private String cusEmail;
-    private String cusPassword;
-    private String cusNic;
-    private String cusNicImage;
-    private String cusDriverLicense;
-    private String cusDriverLicenseImage;
-    private String cusAddress;
-    private int cusContactNo;
-    private String cusStatus;
+    private String customerId;
+    private String nic;
+    private String name;
+    private String newPassword;
+    private String address;
+    private String contact;
+    private String drivingLicenseNo;
+    private String email;
+    private String nicImg;
+    private String drivingLicenseImg;
+    private final String status = "Pending";
 }

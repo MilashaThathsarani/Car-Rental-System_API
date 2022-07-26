@@ -8,10 +8,6 @@
           crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="assets/css/BookingStyle.css">
-
-<!--    <link rel="stylesheet" type="text/css" href="assests/css/Style.css">-->
-
-    <!--    <link href="assests/bootsrap/css/bootstrap.css">-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600&family=Ubuntu&display=swap"
           rel="stylesheet">
@@ -87,23 +83,6 @@
             <button type="button" id="btnSubmitReq">Submit</button>
 
         </form>
-<!--        <div id="id01" class="w3-modal">-->
-<!--            <div class="w3-modal-content w3-card-4">-->
-<!--                <header class="w3-container w3-teal">-->
-<!--        <span onclick="document.getElementById('id01').style.display='none'"-->
-<!--              class="w3-button w3-display-topright">&times;</span>-->
-<!--                    <h2>Thank you for your request!</h2>-->
-<!--                </header>-->
-<!--                <div class="w3-container">-->
-<!--                    <p>Your request is accepted only.<br> please check your request status and upload bank slip</p>-->
-<!--                </div>-->
-<!--                <footer class="w3-container w3-teal">-->
-<!--                    <p>Thank you </p>-->
-<!--                </footer>-->
-<!--            </div>-->
-<!--        </div>-->
-        <!-- /.modal -->
-
     </div>
 </div>
 
@@ -135,7 +114,7 @@
 
         $.ajax({
             method: "POST",
-            url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/booking",
+            url: "http://localhost:8080/BackEnd_war/api/v1/booking",
             contentType: 'application/json',
             async: true,
 
@@ -168,7 +147,7 @@
     function loadAllBookings() {
         $("#tblRentReq").empty();
         $.ajax({
-            url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/booking",
+            url: "http://localhost:8080/BackEnd_war/api/v1/booking",
             method: "GET",
             async: true,
             dataType: "json",
@@ -189,7 +168,7 @@
         let nic= $("#searchNic").val();
         if (!nic.trim().length<=0) {
             $.ajax({
-                url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/regisration/" + nic,
+                url: "http://localhost:8080/BackEnd_war/api/v1/registration/" + nic,
                 method: "GET",
                 async: true,
                 success: function (data, textState, xhr) {
@@ -222,7 +201,7 @@
         $("#selectBrand").empty();
         $('#selectBrand').append("<option>Select</option>");
         $.ajax({
-            url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/car",
+            url: "http://localhost:8080/BackEnd_war/api/v1/car",
             method: "GET",
             async: true,
             dataType: "json",
@@ -248,7 +227,7 @@
     })
     function searchBrand(brand) {
         $.ajax({
-            url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/car/brand/"+brand,
+            url: "http://localhost:8080/BackEnd_war/api/v1/car/brand/"+brand,
             method: "GET",
             async: true,
             dataType: "json",
@@ -286,7 +265,7 @@
         $("#selectDriver").empty();
         $('#selectDriver').append("<option>Select</option>");
         $.ajax({
-            url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/driver",
+            url: "http://localhost:8080/BackEnd_war/api/v1/driver",
             method: "GET",
             async: true,
             dataType: "json",
@@ -312,7 +291,7 @@
     })
     function searchDriverName(name) {
         $.ajax({
-            url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/driver/name/"+name,
+            url: "http://localhost:8080/BackEnd_war/api/v1/driver/name/"+name,
             method: "GET",
             async: true,
             dataType: "json",
@@ -337,21 +316,6 @@
         $("#driver_licens").val("");
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
 </body>

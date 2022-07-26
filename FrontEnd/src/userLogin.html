@@ -145,6 +145,7 @@
 
     //-----------------add user--------------------
 
+
     $("#signUpSubmitBtn").click(()=>{
 
         if (checkvalidationUser()){
@@ -154,7 +155,7 @@
             var data = new FormData(); //setup form data object to send file data
             data.append("myFile", fileObject, fileName); //append data
             $.ajax({
-                url: "http://localhost:8080/BackEnd_war/api/v1/regisration",
+                url: "http://localhost:8080/BackEnd_war/api/v1/registration",
                 method: "POST",
                 async: true,
                 processData: false, //stop processing data of request body
@@ -170,7 +171,7 @@
                     var dataL = new FormData(); //setup form data object to send file data
                     dataL.append("myFile", fileObjectL, fileNameL); //append data
                     $.ajax({
-                        url: "http://localhost:8080/BackEnd_war/api/v1/regisration",
+                        url: "http://localhost:8080/BackEnd_war/api/v1/registration",
                         method: "POST",
                         async: true,
                         processData: false, //stop processing data of request body
@@ -190,7 +191,7 @@
 
                             $.ajax({
                                 method: "POST",
-                                url: "http://localhost:8080/BackEnd_war/api/v1/regisration",
+                                url: "http://localhost:8080/BackEnd_war/api/v1/registration",
                                 contentType: 'application/json',
                                 async: true,
                                 data: JSON.stringify({
@@ -227,59 +228,28 @@
 
     });
 
-
     //---------------------------------login---------------------------------------------------
 
     $("#loginSubmitBtn").click(function () {
-
 
         let re_email = $("#loginEmail").val();
         let re_pass = $("#loginPassword").val()
         $.ajax({
             method: "POST",
-            url: "http://localhost:8080/BackEnd_war/api/v1/regisration/login",
+            url: "http://localhost:8080/BackEnd_war/api/v1/registration/login",
             contentType: 'application/json',
-            async: true,
             data: JSON.stringify({
                 email: re_email,
                 password: re_pass
             }),
             success: function (data) {
-                if(data.code=="200"){
-                    window.location.href="http://localhost:63342/Easy_Car_Rental_BacEnd/Easy_Car_Rental_ForntEnd/userPage.html?_ijt=1308adrt9d1ornrtksuk5tgauq#mybooking_panel"
-
+                if (data.code == "200") {
+                    window.location.href = "http://localhost:63342/Car_Rental_System/FrontEnd/userPage.html?_ijt=7cvc1bef7gai473t32vd69760s"
                 }
-            },
-            error:function (er) {
-                alert(er.responseJSON.data);
             }
         });
 
     });
-    // $("#loginSubmitBtn").click(function () {
-    //
-    //     let re_email = $("#signUpEmail").val();
-    //     let re_pass = $("#loginPassword").val()
-    //     $.ajax({
-    //         method: "PUT",
-    //         url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/regisration",
-    //         contentType: 'application/json',
-    //         async: true,
-    //         data: JSON.stringify({
-    //             email: re_email,
-    //             password: re_pass,
-    //
-    //         }),
-    //         success: function (data) {
-    //             console.log(data);
-    //
-    //         }
-    //     });
-    //
-    // });
-
-
-
 
     //-----------get all registration--------------------------------------
 
@@ -288,7 +258,7 @@
     function loadAllRegistrations() {
         $("#tblUser").empty();
         $.ajax({
-            url: "http://localhost:8080/BackEnd_war/api/v1/regisration",
+            url: "http://localhost:8080/BackEnd_war/api/v1/registration",
             method: "GET",
             async: true,
             dataType: "json",

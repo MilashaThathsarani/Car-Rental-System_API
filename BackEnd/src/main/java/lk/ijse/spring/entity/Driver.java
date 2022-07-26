@@ -5,8 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,13 +20,17 @@ import javax.persistence.Id;
 public class Driver {
     @Id
     private String driverId;
-    private String driverName;
-    private String driverEmail;
-    private String driverPassword;
-    private String driverNic;
-    private String driverLicense;
-    private String driverAddress;
-    private int driverContactNo;
-    private int driverAge;
-    private String driverGender;
+    private String name;
+    private String address;
+    private int age;
+    private String contact;
+    private String gender;
+    private String nic;
+    private String drivingLicenseNo;
+    private String email;
+    private String password;
+
+    @OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)
+    private List<VehicleRent> rentals = new ArrayList<>();
+
 }

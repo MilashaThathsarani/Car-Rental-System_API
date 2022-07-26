@@ -53,17 +53,6 @@
                 </a>
             </div>
 
-            <!-- Alternate Login -->
-            <!--            <div class="alternate-login">-->
-            <!--                <div class="link">-->
-            <!--                    <i class='bx bxl-google'></i>-->
-            <!--                    <span>Google</span>-->
-            <!--                </div>-->
-            <!--                <div class="link">-->
-            <!--                    <i class='bx bxl-facebook-circle'></i>-->
-            <!--                    <span>Facebook</span>-->
-            <!--                </div>-->
-            <!--            </div>-->
         </form> <!-- End Login Form -->
 
         <!-- Sign Up Form -->
@@ -93,28 +82,10 @@
                 <span class="showHide__Icon"><i class="bx bx-hide"></i></span>
                 <small class="input__error_message"></small>
             </div>
-            <!--            <div class="input__group confirm__group">-->
-            <!--                <label class="field">-->
-            <!--                    <input type="password" name="confirm_password" placeholder="Confirm Password" id="signUpConfirmPassword">-->
-            <!--                </label>-->
-            <!--                <span class="input__icon"><i class="bx bx-lock"></i></span>-->
-            <!--                <span class="showHide__Icon"><i class="bx bx-hide"></i></span>-->
-            <!--                <small class="input__error_message"></small>-->
-            <!--            </div>-->
 
             <!-- Sign Up Button -->
             <button type="submit" class="submit-button" id="signUpSubmitBtn">Sign Up</button>
-            <!-- Alternate Login -->
-            <!--            <div class="alternate-login">-->
-            <!--                <div class="link">-->
-            <!--                    <i class='bx bxl-google'></i>-->
-            <!--                    <span>Google</span>-->
-            <!--                </div>-->
-            <!--                <div class="link">-->
-            <!--                    <i class='bx bxl-facebook-circle'></i>-->
-            <!--                    <span>Facebook</span>-->
-            <!--                </div>-->
-            <!--            </div>-->
+
         </form> <!-- End Sign Up Form -->
     </div><!-- End Forms Area -->
 
@@ -152,11 +123,10 @@
 
         $.ajax({
             method: "POST",
-            url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/adminaccount",
+            url: "http://localhost:8080/BackEnd_war/api/v1/adminaccount",
             contentType: 'application/json',
             async: true,
             data: JSON.stringify({
-
                 username: a_username,
                 email: a_email,
                 password: a_pass,
@@ -164,14 +134,9 @@
             }),
             success: function (data) {
                 console.log(data);
-
-
             }
         });
-
     });
-
-
 
 </script>
 </body>

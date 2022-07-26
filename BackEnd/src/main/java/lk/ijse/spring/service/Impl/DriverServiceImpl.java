@@ -1,5 +1,4 @@
 package lk.ijse.spring.service.Impl;
-
 import lk.ijse.spring.dto.DriverDTO;
 import lk.ijse.spring.entity.Driver;
 import lk.ijse.spring.repo.DriverRepo;
@@ -9,7 +8,6 @@ import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
-import java.util.Optional;
 
 public class DriverServiceImpl implements DriverService {
 
@@ -20,20 +18,11 @@ public class DriverServiceImpl implements DriverService {
     ModelMapper modelMapper;
 
     @Override
-    public void saveDriver(DriverDTO driverDTO) {
-        if (!driverRepo.existsById(driverDTO.getDriverId())) {
-            driverRepo.save(modelMapper.map(driverDTO, Driver.class));
+    public void saveDriver(DriverDTO dto) {
+        if (!driverRepo.existsById(dto.getDriverId())) {
+            driverRepo.save(modelMapper.map(dto, Driver.class));
         } else {
             throw new RuntimeException("Customer Already Exist..!");
-        }
-    }
-
-    @Override
-    public void updateDriver(DriverDTO driverDTO) {
-        if (driverRepo.existsById(driverDTO.getDriverId())) {
-            driverRepo.save(modelMapper.map(driverDTO,Driver.class));
-        } else {
-            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
         }
     }
 
@@ -43,6 +32,15 @@ public class DriverServiceImpl implements DriverService {
             driverRepo.deleteById(id);
         }else{
             throw new RuntimeException("Please check the Customer ID.. No Such Customer..!");
+        }
+    }
+
+    @Override
+    public void updateDriver(DriverDTO dto) {
+        if (driverRepo.existsById(dto.getDriverId())) {
+            driverRepo.save(modelMapper.map(dto,Driver.class));
+        } else {
+            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
         }
     }
 
@@ -62,12 +60,4 @@ public class DriverServiceImpl implements DriverService {
         }.getType());
     }
 
-    @Override
-    public DriverDTO findName(String dName) {
-        Optional<Driver> driver = driverRepo.findByDriverName(dName);
-        if (driver.isPresent()) {
-            return modelMapper.map(driver.get(), DriverDTO.class);
-        }
-        return null;
-    }
 }

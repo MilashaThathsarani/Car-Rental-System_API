@@ -126,6 +126,30 @@ body {
     width: 500px;
     height: 350px;
 }
+.about_us_pre{
+    left: 600px;
+    position: relative;
+    top:-170px;
+    font-size: 24px;
+}
+.about_us_h2{
+    left: 900px;
+    position: relative;
+    top: -185px;
+    color: #0e344e;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.about_us_p{
+    left: 130px;
+    position: relative;
+    top: -630px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
 
 
 

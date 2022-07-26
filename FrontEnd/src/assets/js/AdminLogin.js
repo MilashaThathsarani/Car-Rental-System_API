@@ -205,7 +205,7 @@ function setSuccessFor(input){
 function loadAllRegistrations() {
     $("#tblUser").empty();
     $.ajax({
-        url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/registration",
+        url: "http://localhost:8080/BackEnd_war/api/v1/registration",
         method: "GET",
         async: true,
         dataType: "json",

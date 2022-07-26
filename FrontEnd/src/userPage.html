@@ -805,7 +805,7 @@
 
         $.ajax({
             method: "PUT",
-            url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/regisration",
+            url: "http://localhost:8080/BackEnd_war/api/v1/registration",
             contentType: 'application/json',
             async: true,
 
@@ -834,7 +834,7 @@
         let nic = $("#searchNic").val();
         if (!nic.trim().length<=0){
             $.ajax({
-                url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/regisration/" + nic,
+                url: "http://localhost:8080/BackEnd_war/api/v1/registration/" + nic,
                 method: "GET",
                 async: true,
                 success: function (data, textState, xhr) {
@@ -861,8 +861,9 @@
         let nic = $("#searchCustomerNic").val();
         if (!nic.trim().length<=0){
             $.ajax({
-                url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/booking/" + nic,
+                url: "http://localhost:8080/BackEnd_war/api/v1/booking" + nic,
                 method: "GET",
+                contentType: 'application/json',
                 async: true,
                 success: function (data, textState, xhr) {
                     for (let i of data.data) {
@@ -888,9 +889,10 @@
         let nic = $("#searchCusNic").val();
         if (!nic.trim().length<=0){
             $.ajax({
-                url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/regisration/" + nic,
+                url: "http://localhost:8080/BackEnd_war/api/v1/registration/" + nic,
                 method: "GET",
                 async: true,
+                contentType: 'application/json',
                 success: function (data, textState, xhr) {
                     for (let i of data.data) {
                         var row = `<tr><td>${i.email}</td><td>${i.password}</td><td>${i.nic}</td><td>${i.nicImage}</td><td>${i.dlicense}</td><td>${i.dlicenseImage}</td><td>${i.address}</td><td>${i.contactNo}</td><td>${i.cusStatus}</td></tr>`;
