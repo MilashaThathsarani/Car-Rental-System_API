@@ -5,14 +5,14 @@ import lk.ijse.spring.dto.AdminDTO;
 import java.util.List;
 
 public interface AdminService {
-    public void saveAdmin(AdminDTO dto);
+    void saveAdmin(AdminDTO dto);
 
-    public void deleteAdmin(String id);
+    void deleteAdmin(String id);
 
-    public void updateAdmin(AdminDTO dto);
+    void updateAdmin(AdminDTO dto);
 
-    public AdminDTO searchAdmin(String id);
+    AdminDTO searchAdmin(String id);
 
-    public List<AdminDTO> getAllAdmins();
+    List<AdminDTO> getAllAdmins();
 
 }

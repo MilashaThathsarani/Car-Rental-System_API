@@ -5,14 +5,20 @@ import lk.ijse.spring.dto.CustomerDTO;
 import java.util.List;
 
 public interface CustomerService {
-    public void saveCustomer(CustomerDTO dto);
+    void saveCustomer(CustomerDTO dto);
 
-    public void deleteCustomer(String id);
+    void deleteCustomer(String id);
 
-    public void updateCustomer(CustomerDTO dto);
+    void updateCustomer(CustomerDTO dto);
 
-    public CustomerDTO searchCustomer(String id);
+    CustomerDTO searchCustomer(String id);
 
-    public List<CustomerDTO> getAllCustomers();
+    List<CustomerDTO> getAllCustomers();
+
+    CustomerDTO findEmailAndPassword(String email, String password);
+
+    boolean findUser(String email);
+
+    CustomerDTO findNic(String nic);
 
 }

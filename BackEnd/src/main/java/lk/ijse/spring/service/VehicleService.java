@@ -4,14 +4,16 @@ import lk.ijse.spring.dto.VehicleDTO;
 import java.util.List;
 
 public interface VehicleService {
-    public void saveVehicle(VehicleDTO dto);
+    void saveVehicle(VehicleDTO dto);
 
-    public void deleteVehicle(String id);
+    void deleteVehicle(String id);
 
-    public void updateVehicle(VehicleDTO dto);
+    void updateVehicle(VehicleDTO dto);
 
-    public VehicleDTO searchVehicle(String id);
+    VehicleDTO searchVehicle(String id);
 
-    public List<VehicleDTO> getAllVehicles();
+    List<VehicleDTO> getAllVehicles();
+
+    VehicleDTO findBrand(String brand);
 
 }
