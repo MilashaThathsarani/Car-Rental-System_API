@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class AdminController {
 
     @Autowired
-    AdminService adminService;
+    private AdminService adminService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllAdmins() {

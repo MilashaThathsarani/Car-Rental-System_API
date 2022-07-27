@@ -20,7 +20,7 @@ import java.util.List;
 public class VehicleRentServiceImpl implements VehicleRentService {
 
     @Autowired
-    private VehicleRentRepo vehicleRentRepo;
+    VehicleRentRepo vehicleRentRepo;
 
     @Autowired
     ModelMapper modelMapper;

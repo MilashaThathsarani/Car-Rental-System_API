@@ -17,7 +17,7 @@ import java.util.Optional;
 public class DriverServiceImpl implements DriverService {
 
     @Autowired
-    private DriverRepo driverRepo;
+    DriverRepo driverRepo;
 
     @Autowired
     ModelMapper modelMapper;

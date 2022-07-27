@@ -19,7 +19,7 @@ import java.util.Optional;
 public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
-    private CustomerRepo customerRepo;
+    CustomerRepo customerRepo;
 
     @Autowired
     ModelMapper modelMapper;

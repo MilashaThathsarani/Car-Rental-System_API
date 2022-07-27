@@ -6,13 +6,18 @@ import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
 
 @RestController
 @RequestMapping("api/v1/customer")
 @CrossOrigin
 public class CustomerController {
     @Autowired
-    CustomerService customerService;
+    private CustomerService customerService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllCustomers() {
@@ -41,4 +46,38 @@ public class CustomerController {
     public ResponseUtil searchCustomer(@PathVariable String id) {
         return new ResponseUtil(200,"Ok",customerService.searchCustomer(id));
     }
+
+    @GetMapping(path = "/{nic}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil findNic(@PathVariable String nic) {
+        return new ResponseUtil(200,"ok",customerService.findNic(nic));
+    }
+
+    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public boolean saveFile(@RequestPart("myFile") MultipartFile myFile) {
+        System.out.println(myFile.getOriginalFilename());
+
+        try {
+            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            File uploadsDir = new File(projectPath + "/uploads");
+            uploadsDir.mkdir();
+            myFile.transferTo(new File(uploadsDir.getAbsolutePath() + "/" + myFile.getOriginalFilename()));
+            return true;
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+            return false;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @PostMapping(path = "/login", produces = MediaType.APPLICATION_JSON_VALUE)
+    public  ResponseUtil findEmailAndPassword(@RequestBody CustomerDTO user) {
+        if (!user.getEmail().equals("") && !user.getPassword().equals("")) {
+            CustomerDTO dto = customerService.findEmailAndPassword(user.getEmail(), user.getPassword());
+            return new ResponseUtil(200, "done",dto);
+        }
+        throw new RuntimeException("Please Input User name And Password");
+    }
+
 }

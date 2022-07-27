@@ -17,7 +17,7 @@ import java.util.Optional;
 public class VehicleServiceImpl implements VehicleService {
 
     @Autowired
-    private VehicleRepo vehicleRepo;
+    VehicleRepo vehicleRepo;
 
     @Autowired
     ModelMapper modelMapper;

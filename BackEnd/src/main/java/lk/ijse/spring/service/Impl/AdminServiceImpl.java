@@ -17,7 +17,7 @@ import java.util.List;
 public class AdminServiceImpl implements AdminService {
 
     @Autowired
-    private AdminRepo adminRepo;
+    AdminRepo adminRepo;
 
     @Autowired
     ModelMapper modelMapper;

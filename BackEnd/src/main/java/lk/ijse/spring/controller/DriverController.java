@@ -1,8 +1,6 @@
 package lk.ijse.spring.controller;
 
-import lk.ijse.spring.dto.AdminDTO;
 import lk.ijse.spring.dto.DriverDTO;
-import lk.ijse.spring.service.AdminService;
 import lk.ijse.spring.service.DriverService;
 import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,4 +42,11 @@ public class DriverController {
     public ResponseUtil searchDriver(@PathVariable String id) {
         return new ResponseUtil(200,"Ok",driverService.searchDriver(id));
     }
+
+    @GetMapping(path = "/name/{dName}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil findName(@PathVariable String dName) {
+        DriverDTO driverDTO = driverService.findName(dName);
+        return new ResponseUtil(200, "Done", driverDTO);
+    }
+
 }
