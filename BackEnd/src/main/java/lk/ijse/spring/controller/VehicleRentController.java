@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class VehicleRentController {
 
     @Autowired
-    private VehicleRentService vehicleRentService;
+   VehicleRentService vehicleRentService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllVehicleRents() {

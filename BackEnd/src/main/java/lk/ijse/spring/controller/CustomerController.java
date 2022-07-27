@@ -17,7 +17,7 @@ import java.net.URISyntaxException;
 @CrossOrigin
 public class CustomerController {
     @Autowired
-    private CustomerService customerService;
+    CustomerService customerService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllCustomers() {
@@ -54,8 +54,6 @@ public class CustomerController {
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public boolean saveFile(@RequestPart("myFile") MultipartFile myFile) {
-        System.out.println(myFile.getOriginalFilename());
-
         try {
             String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
             File uploadsDir = new File(projectPath + "/uploads");
@@ -79,5 +77,4 @@ public class CustomerController {
         }
         throw new RuntimeException("Please Input User name And Password");
     }
-
 }

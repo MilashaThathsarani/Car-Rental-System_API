@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.rmi.MarshalledObject;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,8 +24,7 @@ public class CustomerServiceImpl implements CustomerService {
     ModelMapper modelMapper;
 
     public void saveCustomer(CustomerDTO dto) {
-        if (!customerRepo.existsById(dto.getCusId())) {
-            //Customer entity = modelMapper.map(dto, Customer.class);
+        if (!customerRepo.existsById(dto.getEmail())) {
             customerRepo.save(modelMapper.map(dto, Customer.class));
         } else {
             throw new RuntimeException("Customer Already Exist..!");
@@ -42,7 +40,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     public void updateCustomer(CustomerDTO dto) {
-        if (customerRepo.existsById(dto.getCusId())) {
+        if (customerRepo.existsById(dto.getEmail())) {
             customerRepo.save(modelMapper.map(dto,Customer.class));
         } else {
             throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");

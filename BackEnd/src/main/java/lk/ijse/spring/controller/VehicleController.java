@@ -17,7 +17,7 @@ import java.net.URISyntaxException;
 @CrossOrigin
 public class VehicleController {
     @Autowired
-    private VehicleService vehicleService;
+    VehicleService vehicleService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllVehicles() {

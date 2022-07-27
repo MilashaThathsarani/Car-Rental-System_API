@@ -15,8 +15,6 @@ import javax.persistence.Id;
 @Entity
 public class Customer {
     @Id
-    private String cusId;
-    private String cusName;
     private String email;
     private String password;
     private String nic;

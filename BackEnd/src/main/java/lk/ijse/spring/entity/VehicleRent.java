@@ -28,7 +28,7 @@ public class VehicleRent {
     private String drName;
 
     @ManyToOne
-    @JoinColumn(name="customer",referencedColumnName = "cusId")
+    @JoinColumn(name="customer",referencedColumnName = "email")
     private Customer customer;
 
     @ManyToOne
