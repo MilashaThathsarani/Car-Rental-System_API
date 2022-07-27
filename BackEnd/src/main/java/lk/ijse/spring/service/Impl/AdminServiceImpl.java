@@ -1,9 +1,7 @@
 package lk.ijse.spring.service.Impl;
 
 import lk.ijse.spring.dto.AdminDTO;
-import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.entity.Admin;
-import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.repo.AdminRepo;
 import lk.ijse.spring.service.AdminService;
 import org.modelmapper.ModelMapper;
@@ -19,7 +17,7 @@ import java.util.List;
 public class AdminServiceImpl implements AdminService {
 
     @Autowired
-    AdminRepo adminRepo;
+    private AdminRepo adminRepo;
 
     @Autowired
     ModelMapper modelMapper;

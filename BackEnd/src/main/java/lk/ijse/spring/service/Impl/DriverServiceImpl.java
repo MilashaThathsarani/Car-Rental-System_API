@@ -10,13 +10,14 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
 public class DriverServiceImpl implements DriverService {
 
     @Autowired
-    DriverRepo driverRepo;
+    private DriverRepo driverRepo;
 
     @Autowired
     ModelMapper modelMapper;
@@ -64,4 +65,12 @@ public class DriverServiceImpl implements DriverService {
         }.getType());
     }
 
+    @Override
+    public DriverDTO findName(String dName) {
+        Optional<Driver> driver = driverRepo.findByDriverName(dName);
+        if (driver.isPresent()) {
+            return modelMapper.map(driver.get(), DriverDTO.class);
+        }
+        return null;
+    }
 }

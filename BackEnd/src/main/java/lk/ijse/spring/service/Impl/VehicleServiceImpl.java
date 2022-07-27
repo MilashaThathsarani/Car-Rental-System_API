@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -19,7 +20,7 @@ public class VehicleServiceImpl implements VehicleService {
     private VehicleRepo vehicleRepo;
 
     @Autowired
-    private ModelMapper modelMapper;
+    ModelMapper modelMapper;
 
     @Override
     public void saveVehicle(VehicleDTO dto) {
@@ -64,4 +65,12 @@ public class VehicleServiceImpl implements VehicleService {
         }.getType());
     }
 
+    @Override
+    public VehicleDTO findBrand(String brand) {
+        Optional<Vehicle> carBrand = vehicleRepo.findByBrand(brand);
+        if (carBrand.isPresent()) {
+            return modelMapper.map(carBrand.get(), VehicleDTO.class);
+        }
+        return null;
+    }
 }

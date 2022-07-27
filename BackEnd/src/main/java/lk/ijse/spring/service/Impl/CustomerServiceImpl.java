@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.rmi.MarshalledObject;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -20,7 +22,7 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerRepo customerRepo;
 
     @Autowired
-    private ModelMapper modelMapper;
+    ModelMapper modelMapper;
 
     public void saveCustomer(CustomerDTO dto) {
         if (!customerRepo.existsById(dto.getCusId())) {
@@ -59,6 +61,35 @@ public class CustomerServiceImpl implements CustomerService {
         List<Customer> all = customerRepo.findAll();
         return modelMapper.map(all,new TypeToken<List<CustomerDTO>>(){
         }.getType());
+    }
+
+    @Override
+    public CustomerDTO findEmailAndPassword(String email, String password) {
+        Optional<Customer> cus = customerRepo.findByEmailAndPassword(email, password);
+        if (cus.isPresent()) {
+            return modelMapper.map(cus.get(), CustomerDTO.class);
+        }
+        throw new RuntimeException("Email name and Password Not Matched");
+    }
+
+    @Override
+    public boolean findUser(String email) {
+        boolean isAvailable = customerRepo.existsByEmail(email);
+        if (customerRepo.existsById(email)) {
+            customerRepo.save(modelMapper.map(email, Customer.class));
+            System.out.println(isAvailable+"");
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public CustomerDTO findNic(String nic) {
+        Optional<Customer> registration = customerRepo.findByNic(nic);
+        if (registration.isPresent()) {
+            return modelMapper.map(registration.get(), CustomerDTO.class);
+        }
+        throw new RuntimeException("NIC Not Matched");
     }
 
 }

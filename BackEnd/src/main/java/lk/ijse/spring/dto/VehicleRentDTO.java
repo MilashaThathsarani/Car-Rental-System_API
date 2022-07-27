@@ -6,15 +6,18 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @ToString
 public class VehicleRentDTO {
-    private String rentId;
-    private LocalDate date;
-    private LocalDate pickUpDate;
-    private LocalDate returnDate;
-    private final String status = "Pending";
+    private String requestNumber;
+    private String nicNumber;
+    private String brand;
+    private String rate;
+    private Date rentStartDate;
+    private Date rentEndDate;
+    private String drName;
 }
