@@ -23,7 +23,7 @@ public class CustomerServiceImpl implements CustomerService {
     private ModelMapper modelMapper;
 
     public void saveCustomer(CustomerDTO dto) {
-        if (!customerRepo.existsById(dto.getCustomerId())) {
+        if (!customerRepo.existsById(dto.getCusId())) {
             //Customer entity = modelMapper.map(dto, Customer.class);
             customerRepo.save(modelMapper.map(dto, Customer.class));
         } else {
@@ -40,7 +40,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     public void updateCustomer(CustomerDTO dto) {
-        if (customerRepo.existsById(dto.getCustomerId())) {
+        if (customerRepo.existsById(dto.getCusId())) {
             customerRepo.save(modelMapper.map(dto,Customer.class));
         } else {
             throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");

@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.time.LocalDate;
+import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,21 +19,23 @@ import java.time.LocalDate;
 @Entity
 public class VehicleRent {
     @Id
-    private String rentId;
-    private LocalDate date;
-    private LocalDate pickUpDate;
-    private LocalDate returnDate;
-    private final String status = "Pending";
+    private String requestNumber;
+    private String nicNumber;
+    private String brand;
+    private String rate;
+    private Date rentStartDate;
+    private Date rentEndDate;
+    private String drName;
 
     @ManyToOne
-    @JoinColumn(name = "customerId", referencedColumnName = "customerId", nullable = false)
+    @JoinColumn(name="customer",referencedColumnName = "cusId")
     private Customer customer;
 
     @ManyToOne
-    @JoinColumn(name = "vehicleId", referencedColumnName = "vehicleId", nullable = false)
+    @JoinColumn(name="vehicle",referencedColumnName = "carNumber")
     private Vehicle vehicle;
 
     @ManyToOne
-    @JoinColumn(name = "driverId", referencedColumnName = "driverId", nullable = false)
+    @JoinColumn(name="driver",referencedColumnName = "driverId")
     private Driver driver;
 }

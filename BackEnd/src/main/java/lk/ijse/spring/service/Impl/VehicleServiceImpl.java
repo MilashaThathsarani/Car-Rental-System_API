@@ -23,7 +23,7 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public void saveVehicle(VehicleDTO dto) {
-        if (!vehicleRepo.existsById(dto.getVehicleId())) {
+        if (!vehicleRepo.existsById(dto.getCarNumber())) {
             vehicleRepo.save(modelMapper.map(dto, Vehicle.class));
         } else {
             throw new RuntimeException("Customer Already Exist..!");
@@ -41,7 +41,7 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public void updateVehicle(VehicleDTO dto) {
-        if (vehicleRepo.existsById(dto.getVehicleId())) {
+        if (vehicleRepo.existsById(dto.getCarNumber())) {
             vehicleRepo.save(modelMapper.map(dto,Vehicle.class));
         } else {
             throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
