@@ -1,5 +1,6 @@
 package lk.ijse.spring.controller;
 
+import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.dto.DriverDTO;
 import lk.ijse.spring.service.DriverService;
 import lk.ijse.spring.util.ResponseUtil;
@@ -43,10 +44,19 @@ public class DriverController {
         return new ResponseUtil(200,"Ok",driverService.searchDriver(id));
     }
 
-    @GetMapping(path = "/name/{dName}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil findName(@PathVariable String dName) {
-        DriverDTO driverDTO = driverService.findName(dName);
+    @GetMapping(path = "/name/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil findName(@PathVariable String name) {
+        DriverDTO driverDTO = driverService.findName(name);
         return new ResponseUtil(200, "Done", driverDTO);
+    }
+
+    @PostMapping(path = "/logindriver", produces = MediaType.APPLICATION_JSON_VALUE)
+    public  ResponseUtil findEmailAndPassword(@RequestBody DriverDTO user) {
+        if (!user.getEmail().equals("") && !user.getPassword().equals("")) {
+            DriverDTO dto = driverService.findEmailAndPassword(user.getEmail(), user.getPassword());
+            return new ResponseUtil(200, "done",dto);
+        }
+        throw new RuntimeException("Please Input User name And Password");
     }
 
 }

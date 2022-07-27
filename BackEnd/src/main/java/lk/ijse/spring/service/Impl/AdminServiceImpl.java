@@ -8,8 +8,8 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -24,7 +24,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public void saveAdmin(AdminDTO dto) {
-        if (!adminRepo.existsById(dto.getAdminId())) {
+        if (!adminRepo.existsById(dto.getUsername())) {
             adminRepo.save(modelMapper.map(dto, Admin.class));
         } else {
             throw new RuntimeException("Customer Already Exist..!");
@@ -42,7 +42,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public void updateAdmin(AdminDTO dto) {
-        if (adminRepo.existsById(dto.getAdminId())) {
+        if (adminRepo.existsById(dto.getUsername())) {
             adminRepo.save(modelMapper.map(dto,Admin.class));
         } else {
             throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");

@@ -14,58 +14,25 @@
           rel="stylesheet">
 </head>
 <body>
-<div class="wrapper">
-    <div class="main-header">
-        <div class="logo-header">
-            <a href="index.html" class="logo">
-                <img src="assets/icon/car-garage-solid-48.png">
-                Easy Car Rental
-            </a>
-            <button class="navbar-toggler sidenav-toggler ml-auto" type="button"
-                    data-toggle="collapse" data-target="collapse" aria-controls="sidebar"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <button class="topbar-toggler more"><img src="assets/icon/icons8-menu-24.png"> </button>
+
+<nav class="nav">
+
+    <div class="container">
+        <div class="logo">
+            <a href="#">Booking.com</a>
         </div>
-        <nav class="navbar navbar-header navbar-expand-lg">
-            <div class="container-fluid">
-
-                <form class="navbar-left navbar-form nav-search mr-md-3" action="">
-                    <div class="input-group">
-                        <input type="text" placeholder="Search ..." class="form-control">
-                        <div class="input-group-append">
-								<span class="input-group-text">
-
-								</span>
-                        </div>
-                    </div>
-                </form>
-
-            </div>
-        </nav>
-    </div>
-    <div class="sidebar">
-        <div class="scrollbar-inner sidebar-wrapper">
-
-            <ul class="nav">
-                <li class="nav-item active">
-                    <a href="#schedule_panel" id="schedule">
-                        <img src="assets/icon/car-solid-24.png" class="figure-img ">
-                        <p>Driver Schedule</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#setting_panel" id="setting">
-                        <img src="assets/icon/user-detail-solid-24.png" class="figure-img ">
-                        <p>Setting</p>
-                    </a>
-                </li>
+        <div id="mainListDiv" class="main_list">
+            <ul class="navlinks">
+                <li><a href="#schedule_panel">Driver Schedule</a></li>
+                <li><a href="#setting_panel">Driver</a></li>
 
             </ul>
         </div>
     </div>
-    <!--my booking-->
+</nav>
+
+
+<!--my booking-->
     <div id="schedule_panel" class="main-panel">
         <div class="content">
             <div class="container-fluid">

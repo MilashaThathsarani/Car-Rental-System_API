@@ -16,89 +16,31 @@
 
 </head>
 <body>
-<div class="wrapper">
-    <div class="main-header">
-        <div class="logo-header">
-            <a href="index.html" class="logo">
-                <img src="assets/icon/car-garage-solid-48.png">
-                Easy Car Rental
-            </a>
-            <button class="navbar-toggler sidenav-toggler ml-auto" type="button"
-                    data-toggle="collapse" data-target="collapse" aria-controls="sidebar"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <button class="topbar-toggler more"><img src="assets/icon/icons8-menu-24.png"></button>
+
+<nav class="nav">
+
+    <div class="container">
+        <div class="logo">
+            <a href="#">Booking.com</a>
         </div>
-        <nav class="navbar navbar-header navbar-expand-lg">
-            <div class="container-fluid">
-
-                <form class="navbar-left navbar-form nav-search mr-md-3" action="">
-                    <div>
-                        <button type="text" class="form-control buy-btn">
-                            <a href="booking.html">
-                                <span class="buy-btn">Booking</span>
-                            </a>
-
-                        </button>
-
-
-                    </div>
-                </form>
-
-            </div>
-        </nav>
-    </div>
-    <div class="sidebar">
-        <div class="scrollbar-inner sidebar-wrapper">
-
-            <ul class="nav">
-                <li class="nav-item active">
-                    <a href="#viewCar_panel" id="cars">
-                        <img src="assets/icon/car-solid-24.png" class="figure-img ">
-                        <p>View Cars</p>
-                    </a>
-                </li>
-                <li class="nav-item active">
-                    <a href="#mybooking_panel" id="myBooking">
-                        <img src="assets/icon/icons8-order-history-24.png" class="figure-img ">
-                        <p>My Status</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#setting_panel" id="setting">
-                        <img src="assets/icon/user-detail-solid-24.png" class="figure-img ">
-                        <p>Setting</p>
-                    </a>
-                </li>
+        <div id="mainListDiv" class="main_list">
+            <ul class="navlinks">
+                <li><a href="#viewCar_panel">Cars</a></li>
+                <li><a href="#mybooking_panel">Rent</a></li>
 
             </ul>
         </div>
     </div>
+</nav>
+
     <!-- view car   -->
     <div id="viewCar_panel" class="main-panel">
         <div class="content">
             <div class="container-fluid">
                 <h2 class="page-title">View Cars</h2>
                 <div>
-                    <div class="btn btn-primary">
-                        <a class="a-booking" href="booking.html">
-                            Booking
-                        </a>
-
-                    </div>
                 </div>
 
-
-
-                <hr>
-                <div class="row">
-                    <div  class="buy-btn">
-                        <a href="booking.html">
-                            <span class="buy-btn">Booking</span>
-                        </a>
-
-                    </div>
                     <div class="col-md">
                         <div class="card">
                             <div class="card-header ">
@@ -530,6 +472,14 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+            <div class="row">
+                <div  class="buy-btn">
+                    <a href="booking.html">
+                        <span class="buy-btn">Booking</span>
+                    </a>
+
                 </div>
             </div>
         </div>

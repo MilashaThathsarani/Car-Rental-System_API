@@ -41,18 +41,6 @@
             <a href="booking.html">
                 <button type="submit" class="submit-button" id="loginSubmitBtn">Sign in</button>
             </a>
-
-            <!-- Alternate Login -->
-            <div class="alternate-login">
-                <div class="link">
-                    <i class='bx bxl-google'></i>
-                    <span>Google</span>
-                </div>
-                <div class="link">
-                    <i class='bx bxl-facebook-circle'></i>
-                    <span>Facebook</span>
-                </div>
-            </div>
         </form> <!-- End Login Form -->
 
 
@@ -80,26 +68,22 @@
 
     $("#loginSubmitBtn").click(function () {
 
-
         let re_email = $("#loginEmail").val();
         let re_pass = $("#loginPassword").val()
         $.ajax({
             method: "POST",
-            url: "http://localhost:8080/BackEnd_war/api/v1/registration/logindriver",
+            url: "http://localhost:8080/BackEnd_war/api/v1/driver/logindriver",
             contentType: 'application/json',
             async: true,
             data: JSON.stringify({
-                d_email: re_email,
-                d_password: re_pass
+                email: re_email,
+                password: re_pass
             }),
             success: function (data) {
                 if(data.code=="200"){
-                    window.location.href="http://localhost:63342/BackEnd/ForntEnd/driverAccount.html?_ijt=rkmi4r3gbuq74s7fo7llep1c8b"
+                    window.location.href="http://localhost:63342/Car_Rental_System/FrontEnd/driverAccount.html?_ijt=b09q5q5mj5aif8rjf4kjjb199e"
                 }
             },
-            error:function (er) {
-                alert(er.responseJSON.data);
-            }
         });
 
     });

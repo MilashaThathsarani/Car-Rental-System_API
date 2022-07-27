@@ -306,7 +306,7 @@
 
 </section>
 
-
+<!--/////////////////////////////////////////////////Driver Panel////////////////////////////////////////////////////-->
 <section>
     <div id="driver_panel" class="main-panel">
         <div class="content">
@@ -544,11 +544,67 @@
         }
 
     }
+//////=================================================================================================================
+
+    $("#did").on("keypress", function (e) {
+        if (e.key == "Enter") {
+            searchDriver();
+        }
+    });
+
+    //Get All Customers Event
+    $("#btnGetAllDriver").click(function () {
+        loadAllDrivers();
+    });
 
     $("#btnAddDriver").click(function () {
         saveDriver();
     });
 
+    //Delete Customer Event
+    $("#btnDeleteDriver").click(function () {
+        deleteDriver();
+    });
+
+    //Update Customer Event
+    $("#btnUpdateDriver").click(function () {
+        updateDriver();
+    });
+
+    //Bind click events to the table rows
+    function bindClickEvents() {
+        $("#tblMain_Driver>tr").click(function () {
+
+            let dr_id =$(this).children().eq(0).text();
+            let dr_name = $(this).children().eq(1).text();
+            let dr_email = $(this).children().eq(2).text();
+            let dr_password = $(this).children().eq(3).text();
+            let dr_driver_nic = $(this).children().eq(4).text();
+            let dr_driver_license = $(this).children().eq(5).text();
+            let dr_address =$(this).children().eq(6).text();
+            let dr_contactNo =$(this).children().eq(7).text();
+            let dr_age =$(this).children().eq(7).text();
+            let dr_gender =$(this).children().eq(7).text();
+
+            //Set values to the text-fields
+            $("#did").val(dr_id);
+            $("#d_name").val(dr_name);
+            $("#d_email").val(dr_email);
+            $("#d_password").val(dr_password);
+            $("#driver_nic").val(dr_driver_nic);
+            $("#driver_license").val(dr_driver_license);
+            $("#d_address").val(dr_address);
+            $("#d_contactNo").val(dr_contactNo);
+            $("#d_age").val(dr_age);
+            $("#d_gender").val(dr_gender);
+        });
+    }
+
+
+    // Methods
+    loadAllDrivers();
+
+    //Save Customer
     function saveDriver() {
         var data = $("#driverform").serialize(); // return query string of form with name:type-value
         $.ajax({
@@ -558,8 +614,8 @@
             success: function (res) {
                 if (res.code == 200) {
                     alert("Successfully Customer Registered");
-                    // loadAllCustomers();
-                    // clearForm();
+                    loadAllDrivers();
+                    clearForm();
                 }
             },
             error: function (ob) {
@@ -569,6 +625,130 @@
     }
 
 
+    function loadAllDrivers() {
+        $("#tblDriver").empty();
+        $.ajax({
+            url:"http://localhost:8080/BackEnd_war/api/v1/driver",
+            method: "GET",
+            // dataType:"json", // please convert the response into JSON
+            success: function (resp) {
+
+                for (let i of resp.data) {
+                    var row = `<tr><td>${i.driverId}</td><td>${i.name}</td><td>${i.email}</td><td>${i.password}</td><td>${i.nic}</td><td>${i.drivingLicenseNo}</td><td>${i.address}</td><td>${i.contact}</td><td>${i.age}</td><td>${i.gender}</td></tr>`;
+                    $("#tblDriver").append(row);
+                }
+                bindClickEvents();
+                clearForm();
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
+    }
+
+    //Update Driver
+    function updateDriver() {
+        //creating a js object with relevant data which you wanna send to the server
+        var cusOb = {
+            driverId: $("#did").val(),
+            name:$("#d_name").val(),
+            address:$("#d_address").val(),
+            age:$("#d_age").val(),
+            contact:$("#d_contactNo").val(),
+            gender:$("#d_gender").val(),
+            nic:$("#driver_nic").val(),
+            drivingLicenseNo:$("#driver_license").val(),
+            email:$("#d_email").val(),
+            password: $("#d_password").val()
+        }
+
+        $.ajax({
+            url:"http://localhost:8080/BackEnd_war/api/v1/driver" ,
+            method: "PUT",
+            contentType: "application/json", //You should state request's content type using MIME types
+            data: JSON.stringify(cusOb), // format js object to valid json string
+            success: function (res) {
+                if (res.code == 200) { // process is  ok
+                    alert("Successfully Updated");
+                    loadAllDrivers();
+                    clearForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
+    }
+
+    //Delete Customer
+    function deleteDriver() {
+        // Get the customer id
+        let driverId = $("#did").val();
+
+        // initiate the request
+        $.ajax({
+            url: "http://localhost:8080/BackEnd_war/api/v1/driver" + "?id=" + driverId,// viya query string
+            method: "DELETE",
+            //data:data,// application/x-www-form-urlencoded
+            success: function (res) {
+                if (res.code == 200) {
+                    alert("Customer Successfully Deleted");
+                    loadAllDrivers();
+                    clearForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
+    }
+
+    //Search Customer
+    function searchDriver() {
+        var driverId = $("#did").val();
+
+        $.ajax({
+            url:  "http://localhost:8080/BackEnd_war/api/v1/driver" + "/" + driverId,
+            method: "GET",
+            success: function (res) {
+                if (res.code = 200) {
+                    var driver = res.data;
+                    $("#did").val(driver.driverId);
+                    $("#d_name").val(driver.name);
+                    $("#d_email").val(driver.email);
+                    $("#d_password").val(driver.password);
+                    $("#driver_nic").val(driver.nic);
+                    $("#driver_license").val(driver.drivingLicenseNo);
+                    $("#d_address").val(driver.address);
+                    $("#d_contactNo").val(driver.contact);
+                    $("#d_age").val(driver.age);
+                    $("#d_gender").val(driver.gender);
+                } else {
+                    clearForm();
+                }
+            },
+            error:function (ob){
+                alert(ob.responseJSON.message);
+            }
+        });
+    }
+
+    //Clear Customer Input Fields
+    function clearForm() {
+        $("#did").focus();
+        $("#d_name").val();
+        $("#d_email").val();
+        $("#d_password").val();
+        $("#driver_nic").val();
+        $("#driver_license").val();
+        $("#d_address").val();
+        $("#d_contactNo").val();
+        $("#d_age").val();
+        $("#d_gender").val();
+        $("#did").focus();
+    }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Methods
     //----------car input field validations----------------------
 

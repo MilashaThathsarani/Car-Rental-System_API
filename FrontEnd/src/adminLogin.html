@@ -112,31 +112,29 @@
 <script src="assets/js/jquery-3.6.0.min.js"></script>
 <script>
 
+
     $("#signUpSubmitBtn").click(function () {
+        saveAdmin();
+    });
 
-        alert("Done")
-
-        let a_username = $("#signUpUsername").val();
-        let a_email = $("#signUpEmail").val();
-        let a_pass = $("#signUpPassword").val();
-
-
+    function saveAdmin() {
+        var data = $("#signUpForm").serialize(); // return query string of form with name:type-value
         $.ajax({
+            url:"http://localhost:8080/BackEnd_war/api/v1/admin",
             method: "POST",
-            url: "http://localhost:8080/BackEnd_war/api/v1/adminaccount",
-            contentType: 'application/json',
-            async: true,
-            data: JSON.stringify({
-                username: a_username,
-                email: a_email,
-                password: a_pass,
-
-            }),
-            success: function (data) {
-                console.log(data);
+            data: data,// if we send data with the request
+            success: function (res) {
+                if (res.code == 200) {
+                    alert("Successfully Admin Registered");
+                    // loadAllDrivers();
+                    // clearForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
             }
         });
-    });
+    }
 
 </script>
 </body>

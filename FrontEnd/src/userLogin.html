@@ -87,7 +87,7 @@
 
             <div class="input__group">
                 <label class="field">
-                    <input type="text" name="dLicense" placeholder="Driving licence number" id="dr_License">
+                    <input type="text" name="dlicense" placeholder="Driving licence number" id="dr_License">
                 </label>
                 <!--                <span class="input__icon"><i class="bx bx-at"></i></span>-->
                 <small class="input__error_message"></small>
@@ -95,7 +95,7 @@
 
             <div class="input__group">
                 <div class="form-floating mb-3">
-                    <input id="dLicenseImage" name="dLicenseImage" type="file" />
+                    <input id="dLicenseImage" name="dlicenseImage" type="file" />
                 </div>
             </div>
 
@@ -155,7 +155,7 @@
             var data = new FormData(); //setup form data object to send file data
             data.append("myFile", fileObject, fileName); //append data
             $.ajax({
-                url: "http://localhost:8080/BackEnd_war/api/v1/registration",
+                url: "http://localhost:8080/BackEnd_war/api/v1/customer",
                 method: "POST",
                 async: true,
                 processData: false, //stop processing data of request body
@@ -171,7 +171,7 @@
                     var dataL = new FormData(); //setup form data object to send file data
                     dataL.append("myFile", fileObjectL, fileNameL); //append data
                     $.ajax({
-                        url: "http://localhost:8080/BackEnd_war/api/v1/registration",
+                        url: "http://localhost:8080/BackEnd_war/api/v1/customer",
                         method: "POST",
                         async: true,
                         processData: false, //stop processing data of request body
@@ -191,7 +191,7 @@
 
                             $.ajax({
                                 method: "POST",
-                                url: "http://localhost:8080/BackEnd_war/api/v1/registration",
+                                url: "http://localhost:8080/BackEnd_war/api/v1/customer",
                                 contentType: 'application/json',
                                 async: true,
                                 data: JSON.stringify({
@@ -210,7 +210,7 @@
                                         alert('Registration Successful');
                                     }
                                     console.log(data);
-                                    loadAllRegistrations();
+                                    // loadAllRegistrations();
                                 },
                                 error: function (ob, textStatus, error) {
                                     console.log("error from : " + ob + " " + textStatus + " " + error);
@@ -236,7 +236,7 @@
         let re_pass = $("#loginPassword").val()
         $.ajax({
             method: "POST",
-            url: "http://localhost:8080/BackEnd_war/api/v1/registration/login",
+            url: "http://localhost:8080/BackEnd_war/api/v1/customer/login",
             contentType: 'application/json',
             data: JSON.stringify({
                 email: re_email,

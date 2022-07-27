@@ -1,5 +1,7 @@
 package lk.ijse.spring.service.Impl;
+import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.dto.DriverDTO;
+import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.entity.Driver;
 import lk.ijse.spring.repo.DriverRepo;
 import lk.ijse.spring.service.DriverService;
@@ -7,8 +9,8 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -66,11 +68,20 @@ public class DriverServiceImpl implements DriverService {
     }
 
     @Override
-    public DriverDTO findName(String dName) {
-        Optional<Driver> driver = driverRepo.findByDriverName(dName);
+    public DriverDTO findName(String name) {
+        Optional<Driver> driver = driverRepo.findByName(name);
         if (driver.isPresent()) {
             return modelMapper.map(driver.get(), DriverDTO.class);
         }
         return null;
+    }
+
+    @Override
+    public DriverDTO findEmailAndPassword(String email, String password) {
+        Optional<Driver> cus = driverRepo.findByEmailAndPassword(email,password);
+        if (cus.isPresent()) {
+            return modelMapper.map(cus.get(), DriverDTO.class);
+        }
+        throw new RuntimeException("Email name and Password Not Matched");
     }
 }
