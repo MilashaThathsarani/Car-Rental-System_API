@@ -48,39 +48,8 @@
     <div  class="content">
         <div class="container-fluid">
             <h4 class="page-title">View Customer</h4>
-            <div class="row">
+            <div class="col">
 
-                <div class="col-md-6">
-
-                    <div class="card">
-                        <div class="card-header ">
-                            <p class="card-category">Customer Details</p>
-                        </div>
-                        <div class="card-body">
-                            <div>
-                                <button id="btnGetAllUsers" class="btn btn-primary" type="button">View Customers</button>
-                            </div>
-                            <div class="table-responsive">
-                                <table id="tblMain_Cus" class="table table-head-bg-success table-striped table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Password</th>
-                                        <th scope="col">Nic Number</th>
-                                        <th scope="col">Nic Number Image</th>
-                                        <th scope="col">Driving Licens</th>
-                                        <th scope="col">Driving Licen Image</th>
-                                        <th scope="col">Address</th>
-                                        <th scope="col">Contact</th>
-                                        <th scope="col">Status</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody id="tblUser"></tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-header ">
@@ -157,6 +126,28 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div>
+                        <button id="btnGetAllUsers" class="btn btn-primary" type="button">View Customers</button>
+                    </div>
+                    <table id="tblMain_Cus" class="table table-head-bg-success table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th scope="col">Email</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">Nic Number</th>
+                            <th scope="col">Nic Number Image</th>
+                            <th scope="col">Driving Licens</th>
+                            <th scope="col">Driving Licen Image</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tblUser"></tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -439,120 +430,120 @@
 <script src="assets/bootsrap/js/bootstrap.min.js"></script>
 <script >
 
-    // $("#btnAddDriver").click(function () {
-    //     if (checkvalidationDriver()) {
-    //         let dr_id = $("#did").val();
-    //         let dr_name = $("#d_name").val();
-    //         let dr_email = $("#d_email").val();
-    //         let dr_password = $("#d_password").val();
-    //         let dr_driver_nic = $("#driver_nic").val();
-    //         let dr_driver_license = $("#driver_license").val();
-    //         let dr_address = $("#d_address").val();
-    //         let dr_contactNo = $("#d_contactNo").val();
-    //         let dr_age = $("#d_age").val();
-    //         let dr_gender = $("#d_gender").val();
+    // var customer_panel= document.getElementById("customer_panel");
+    // var manageCar_panel= document.getElementById("manageCar_panel");
+    // var reqRental_panel= document.getElementById("reqRental_panel");
+    // var driver_panel= document.getElementById("driver_panel");
     //
-    //         $.ajax({
-    //             method: "POST",
-    //             url: "http://localhost:8080/BackEnd_war/api/v1/driver",
-    //             contentType: 'application/json',
-    //             async: true,
-    //             data: JSON.stringify({
-    //                 driverId: dr_id,
-    //                 driverName: dr_name,
-    //                 driverEmail: dr_email,
-    //                 driverPassword: dr_password,
-    //                 driverNic: dr_driver_nic,
-    //                 driverLicense: dr_driver_license,
-    //                 driverAddress: dr_address,
-    //                 driverContactNo: dr_contactNo,
-    //                 driverAge: dr_age,
-    //                 driverGender: dr_gender
-    //             }),
-    //             success: function (data) {
-    //                 if(data.message=='Success'){
-    //                     alert('Added Successful');
-    //                 }
-    //                 console.log(data);
-    //             //     loadAllDrivers();
-    //             //     clearAllDriverText();
-    //              },
-    //             error: function (ob, textStatus, error) {
-    //                 console.log("error from : " + ob + " " + textStatus + " " + error);
-    //                 if(data.message!=='Success'){
-    //                     alert('Added UnSuccessful! Try again');
-    //                 }
-    //             }
-    //         });
-    //     }
+    //
+    // customer_panel.style.display='block';
+    // manageCar_panel.style.display='none';
+    // reqRental_panel.style.display='none';
+    // driver_panel.style.display='none';
+    //
+    //
+    // var customer = document.getElementById("customer");
+    // customer.addEventListener('click',function () {
+    //     customer_panel.style.display='block';
+    //     manageCar_panel.style.display='none';
+    //     reqRental_panel.style.display='none';
+    //     driver_panel.style.display='none';
+    //
     // });
     //
-    // function checkvalidationDriver() {
+    // var manageCar = document.getElementById("manageCar");
+    // manageCar.addEventListener('click',function () {
+    //     customer_panel.style.display='none';
+    //     manageCar_panel.style.display='block';
+    //     reqRental_panel.style.display='none';
+    //     driver_panel.style.display='none';
     //
-    //     let dr_id = $("#did").val();
-    //     let dr_name = $("#d_name").val();
-    //     let dr_email = $("#d_email").val();
-    //     let dr_password = $("#d_password").val();
-    //     let dr_driver_nic = $("#driver_nic").val();
-    //     let dr_driver_license = $("#driver_license").val();
-    //     let dr_address = $("#d_address").val();
-    //     let dr_contactNo = $("#d_contactNo").val();
-    //     let dr_age = $("#d_age").val();
-    //     let dr_gender = $("#d_gender").val();
+    // });
+    // var reqRental = document.getElementById("reqRental");
+    // reqRental.addEventListener('click',function () {
+    //     customer_panel.style.display='none';
+    //     manageCar_panel.style.display='none';
+    //     reqRental_panel.style.display='block';
+    //     driver_panel.style.display='none';
     //
-    //     if (dr_id!=""){
-    //         if (dr_name!=""){
-    //             if(dr_email!=""){
-    //                 if (dr_password!=""){
-    //                     if (dr_driver_nic!=""){
-    //                         if (dr_driver_license!=""){
-    //                             if (dr_address!=""){
-    //                                 if (dr_contactNo!=""){
-    //                                     if (dr_age!=""){
-    //                                         if (dr_gender){
-    //                                             return true;
-    //                                         }else{
-    //                                             alert("Please Add Gender");
-    //                                             return false;
-    //                                         }
-    //                                     }else{
-    //                                         alert("Please Add Age");
-    //                                         return false;
-    //                                     }
-    //                                 }else{
-    //                                     alert("Please Add Contact Number");
-    //                                     return false;
-    //                                 }
-    //                             }else{
-    //                                 alert("Please Add Address");
-    //                                 return false;
-    //                             }
-    //                         }else{
-    //                             alert("Please Add Driver License");
-    //                             return false;
-    //                         }
-    //                     }else{
-    //                         alert("Please Add Driver NIC Number");
-    //                         return false;
-    //                     }
-    //                 }else {
-    //                     alert("Please Add Password");
-    //                     return false;
-    //                 }
-    //             }else{
-    //                 alert("Please Add Email");
-    //                 return false;
-    //             }
-    //         }else{
-    //             alert("Please Add Name");
-    //             return false;
-    //         }
-    //     }else{
-    //         alert("Please Add id");
-    //         return false;
-    //     }
+    // });
     //
-    // }
+    // var driver = document.getElementById("driver");
+    // driver.addEventListener('click',function () {
+    //     customer_panel.style.display='none';
+    //     manageCar_panel.style.display='none';
+    //     reqRental_panel.style.display='none';
+    //     driver_panel.style.display='block';
+    //
+    // });
+
+
+    function checkvalidationDriver() {
+
+        let dr_id = $("#did").val();
+        let dr_name = $("#d_name").val();
+        let dr_email = $("#d_email").val();
+        let dr_password = $("#d_password").val();
+        let dr_driver_nic = $("#driver_nic").val();
+        let dr_driver_license = $("#driver_license").val();
+        let dr_address = $("#d_address").val();
+        let dr_contactNo = $("#d_contactNo").val();
+        let dr_age = $("#d_age").val();
+        let dr_gender = $("#d_gender").val();
+
+        if (dr_id!=""){
+            if (dr_name!=""){
+                if(dr_email!=""){
+                    if (dr_password!=""){
+                        if (dr_driver_nic!=""){
+                            if (dr_driver_license!=""){
+                                if (dr_address!=""){
+                                    if (dr_contactNo!=""){
+                                        if (dr_age!=""){
+                                            if (dr_gender){
+                                                return true;
+                                            }else{
+                                                alert("Please Add Gender");
+                                                return false;
+                                            }
+                                        }else{
+                                            alert("Please Add Age");
+                                            return false;
+                                        }
+                                    }else{
+                                        alert("Please Add Contact Number");
+                                        return false;
+                                    }
+                                }else{
+                                    alert("Please Add Address");
+                                    return false;
+                                }
+                            }else{
+                                alert("Please Add Driver License");
+                                return false;
+                            }
+                        }else{
+                            alert("Please Add Driver NIC Number");
+                            return false;
+                        }
+                    }else {
+                        alert("Please Add Password");
+                        return false;
+                    }
+                }else{
+                    alert("Please Add Email");
+                    return false;
+                }
+            }else{
+                alert("Please Add Name");
+                return false;
+            }
+        }else{
+            alert("Please Add id");
+            return false;
+        }
+
+    }
 
     $("#btnAddDriver").click(function () {
         saveDriver();
