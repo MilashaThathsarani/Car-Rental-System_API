@@ -202,7 +202,7 @@
                                     dlicense: re_lic,
                                     dlicenseImage: re_licImg,
                                     address: re_address,
-                                    contactNo: Number.parseInt(re_cntct),
+                                    contactNo: Number.parseInt(re_cntct)
 
                                 }),
                                 success: function (data) {
@@ -212,12 +212,12 @@
                                     console.log(data);
                                     // loadAllRegistrations();
                                 },
-                                error: function (ob, textStatus, error) {
-                                    console.log("error from : " + ob + " " + textStatus + " " + error);
-                                    if(data.message!='Success'){
-                                        alert('Registration UnSuccessful! Try again');
-                                    }
-                                }
+                                // error: function (ob, textStatus, error) {
+                                //     console.log("error from : " + ob + " " + textStatus + " " + error);
+                                //     if(data.message!='Success'){
+                                //         alert('Registration UnSuccessful! Try again');
+                                //     }
+                                // }
                             });
 
                         }

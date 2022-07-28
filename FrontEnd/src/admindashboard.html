@@ -348,7 +348,6 @@
                                                placeholder="Driver_license" name="drivingLicenseNo" type="text">
                                         <label for="driver_license">Driver License</label>
                                     </div>
-                                </form>
                             </div>
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="d_address"
@@ -381,6 +380,7 @@
                                     <button id="btnGetAllDriver" class="btn btn-primary" type="button">View Drivers</button>
                                     <button id="btnClearDriver" class="btn btn-simple-danger" type="button">Clear</button>
                     </div>
+                    </form>
 
                 </div>
                 <div class="col-md">
@@ -429,54 +429,6 @@
 <script src="assets/js/jquery-3.6.0.min.js"></script>
 <script src="assets/bootsrap/js/bootstrap.min.js"></script>
 <script >
-
-    // var customer_panel= document.getElementById("customer_panel");
-    // var manageCar_panel= document.getElementById("manageCar_panel");
-    // var reqRental_panel= document.getElementById("reqRental_panel");
-    // var driver_panel= document.getElementById("driver_panel");
-    //
-    //
-    // customer_panel.style.display='block';
-    // manageCar_panel.style.display='none';
-    // reqRental_panel.style.display='none';
-    // driver_panel.style.display='none';
-    //
-    //
-    // var customer = document.getElementById("customer");
-    // customer.addEventListener('click',function () {
-    //     customer_panel.style.display='block';
-    //     manageCar_panel.style.display='none';
-    //     reqRental_panel.style.display='none';
-    //     driver_panel.style.display='none';
-    //
-    // });
-    //
-    // var manageCar = document.getElementById("manageCar");
-    // manageCar.addEventListener('click',function () {
-    //     customer_panel.style.display='none';
-    //     manageCar_panel.style.display='block';
-    //     reqRental_panel.style.display='none';
-    //     driver_panel.style.display='none';
-    //
-    // });
-    // var reqRental = document.getElementById("reqRental");
-    // reqRental.addEventListener('click',function () {
-    //     customer_panel.style.display='none';
-    //     manageCar_panel.style.display='none';
-    //     reqRental_panel.style.display='block';
-    //     driver_panel.style.display='none';
-    //
-    // });
-    //
-    // var driver = document.getElementById("driver");
-    // driver.addEventListener('click',function () {
-    //     customer_panel.style.display='none';
-    //     manageCar_panel.style.display='none';
-    //     reqRental_panel.style.display='none';
-    //     driver_panel.style.display='block';
-    //
-    // });
-
 
     function checkvalidationDriver() {
 
@@ -619,7 +571,7 @@
                 }
             },
             error: function (ob) {
-                alert(ob.responseJSON.message);
+                alert(ob.message);
             }
         });
     }
@@ -641,7 +593,7 @@
                 clearForm();
             },
             error: function (ob) {
-                alert(ob.responseJSON.message);
+                alert(ob.message);
             }
         });
     }
@@ -675,7 +627,7 @@
                 }
             },
             error: function (ob) {
-                alert(ob.responseJSON.message);
+                alert(ob.message);
             }
         });
     }
@@ -698,7 +650,7 @@
                 }
             },
             error: function (ob) {
-                alert(ob.responseJSON.message);
+                alert(ob.message);
             }
         });
     }
@@ -728,7 +680,7 @@
                 }
             },
             error:function (ob){
-                alert(ob.responseJSON.message);
+                alert(ob.message);
             }
         });
     }
