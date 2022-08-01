@@ -146,87 +146,64 @@
     //-----------------add user--------------------
 
 
-    $("#signUpSubmitBtn").click(()=>{
+    var baseUrl3 = "http://localhost:8080/Back_End_war/api/v1/customer";
+    var email=$('#cusID').val();
+    var password=$('#cusName').val();
+    var nic=$('#cusAddress').val();
+    var nicImage=$('#cusContact').val();
+    var dlicense=$('#cusEmail').val();
+    var dlicenseImage=$('#cusNic').val();
+    var address=$('#cusNic').val();
+    var contactNo=$('#cusNic').val();
 
-        if (checkvalidationUser()){
-            //-----upload nic image file----------------------
-            var fileObject = $("#nicImage")[0].files[0];//access file object from input field
-            var fileName = $("#nicImage")[0].files[0].name; //get file name
-            var data = new FormData(); //setup form data object to send file data
-            data.append("myFile", fileObject, fileName); //append data
-            $.ajax({
-                url: "http://localhost:8080/BackEnd_war/api/v1/customer",
-                method: "POST",
-                async: true,
-                processData: false, //stop processing data of request body
-                contentType: false, // stop setting content type by jQuery
-                data: data,
-                success: function () {
-                    alert("File Uploaded");
+    var fileObjectNic1 = $('#imgNiCFront')[0].files[0];
+    var fileNameNic1 = id + "-nicfront-" + $('#imgNiCFront')[0].files[0].name;
+    var data = new FormData();
+    data.append("nicf", fileObjectNic1, fileNameNic1);
+    data.append("nicb", fileObjectNic2, fileNameNic2);
+    data.append("licenceImg", fileObjectLicence, fileNameLicence);
+    var cusotmer = {
+        customerId: cusID,
+        name: cusName,
+        address: cusaddress,
+        contactNo: contact,
+        email: cusEmail,
+        nicNo: cusNicNo,
+        nicFrontImg:fileObjectNic1,
+        nicBackImg:nicBackImg,
 
-                    //-----upload lic image file----------------------
+    }
+    function saveCustomer() {
 
-                    var fileObjectL = $("#dLicenseImage")[0].files[0];//access file object from input field
-                    var fileNameL = $("#dLicenseImage")[0].files[0].name; //get file name
-                    var dataL = new FormData(); //setup form data object to send file data
-                    dataL.append("myFile", fileObjectL, fileNameL); //append data
-                    $.ajax({
-                        url: "http://localhost:8080/BackEnd_war/api/v1/customer",
-                        method: "POST",
-                        async: true,
-                        processData: false, //stop processing data of request body
-                        contentType: false, // stop setting content type by jQuery
-                        data: dataL,
-                        success: function () {
-
-                            alert("File Uploaded");
-                            let re_email = $("#signUpEmail").val();
-                            let re_pass = $("#signUpPassword").val();
-                            let re_nic = $("#nic_number").val();
-                            let re_nicImg = $("#nicImage").val();
-                            let re_lic = $("#dr_License").val();
-                            let re_licImg = $("#dLicenseImage").val();
-                            let re_address = $("#u_address").val();
-                            let re_cntct = $("#cntct_num").val();
-
-                            $.ajax({
-                                method: "POST",
-                                url: "http://localhost:8080/BackEnd_war/api/v1/customer",
-                                contentType: 'application/json',
-                                async: true,
-                                data: JSON.stringify({
-                                    email: re_email,
-                                    password: re_pass,
-                                    nic: re_nic,
-                                    nicImage: re_nicImg,
-                                    dlicense: re_lic,
-                                    dlicenseImage: re_licImg,
-                                    address: re_address,
-                                    contactNo: Number.parseInt(re_cntct)
-
-                                }),
-                                success: function (data) {
-                                    if(data.message=='Success'){
-                                        alert('Registration Successful');
-                                    }
-                                    console.log(data);
-                                    // loadAllRegistrations();
-                                },
-                                // error: function (ob, textStatus, error) {
-                                //     console.log("error from : " + ob + " " + textStatus + " " + error);
-                                //     if(data.message!='Success'){
-                                //         alert('Registration UnSuccessful! Try again');
-                                //     }
-                                // }
-                            });
-
-                        }
-                    });
+        $.ajax({
+            url: baseUrl3,
+            method: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(cusotmer),
+            success: function (resp) {
+                if (resp.data() === true) {
+                    clearSignupTextFields();
                 }
-            });
-        }
+                alert(resp.massage);
+            },
+            error: function (ob) {
 
-    });
+                alert(ob.massage);
+            }
+        });
+
+    }
+    function clearSignupTextFields(){
+        $("#cusName").val('');
+        $("#cusAddress").val('');
+        $("#cusContact").val('');
+        $("#cusNic").val('');
+        $("#cusUserName").val('');
+        $("#password").val('');
+        $("#cusEmail").val('');
+        $("#imgNiCFront").val('');
+
+    }
 
     //---------------------------------login---------------------------------------------------
 

@@ -14,5 +14,4 @@ public class WebAppConfig {
     public ModelMapper modelMapper(){
         return new ModelMapper();
     }
-
 }

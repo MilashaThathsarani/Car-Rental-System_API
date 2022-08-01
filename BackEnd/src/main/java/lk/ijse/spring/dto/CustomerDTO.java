@@ -17,5 +17,5 @@ public class CustomerDTO {
     private String dlicense;
     private String dlicenseImage;
     private String address;
-    private int contactNo;
+    private String contactNo;
 }

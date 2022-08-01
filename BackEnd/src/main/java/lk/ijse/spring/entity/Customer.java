@@ -22,5 +22,5 @@ public class Customer {
     private String dlicense;
     private String dlicenseImage;
     private String address;
-    private int contactNo;
+    private String contactNo;
 }
