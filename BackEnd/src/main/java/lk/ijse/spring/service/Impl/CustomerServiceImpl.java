@@ -71,15 +71,6 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void uploadCustomerImages(String nicPath, String licenceImgPath, String id) {
-        if (customerRepo.existsById(id)) {
-            customerRepo.updateCustomerFilePaths(nicPath, licenceImgPath, id);
-        } else {
-            throw new RuntimeException("Customer Not Found");
-        }
-    }
-
-    @Override
     public boolean findUser(String email) {
         boolean isAvailable = customerRepo.existsByEmail(email);
         if (customerRepo.existsById(email)) {

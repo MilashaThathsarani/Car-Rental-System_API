@@ -77,6 +77,122 @@
     left: 50px;
 }
 
+/*-----------------------------------------------------driver-------------------------------------------------------*/
+
+#din1{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+    border: black;
+}
+#din2{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+}
+#din3{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+}
+#din4{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+}
+#din5{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+}#din6{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    right: 30px;
+}#din7{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    right: 30px;
+}#din8{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    right: 30px;
+}#din9{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    right: 30px;
+}#din10{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    right: 30px;
+
+}
+ #btnAddDriver{
+     position: relative;
+     width: 120px;
+     height: 45px;
+     background-color: #009432;
+     border-radius: 15%;
+     left: 530px;
+     border: darkgreen;
+     font-weight: bold;
+ }
+#btnUpdateDriver{
+    position: relative;
+     width: 120px;
+     height: 45px;
+    background-color: #FFC312;
+    border-radius: 15%;
+    left: 550px;
+    border: darkorange;
+    font-weight: bold;
+
+ }
+#btnDeleteDriver{
+    position: relative;
+     width: 120px;
+     height: 45px;
+    background-color: #ff3838;
+    border-radius: 15%;
+    left: 570px;
+    border:  darkred;
+    font-weight: bold;
+ }
+#btnGetAllDriver{
+    position: relative;
+     width: 120px;
+     height: 45px;
+    border-radius: 15%;
+    left: 590px;
+    border: darkblue;
+    background-color:#5352ed;
+    font-weight: bold;
+ }
+#btnClearDriver{
+    position: relative;
+     width: 120px;
+     height: 45px;
+    border-radius: 15%;
+    left: 610px;
+    background-color: #7f8c8d;
+    border: black;
+    font-weight: bold;
+ }
+
+
+/*-----------------------------------------------------driver-------------------------------------------------------*/
+
+
+
 /*.form-control{*/
 /*    position: relative;*/
 /*    left: 100px;*/
@@ -750,7 +866,7 @@ a {
 }
 
 .table-head-bg-success thead th, .table-striped-bg-success tbody tr:nth-of-type(odd) {
-    background:grey !important;
+    background:#0e344e !important;
     color: #ffffff !important;
     border: 0px !important;
 }
@@ -868,192 +984,6 @@ a {
     padding-bottom: 8px;
     margin-top: 0;
 }
-
-
-
-/*    Button    */
-.btn {
-    padding: 8px 16px;
-    font-size: 14px;
-    opacity: 0.9;
-    border-radius: 3px;
-}
-.btn:hover, .btn:focus {
-    opacity: 1;
-}
-
-.btn-lg {
-    font-size: 18px;
-    border-radius: 6px;
-    padding: 10px 30px;
-    font-weight: 400;
-}
-
-.btn-sm {
-    font-size: 12px;
-    padding: 7px 13px;
-}
-
-.btn-xs {
-    font-size: 11px;
-    padding: 5px 9px;
-}
-
-.btn.disabled:hover, .btn:hover:disabled {
-    opacity: 0.65;
-}
-
-.btn-default {
-    background: #607D8B !important;
-    color: #ffffff !important;
-}
-.btn-default:hover, .btn-default:focus, .btn-default:disabled {
-    background: #607D8B !important;
-    color: #ffffff !important;
-}
-
-.btn-primary {
-    background: #1D62F0 !important;
-    border-color: #1D62F0 !important;
-}
-.btn-primary:hover, .btn-primary:focus, .btn-primary:disabled {
-    background: #1D62F0 !important;
-    border-color: #1D62F0 !important;
-}
-
-.btn-info {
-    background: #23CCEF !important;
-    border-color: #23CCEF !important;
-}
-.btn-info:hover, .btn-info:focus, .btn-info:disabled {
-    background: #23CCEF !important;
-    border-color: #23CCEF !important;
-}
-
-.btn-success {
-    background: #59d05d !important;
-    border-color: #59d05d !important;
-}
-.btn-success:hover, .btn-success:focus, .btn-success:disabled {
-    background: #59d05d !important;
-    border-color: #59d05d !important;
-}
-
-.btn-warning {
-    background: #fbad4c !important;
-    border-color: #fbad4c !important;
-    color: #ffffff !important;
-}
-.btn-warning:hover, .btn-warning:focus, .btn-warning:disabled {
-    background: #fbad4c !important;
-    border-color: #fbad4c !important;
-    color: #ffffff !important;
-}
-
-.btn-danger {
-    background: #ff646d !important;
-    border-color: #ff646d !important;
-}
-.btn-danger:hover, .btn-danger:focus, .btn-danger:disabled {
-    background: #ff646d !important;
-    border-color: #ff646d !important;
-}
-
-.btn-border {
-    background: transparent !important;
-    font-weight: 600 !important;
-}
-.btn-border:hover, .btn-border:focus {
-    background: transparent !important;
-    font-weight: 600 !important;
-}
-
-.btn-default.btn-border {
-    color: #607D8B !important;
-    border: 2px solid #607D8B !important;
-}
-
-.btn-primary.btn-border {
-    color: #1D62F0 !important;
-    border: 2px solid #1D62F0 !important;
-}
-
-.btn-info.btn-border {
-    color: #23CCEF !important;
-    border: 2px solid #23CCEF !important;
-}
-
-.btn-success.btn-border {
-    color: #59d05d !important;
-    border: 2px solid #59d05d !important;
-}
-
-.btn-warning.btn-border {
-    color: #fbad4c !important;
-    border: 2px solid #fbad4c !important;
-}
-
-.btn-danger.btn-border {
-    color: #ff646d !important;
-    border: 2px solid #ff646d !important;
-}
-
-.btn-round {
-    border-radius: 100px !important;
-}
-
-.btn-link {
-    border: 0 !important;
-    background: transparent !important;
-}
-.btn-link:hover, .btn-link:focus {
-    text-decoration: underline !important;
-    background: transparent !important;
-    border: 0 !important;
-}
-
-.btn-default.btn-link {
-    color: #607D8B !important;
-}
-.btn-default.btn-link:hover {
-    color: #607D8B !important;
-}
-
-.btn-primary.btn-link {
-    color: #1D62F0 !important;
-}
-.btn-primary.btn-link:hover {
-    color: #1D62F0 !important;
-}
-
-.btn-info.btn-link {
-    color: #23CCEF !important;
-}
-.btn-info.btn-link:hover {
-    color: #23CCEF !important;
-}
-
-.btn-success.btn-link {
-    color: #59d05d !important;
-}
-.btn-success.btn-link:hover {
-    color: #59d05d !important;
-}
-
-.btn-warning.btn-link {
-    color: #fbad4c !important;
-}
-.btn-warning.btn-link:hover {
-    color: #fbad4c !important;
-}
-
-.btn-danger.btn-link {
-    color: #ff646d !important;
-}
-.btn-danger.btn-link:hover {
-    color: #ff646d !important;
-}
-
 .toggle-on.btn {
     color: #ffffff !important;
 }

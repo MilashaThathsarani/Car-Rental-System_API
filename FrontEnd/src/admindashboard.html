@@ -45,16 +45,13 @@
 
 
 <div id="customer_panel" class="main-panel">
+    <h1>Customer Details</h1>
     <div  class="content">
         <div class="container-fluid">
             <h4 class="page-title">View Customer</h4>
             <div class="col">
 
                 <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header ">
-                        </div>
-                        <div class="card-body">
                             <form>
                                 <div class="form-floating mb-6">
                                     <input class="form-control" id="searchNic"
@@ -157,6 +154,7 @@
 <!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
 <section>
     <div id="manageCar_panel" class="main-panel">
+        <h1 >Car Details</h1>
         <div class="content">
             <div class="container-fluid">
                 <h4 class="page-title">Manage Car</h4>
@@ -309,86 +307,89 @@
 <!--/////////////////////////////////////////////////Driver Panel////////////////////////////////////////////////////-->
 <section>
     <div id="driver_panel" class="main-panel">
+        <h1 id="dname">Driver Details</h1>
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
                                 <form id="driverform">
-                                    <div class="form-floating mb-3">
+                                    <div id="din1" class="form-floating mb-3">
                                         <input class="form-control" id="did"
                                                placeholder="Did" name="driverId" type="text">
                                         <label for="did">Driver Id
                                         </label>
                                     </div>
 
-                                    <div class="form-floating mb-3">
+                                    <div id="din2" class="form-floating mb-3">
                                         <input class="form-control" id="d_name"
                                                placeholder="Name" name="name" type="text">
                                         <label for="d_name">Driver Name</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="din3" class="form-floating mb-3">
                                         <input class="form-control" id="d_email"
                                                placeholder="d_email" name="email" type="text">
                                         <label for="d_email">Email</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="din4" class="form-floating mb-3">
                                         <input class="form-control" id="d_password"
                                                placeholder="Password" name="password" type="text">
                                         <label for="d_password">Password</label>
                                     </div>
 
-                                    <div class="form-floating mb-3">
+                                    <div id="din5" class="form-floating mb-3">
                                         <input class="form-control" id="driver_nic"
                                                placeholder="Driver_Nic" name="nic" type="text">
                                         <label for="driver_nic"> Driver Nic</label>
                                     </div>
 
-                                    <div class="form-floating mb-3">
+                                    </div>
+
+
+                    <div class="col-md-6">
+                                    <div id="din6" class="form-floating mb-3">
                                         <input class="form-control" id="driver_license"
                                                placeholder="Driver_license" name="drivingLicenseNo" type="text">
                                         <label for="driver_license">Driver License</label>
                                     </div>
-                            </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="din7" class="form-floating mb-3">
                                         <input class="form-control" id="d_address"
                                                placeholder="Address" name="address" type="text">
                                         <label for="d_address">Address</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="din8" class="form-floating mb-3">
                                         <input class="form-control" id="d_contactNo"
                                                placeholder="contactNo" name="contact" type="text">
                                         <label for="d_contactNo">Contact No</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="din9" class="form-floating mb-3">
                                         <input class="form-control" id="d_age"
                                                placeholder="Age" name="age" type="text">
                                         <label for="d_age">Age</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="din10" class="form-floating mb-3">
                                         <input class="form-control" id="d_gender"
                                                placeholder="Gender" name="gender" type="text">
                                         <label for="d_gender">Gender</label>
                                     </div>
 
+                    </div>
+
                                     <br>
                                     <br>
+
                                     <div>
 
-                                    <button id="btnAddDriver" class="btn btn-success" type="button">Add </button>
-                                    <button id="btnDeleteDriver" class="btn btn-danger" type="button">Delete</button>
-                                    <button id="btnUpdateDriver" class="btn btn-warning" type="button">Update</button>
-                                    <button id="btnGetAllDriver" class="btn btn-primary" type="button">View Drivers</button>
-                                    <button id="btnClearDriver" class="btn btn-simple-danger" type="button">Clear</button>
+                                    <button id="btnAddDriver"  type="button">Add </button>
+                                    <button id="btnUpdateDriver"  type="button">Update</button>
+                                        <button id="btnDeleteDriver"  type="button">Delete</button>
+                                        <button id="btnGetAllDriver"  type="button">View All Drivers</button>
+                                    <button id="btnClearDriver"  type="button">Clear</button>
                     </div>
                     </form>
 
                 </div>
                 <div class="col-md">
 
-                    <div class="card">
-                        <div class="card-header ">
-                            <p class="card-category">Driver Details</p>
-                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table id="tblMain_Driver" class="table table-head-bg-success table-striped table-hover">
@@ -409,7 +410,6 @@
                                     </thead>
                                     <tbody id="tblDriver"></tbody>
                                 </table>
-                            </div>
                         </div>
                     </div>
                 </div>

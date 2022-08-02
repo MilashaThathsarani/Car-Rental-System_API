@@ -17,8 +17,6 @@ public interface CustomerService {
 
     CustomerDTO findEmailAndPassword(String email, String password);
 
-    void uploadCustomerImages(String nicPath, String licenceImgPath, String id);
-
     boolean findUser(String email);
 
     CustomerDTO findNic(String nic);
