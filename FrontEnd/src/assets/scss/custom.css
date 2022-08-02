@@ -51,15 +51,21 @@
 
 #tblMain_Cus{
     position: relative;
-    left: 200px;
+    left:220px;
     width: 1000px;
-    top: 50px;
+    top: 15px;
 }
 
 #btnGetAllUsers{
     position: relative;
     left: 1065px;
-    top: 40px;
+    top: 5px;
+    width: 150px;
+    height: 45px;
+    border-radius: 15%;
+    border: darkblue;
+    background-color:#5352ed;
+    font-weight: bold;
 }
 
 .customer-searchnic{
