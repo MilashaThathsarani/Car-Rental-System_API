@@ -76,7 +76,112 @@
     position: relative;
     left: 50px;
 }
+/*-----------------------------------------------------customer-------------------------------------------------------*/
 
+#sn{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+    border: black;
+    top: 20px;
+}
+#btnSearchNic{
+    position: relative;
+    width: 120px;
+    height: 45px;
+    background-color: lightslategray;
+    border-radius: 15%;
+    left: 750px;
+    border: darkorange;
+    font-weight: bold;
+    top: -25px;
+}
+#cn1{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+    border: black;
+}
+#cn2{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+}
+#cn3{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+}
+#lblc{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+    top: -1px;
+
+}
+#cn4{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+    top: -23px;
+}
+#cn5 {
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+    top: -22px;
+}
+#cn6{
+     position: relative;
+     width: 500px;
+     height: 50px;
+     right: 30px;
+    top: -25px;
+ }
+#lbld{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    right: 30px;
+}
+#cn7{
+      position: relative;
+      width: 500px;
+      height: 50px;
+      right: 30px;
+    top: -25px;
+  }#cn8{
+       position: relative;
+       width: 500px;
+       height: 50px;
+       right: 30px;
+       top: -25px;
+   }#cn9 {
+             position: relative;
+             width: 500px;
+             height: 50px;
+             right: 30px;
+           top: -25px;
+         }
+
+    #btnUpdateUser{
+        position: relative;
+        width: 120px;
+        height: 45px;
+        background-color: #FFC312;
+        border-radius: 15%;
+        left: 1120px;
+        border: darkorange;
+        font-weight: bold;
+        top: -60px;
+    }
 /*-----------------------------------------------------driver-------------------------------------------------------*/
 
 #din1{

@@ -48,82 +48,86 @@
     <h1>Customer Details</h1>
     <div  class="content">
         <div class="container-fluid">
-            <h4 class="page-title">View Customer</h4>
-            <div class="col">
 
-                <div class="col-md-6">
-                            <form>
-                                <div class="form-floating mb-6">
+
+                                <div id="sn" class="form-floating mb-6">
                                     <input class="form-control" id="searchNic"
                                            placeholder="SearchNic" name="nic" type="text">
                                     <label for="searchNic">Search NIC No</label>
                                     <span class="control-error"></span>
                                 </div>
                                 <div class="form-floating mb-6">
-                                    <button id="btnSearchNic" class="btn btn-primary" type="button">Search NIC</button>
+                                    <button id="btnSearchNic" type="button">Search NIC</button>
                                 </div>
-                            </form>
 
                             <hr>
-                            <div class="card-body">
+
+                    <div class="row">
+
+                    <div class="col-md-6">
                                 <form class="car_form">
-                                    <div class="form-floating mb-3">
+                                    <div id="cn1" class="form-floating mb-3">
                                         <input class="form-control" id="email"
                                                placeholder="Email" name="email" type="text">
                                         <label for="email">Email
                                         </label>
                                     </div>
 
-                                    <div class="form-floating mb-3">
+                                    <div id="cn2" class="form-floating mb-3">
                                         <input class="form-control" id="password"
                                                placeholder="Password" name="password" type="text">
                                         <label for="password">Password</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="cn3" class="form-floating mb-3">
                                         <input class="form-control" id="nic"
                                                placeholder="Nic" name="nic" type="text">
                                         <label for="nic">NIC</label>
                                     </div>
-                                    <label>NIC Image - Can not be edition</label>
-                                    <div class="form-floating mb-3">
+                                    <label id="lblc">NIC Image - Can not be edition</label>
+                                    <div id="cn4" class="form-floating mb-3">
                                         <input class="form-control reg-image" id="nicImage"
                                                placeholder="Drivinglicense" name="nicImage" type="text">
                                         <label for="nicImage">NIC Image</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="cn5" class="form-floating mb-3">
                                         <input class="form-control" id="dlicense"
                                                placeholder="Drivinglicense" name="dlicense" type="text">
                                         <label for="dlicense">Driving Licen</label>
                                     </div>
-                                    <label>Driving Licen Image - Can not be edition </label>
-                                    <div class="form-floating mb-3">
+
+                                </div>
+                        <div class="col-md-6">
+                                    <label id="lbld">Driving Licen Image - Can not be edition </label>
+                                    <div id="cn6" class="form-floating mb-3">
                                         <input class="form-control reg-image" id="dlicenseImage"
                                                placeholder="Drivinglicense" name="dlicenseImage" type="text">
                                         <label for="dlicenseImage">Driving Licen Image</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="cn7" class="form-floating mb-3">
                                         <input class="form-control" id="address"
                                                placeholder="Address" name="address" type="text">
                                         <label for="address">Address</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="cn8" class="form-floating mb-3">
                                         <input class="form-control" id="contactNo"
                                                placeholder="ContactNo" name="contactNo" type="text">
                                         <label for="contactNo">Contact</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="cn9" class="form-floating mb-3">
                                         <input class="form-control" id="customerStatus"
                                                placeholder="CustomerStatus" name="cusStatus" type="text">
                                         <label for="customerStatus">Status</label>
                                     </div>
+                        </div>
 
                                     <button id="btnUpdateUser" class="btn btn-warning" type="button">Update</button>
 
                                 </form>
-                            </div>
-                        </div>
                     </div>
-                </div>
+                    </div>
+                    </div>
+                    </div>
+
 
                 <div class="col-md-6">
                     <div>
@@ -535,8 +539,8 @@
             let dr_driver_license = $(this).children().eq(5).text();
             let dr_address =$(this).children().eq(6).text();
             let dr_contactNo =$(this).children().eq(7).text();
-            let dr_age =$(this).children().eq(7).text();
-            let dr_gender =$(this).children().eq(7).text();
+            let dr_age =$(this).children().eq(8).text();
+            let dr_gender =$(this).children().eq(9).text();
 
             //Set values to the text-fields
             $("#did").val(dr_id);
