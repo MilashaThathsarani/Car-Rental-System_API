@@ -92,13 +92,15 @@ input:checked + .slider:before {
 
 
 button {
-    background: #1c7cbb;
+    background: #0e344e;
     box-shadow: 0 .125em .5em #ccc;
     color: white;
-    border: none;
+    border-radius: 10%;
     font-size: 1em;
-
     padding: .25em 2em;
+    position: relative;
+    left: 550px;
+    height: 40px;
 }
 .cd{
     left: 0;
@@ -116,18 +118,16 @@ button {
     width: 119px;
 }
 .btn-v{
-    background: #1c7cbb;
-    box-shadow: 0 0.125em 0.5em #ccc;
-    color: white;
-    border: none;
-    /* font-size: 1em; */
+    color: black;
+    border-radius: 10%;
     position: relative;
-    margin: 4px;
-    width: 78px;
-    padding: 6px;
-    /* left: 63%; */
-    right: 0;
+    width: 200px;
+    height: 40px;
     top: 20%;
+    text-decoration: none;
+    left: 600px;
+    font-size: 20px;
+    font-weight: bold;
 }
 form {
     max-width: 70em;

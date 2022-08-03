@@ -158,124 +158,110 @@
 <!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
 <section>
     <div id="manageCar_panel" class="main-panel">
-        <h1 >Car Details</h1>
         <div class="content">
             <div class="container-fluid">
-                <h4 class="page-title">Manage Car</h4>
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-body">
                                 <form id="car_formId">
-                                <form class="car_form">
-                                    <div class="form-floating mb-3">
+                                    <div id="ca1" class="form-floating mb-3">
                                         <input class="form-control" id="carNumber"
                                                placeholder="CarNumber" name="carNumber" type="text">
                                         <label for="carNumber">Car Number
                                         </label>
                                     </div>
 
-                                    <div class="form-floating mb-3">
+                                    <div id="ca2" class="form-floating mb-3">
                                         <input class="form-control" id="brand"
                                                placeholder="Brand" name="brand" type="text">
                                         <label for="brand">Brand</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="ca3" class="form-floating mb-3">
                                         <input class="form-control" id="type"
                                                placeholder="Type" name="type" type="text">
                                         <label for="type">Type</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="ca4" class="form-floating mb-3">
                                         <input class="form-control" id="passengers"
                                                placeholder="Passengers" name="passengers" type="text">
                                         <label for="passengers">Passengers</label>
                                     </div>
 
-                                    <div class="form-floating mb-3">
+                                    <div id="ca5" class="form-floating mb-3">
                                         <input class="form-control" id="transmission"
                                                placeholder="Transmission" name="transmission" type="text">
                                         <label for="transmission"> Transmission type</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="ca6" class="form-floating mb-3">
                                         <input class="form-control" id="fuel"
                                                placeholder="Fuel" name="fuel" type="text">
                                         <label for="fuel"> Fuel Type</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="ca7" class="form-floating mb-3">
                                         <input class="form-control" id="dailyRate"
                                                placeholder="DailyRate" name="dailyRate" type="text">
                                         <label for="dailyRate">Daily Rate (Rs)</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="ca8" class="form-floating mb-3">
                                         <input class="form-control" id="monthlyRate"
                                                placeholder="MonthlyRate" name="monthlyRate" type="text">
                                         <label for="monthlyRate">Monthly Rate (Rs)</label>
                                     </div>
-                                </form>
-                                </form>
-                            </div>
-                        </div>
+
+
                     </div>
 
 
                     <div class="col-md-6">
-                        <div class="card">
-                              <div class="card-body">
-                                <form class="car_form">
-
-                                    <div class="form-floating mb-3">
+                                    <div id="ca9" class="form-floating mb-3">
                                         <input class="form-control" id="freeKmForDay"
                                                placeholder="FreeKmForDay" name="freeKmForDay" type="text">
                                         <label for="freeKmForDay"> Free km for a day</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="ca10" class="form-floating mb-3">
                                         <input class="form-control" id="freeKmForMonth"
                                                placeholder="FreeKmForMonth" name="freeKmForMonth" type="text">
                                         <label for="freeKmForMonth"> Free km for a month</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="ca11" class="form-floating mb-3">
                                         <input class="form-control" id="pricePerExtraKm"
                                                placeholder="PricePerExtraKm" name="pricePerExtraKm" type="text">
                                         <label for="pricePerExtraKm">Price per extra KM (Rs)</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="ca12" class="form-floating mb-3">
                                         <input class="form-control" id="regNumber"
                                                placeholder="RegNumber" name="regNumber" type="text">
                                         <label for="regNumber">Registration number
                                         </label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="ca13" class="form-floating mb-3">
                                         <input class="form-control" id="color"
                                                placeholder="Color" name="color" type="text">
                                         <label for="color">Color</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="ca14" class="form-floating mb-3">
                                         <input id="file" name="file" type="file" />
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="ca15" class="form-floating mb-3">
                                         <input class="form-control" id="carQuantity"
                                                placeholder="CarQuantity" name="carQuantity" type="text">
                                         <label for="carQuantity">Number of cars available</label>
                                     </div>
+                    </div>
+                    </form>
                                     <br>
                                     <br>
-                                    <button id="btnAddCar" class="btn btn-success" type="button">Add</button>
-                                    <button id="btnDeleteCar" class="btn btn-danger" type="button">Delete</button>
-                                    <button id="btnUpdateCar" class="btn btn-warning" type="button">Update</button>
-                                    <button id="btnGetAllCar" class="btn btn-primary" type="button">View Cars</button>
-                                    <button id="btnClearCar" class="btn btn-simple-danger" type="button">Clear</button>
-                                </form>
-                                  </form>
-                            </div>
-                        </div>
+                                    <button id="btnAddCar"  type="button">Add</button>
+                                    <button id="btnUpdateCar"  type="button">Update</button>
+                    <button id="btnDeleteCar"  type="button">Delete</button>
+                                    <button id="btnGetAllCar" type="button">View Cars</button>
+                                    <button id="btnClearCar" type="button">Clear</button>
+
+                    </div>
                     </div>
                 </div>
 
 
                 <div class="col-md">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="table-responsive">
                                 <table id="tblMain_Car" class="table table-head-bg-success table-striped table-hover">
                                     <thead>
                                     <tr>
@@ -300,9 +286,6 @@
                                 </table>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -311,7 +294,6 @@
 <!--/////////////////////////////////////////////////Driver Panel////////////////////////////////////////////////////-->
 <section>
     <div id="driver_panel" class="main-panel">
-        <h1 id="dname">Driver Details</h1>
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
