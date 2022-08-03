@@ -108,6 +108,80 @@
     top: -25px;
 
 }
+#d1{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+    border: black;
+}
+#d2{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+}
+#d3{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+}
+#lblc{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+    top: -1px;
+
+}
+#d4{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+    top: -23px;
+}
+#d5 {
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+    top: -22px;
+}
+#d6{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    right: 30px;
+    top: -25px;
+}
+#d7{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    right: 30px;
+    top: -25px;
+}#d8{
+     position: relative;
+     width: 500px;
+     height: 50px;
+     right: 30px;
+     top: -25px;
+ }#d9 {
+      position: relative;
+      width: 500px;
+      height: 50px;
+      right: 30px;
+      top: -25px;
+  }
+#d10 {
+    position: relative;
+    width: 500px;
+    height: 50px;
+    right: 30px;
+    top: -25px;
+}
 
 
 

@@ -33,10 +33,10 @@
         </div>
         <div id="mainListDiv" class="main_list">
             <ul class="navlinks">
-                <li><a href="#customer_panel">Customer Details</a></li>
-                <li><a href="#manageCar_panel">CarDetails</a></li>
-                <li><a href="#reqRental_panel">Rental Details</a></li>
-                <li><a href="#driver_panel">Driver Details</a></li>
+                <li><a id="cu" href="#customer_panel">Customer Details</a></li>
+                <li><a id="mc" href="#manageCar_panel">CarDetails</a></li>
+                <li><a id="rp" href="#reqRental_panel">Rental Details</a></li>
+                <li><a id="dp" href="#driver_panel">Driver Details</a></li>
 
             </ul>
         </div>
@@ -415,6 +415,18 @@
 <script src="assets/js/jquery-3.6.0.min.js"></script>
 <script src="assets/bootsrap/js/bootstrap.min.js"></script>
 <script >
+
+    $("#customer_panel").css("display", "block");
+    $("#manageCar_panel").css("display", "none");
+    $("#driver_panel").css("display", "none");
+
+    $("#mc").click(function () {
+        $("#manageCar_panel").css("display", "block");
+        $("#customer_panel").css("display", "block");
+        $("#driver_panel").css("display", "none");
+    });
+
+
 
     function checkvalidationDriver() {
 
