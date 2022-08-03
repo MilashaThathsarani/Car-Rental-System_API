@@ -231,6 +231,48 @@
 
     });
 
+    // $(cusSaveBtnInCustomer).off('click');
+    // $(cusSaveBtnInCustomer).click(function () {
+    //     console.log("Cus Save Btn")
+    //     let data = new FormData();
+    //     let dto = {
+    //         nic: cusNicField.val(),
+    //         name: cusNameField.val(),
+    //         nicPhoto: "",
+    //         licenseNo: cusLicenseField.val(),
+    //         licensePhoto: "",
+    //         contactNo: parseInt(cusContactNoField.val()),
+    //         email: cusEmailField.val(),
+    //         password: cusPasswordField.val()
+    //     }
+    //     let nicPhotoFile = $("#cusNicFile")[0].files[0];
+    //     let nicPhotoFileName = $("#cusNicFile")[0].files[0].name;
+    //     let licensePhotoFile = $("#cusLicenseFile")[0].files[0];
+    //     let licensePhotoFileName = $("#cusLicenseFile")[0].files[0].name;
+    //     data.append("nicPhoto", nicPhotoFile, nicPhotoFileName);
+    //     data.append("licensePhoto", licensePhotoFile, licensePhotoFileName);
+    //     data.append("dto", new Blob([JSON.stringify(dto)], {type: "application/json"}));
+    //
+    //     if (confirm('Do you want to save this customer') == true) {
+    //         $.ajax({
+    //             url: baseUrl + "customer",
+    //             method: "POST",
+    //             async: true,
+    //             data: data,
+    //             processData: false,
+    //             contentType: false,
+    //             success: function (resp) {
+    //                 clearAllCustomerFields();
+    //                 alert(resp.message)
+    //             },
+    //             error: function (ob) {
+    //                 clearAllCustomerFields();
+    //                 alert(ob.message);
+    //             }
+    //         })
+    //     }
+    // })
+
 
 
     //---------------------------------login---------------------------------------------------

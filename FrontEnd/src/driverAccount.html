@@ -15,6 +15,7 @@
 </head>
 <body>
 
+
 <nav class="nav">
 
     <div class="container">
@@ -40,20 +41,17 @@
                 <hr>
                 <div class="row">
                     <div class="col-md">
-                        <div class="card">
-                            <div class="card-header ">
-                                <h4 class="card-title">Table #1</h4>
                                 <p class="card-category">Details</p>
                             </div>
                             <div class="card-body">
-                                <div class="form-floating mb-6">
+                                <div id="dn1" class="form-floating mb-6">
                                     <input  class="form-control" id="searchDriverNic"
                                             placeholder="SearchDriverNic" type="text">
                                     <label for="searchDriverNic">Search NIC No</label>
                                     <span class="control-error"></span>
                                 </div>
-                                <div class="form-floating mb-6">
-                                    <button id="btnSearchDriverNic" class="btn btn-primary" type="button">Search NIC</button>
+                                <div id="nicbtn1" class="form-floating mb-6">
+                                    <button id="btnSearchDriverNic"  type="button">Search NIC</button>
 
                                 </div>
 
@@ -76,8 +74,6 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
-                    </div>
                 </div>
 
             </div>
@@ -92,94 +88,95 @@
                 <hr>
                 <div class="row">
                     <div class="col-md">
-                        <div class="card">
-                            <div class="card-header ">
                                 <h3>Driver Information</h3>
                             </div>
                             <form>
 
-                                <div class="form-floating mb-6">
+                                <div id="srch1" class="form-floating mb-6">
                                     <input  class="form-control" id="search_D_Nic"
                                             placeholder="SearchDriverNic" type="text">
                                     <label for="search_D_Nic">Search NIC No</label>
                                     <span class="control-error"></span>
                                 </div>
-                                <div class="form-floating mb-6">
-                                    <button id="btnSearch_Driver_Nic" class="btn btn-primary" type="button">Search NIC</button>
+                                <div id="nicbtn2" class="form-floating mb-6">
+                                    <button id="btnSearch_Driver_Nic" type="button">Search NIC</button>
 
                                 </div>
 
                             </form>
-                            <hr>
-                            <br>
+
                             <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
                                 <form class="car_form">
-                                    <div class="form-floating mb-3">
+                                    <div id="d1" class="form-floating mb-3">
                                         <input class="form-control" id="did"
                                                placeholder="Did" name="did" type="text">
                                         <label for="did">Driver Id
                                         </label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="d1" class="form-floating mb-3">
                                         <input class="form-control" id="driverName"
                                                placeholder="DriverName" name="d_name" type="text">
                                         <label for="driverName">Driver Name
                                         </label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="d1" class="form-floating mb-3">
                                         <input class="form-control" id="email"
                                                placeholder="Email" name="d_email" type="text">
                                         <label for="email">Email
                                         </label>
                                     </div>
 
-                                    <div class="form-floating mb-3">
+                                    <div id="d1" class="form-floating mb-3">
                                         <input class="form-control" id="password"
                                                placeholder="Password" name="d_password" type="text">
                                         <label for="password">Password</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="d1" class="form-floating mb-3">
                                         <input class="form-control" id="nicNo"
                                                placeholder="Nic" name="driver_nic" type="text">
                                         <label for="nicNo">NIC</label>
                                     </div>
+                                </div>
 
-                                    <div class="form-floating mb-3">
+                                    <div class="col-md-6">
+                                    <div id="d1" class="form-floating mb-3">
                                         <input class="form-control" id="dlicense"
                                                placeholder="Drivinglicense" name="driver_license" type="text">
                                         <label for="dlicense">Driving Licen</label>
                                     </div>
 
-                                    <div class="form-floating mb-3">
+                                    <div id="d1" class="form-floating mb-3">
                                         <input class="form-control" id="address"
                                                placeholder="Address" name="d_address" type="text">
                                         <label for="address">Address</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="d1" class="form-floating mb-3">
                                         <input class="form-control" id="contactNo"
                                                placeholder="ContactNo" name="d_contactNo" type="text">
                                         <label for="contactNo">Contact</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="d1" class="form-floating mb-3">
                                         <input class="form-control" id="age"
                                                placeholder="Age" name="d_age" type="text">
                                         <label for="age">Age</label>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div id="d1" class="form-floating mb-3">
                                         <input class="form-control" id="gender"
                                                placeholder="Gender" name="d_gender" type="text">
                                         <label for="gender">Gender</label>
                                     </div>
                                     <button id="btnUpdateUser" class="btn btn-warning" type="button">Update</button>
+                                    </div>
 
                                 </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-            </div>
-        </div>
     </div>
 
 </div>
