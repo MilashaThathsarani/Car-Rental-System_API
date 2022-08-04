@@ -158,6 +158,7 @@
 
 <!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
 <section id="manageCar_panel">
+    <h1>Car Details</h1>
     <div class="main-panel">
         <div class="content">
             <div class="container-fluid">
@@ -377,7 +378,6 @@
                 <div class="col-md">
 
                         <div class="card-body">
-                            <div class="table-responsive">
                                 <table id="tblMain_Driver" class="table table-head-bg-success table-striped table-hover">
                                     <thead>
                                     <tr>
@@ -397,7 +397,6 @@
                                     <tbody id="tblDriver"></tbody>
                                 </table>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -566,7 +565,6 @@
 
     //Save Customer
     function saveDriver() {
-        if (checkvalidationDriver()) {
             var data = $("#driverform").serialize(); // return query string of form with name:type-value
             $.ajax({
                 url: "http://localhost:8080/BackEnd_war/api/v1/driver",
@@ -583,7 +581,6 @@
                     alert(ob.message);
                 }
             });
-        }
     }
 
 

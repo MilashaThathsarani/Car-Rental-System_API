@@ -366,55 +366,65 @@
     height: 50px;
     left: 200px;
     border: black;
+    top:100px;
 }
 #din2{
     position: relative;
     width: 500px;
     height: 50px;
     left: 200px;
+    top:105px;
 }
 #din3{
     position: relative;
     width: 500px;
     height: 50px;
     left: 200px;
+    top:110px;
 }
 #din4{
     position: relative;
     width: 500px;
     height: 50px;
     left: 200px;
+    top:115px;
 }
 #din5{
     position: relative;
     width: 500px;
     height: 50px;
     left: 200px;
+    top:120px;
 }#din6{
     position: relative;
     width: 500px;
     height: 50px;
     right: 30px;
+     top:100px;
 }#din7{
     position: relative;
     width: 500px;
     height: 50px;
     right: 30px;
+      top:105px;
 }#din8{
     position: relative;
     width: 500px;
     height: 50px;
     right: 30px;
+       top:110px;
 }#din9{
     position: relative;
     width: 500px;
     height: 50px;
     right: 30px;
+        top:115px;
 }#din10{
     position: relative;
     width: 500px;
     height: 50px;
     right: 30px;
+         top:120px;
 
 }
  #btnAddDriver{
@@ -426,6 +436,7 @@
      left: 530px;
      border: darkgreen;
      font-weight: bold;
+     top:135px;
  }
 #btnUpdateDriver{
     position: relative;
@@ -436,6 +447,7 @@
     left: 550px;
     border: darkorange;
     font-weight: bold;
+    top:135px;
 
  }
 #btnDeleteDriver{
@@ -447,6 +459,7 @@
     left: 570px;
     border:  darkred;
     font-weight: bold;
+    top:135px;
  }
 #btnGetAllDriver{
     position: relative;
@@ -457,6 +470,7 @@
     border: darkblue;
     background-color:#5352ed;
     font-weight: bold;
+    top:135px;
  }
 #btnClearDriver{
     position: relative;
@@ -467,7 +481,12 @@
     background-color: #7f8c8d;
     border: black;
     font-weight: bold;
+    top:135px;
  }
+#tblMain_Driver{
+    position: relative;
+    top: 165px;
+}
 
 
 /*-----------------------------------------------------driver-------------------------------------------------------*/
