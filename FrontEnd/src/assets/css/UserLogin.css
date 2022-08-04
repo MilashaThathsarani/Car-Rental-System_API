@@ -123,7 +123,7 @@ form .input__group .field::after{
     right: 0;
     width: 100%;
     height: 2px;
-    background-color: var(--primary-color);
+    background-color:#60a3bc;
     transform: translateX(-100%);
     transition: 0.3s ease-in-out;
 }
@@ -168,7 +168,7 @@ form .input__group > span{
 }
 form .input__group input[type="text"]:focus ~ span,
 form .input__group input[type="password"]:focus ~ span{
-    color: var(--primary-color);
+    color: #60a3bc;
 }
 /* Input Icon */
 form .input__group .input__icon{
@@ -185,7 +185,7 @@ form .input__group .showHide__Icon{
     cursor: pointer;
 }
 form .input__group .showHide__Icon:hover{
-    color: var(--primary-color);
+    color: #60a3bc;
 }
 /* Error Message */
 form .input__group .input__error_message{
@@ -257,7 +257,7 @@ form  .form__actions > div:hover{
     top: 2px;
     width: 3px;
     height: 8px;
-    border: solid var(--primary-color);
+    border: solid #60a3bc;
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg) scale(0);
     transform: rotate(45deg) scale(0);
@@ -265,10 +265,10 @@ form  .form__actions > div:hover{
 }
 /* When Input Checkbox Is Checked */
 .form__actions .remeber_me input:checked ~ .checkmark ~ span{
-    color: var(--primary-color);
+    color: #60a3bc;
 }
 .form__actions .remeber_me input:checked ~ .checkmark{
-    border-color: var(--primary-color);
+    border-color: #60a3bc;
 }
 .form__actions .remeber_me input:checked ~ .checkmark::after{
     opacity: 1;
@@ -281,36 +281,15 @@ form  .form__actions > div:hover{
     top: 4px;
     cursor: pointer;
     font-size: 15px;
-    color: var(--primary-color);
+    color: #60a3bc;
     transition: 0.3s ease-in-out;
     font-weight: 500;
 }
 
-/* Submit Button */
-/*button.submit-button{*/
-/*    position: relative;*/
-/*    width: 65%;*/
-/*    background-color: var(--primary-color);*/
-/*    */
-/*    color: var(--white-color);*/
-/*    cursor: pointer;*/
-/*    padding: 16px 0;*/
-/*    border: none;*/
-/*    border-radius: 5px;*/
-/*    font-size: 17px;*/
-/*    font-weight: 600;*/
-/*    letter-spacing: 2px;*/
-/*    margin: 50px auto 10px ;*/
-/*    display: block;*/
-/*    outline: none;*/
-/*    transition: 0.5s ease-in-out;*/
-/*    overflow: hidden;*/
-/*    text-transform: uppercase;*/
-/*}*/
 button.submit-button{
     position: relative;
     width: 65%;
-    background-color: var(--primary-color);
+    background-color: #60a3bc;
     color: var(--white-color);
     cursor: pointer;
     padding: 16px 0;
@@ -357,8 +336,8 @@ button.submit-button:active{
     color: var(--primary-light-gray);
 }
 .alternate-login .link:hover{
-    border-color: var(--primary-color);
-    color: var(--primary-color);
+    border-color: #60a3bc;
+    color: #60a3bc;
 }
 .alternate-login .link i{
     font-size: 18px;
@@ -388,7 +367,7 @@ form.sign-up__form{
     position: relative;
     width: var(--aside-area-width);
     height: 100%;
-    background-color: var(--aside-area-BG-color);
+    background-color: #60a3bc;
     border-radius: 5px;
     opacity: 1;
 }
@@ -480,23 +459,10 @@ form.sign-up__form{
 
 .login{
 
-
-    /*width: 200px;*/
-    /*height: 40px;*/
-
-    /*background-image: linear-gradient(*/
-    /*        94deg*/
-    /*        , #0096e0, #3eabff);*/
-    /*color: #ffffff;*/
-
-    /*line-height: 40px;*/
-    /*font-size: 16px;*/
-    /*font-family: 'Roboto', sans-serif;*/
-    /*cursor: pointer;*/
     text-align: center;
     position: relative;
     width: 65%;
-    background-color: var(--primary-color);
+    background-color: #60a3bc;
     color: var(--white-color);
     cursor: pointer;
     padding: 16px 0;
