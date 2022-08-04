@@ -28,6 +28,7 @@
             <ul class="navlinks">
                 <li><a id="vc" href="#viewCar_panel">Cars</a></li>
                 <li><a id="mb" href="#mybooking_panel">Bookings</a></li>
+                <li><a id="rq" href="#requstStatus">Request Status</a></li>
                 <li><a id="sp" href="#setting_panel">User Information</a></li>
 
             </ul>
@@ -487,27 +488,20 @@
                 <h2 class="page-title">My Booking</h2>
                 <hr>
                 <div class="row">
-                    <div class="col-md">
-                        <div class="card">
-                            <div class="card-header ">
-                                <h4 class="card-title">Table #1</h4>
-                                <p class="card-category">Details</p>
-                            </div>
-                            <div class="form-floating mb-6">
+                            <div id="bsin2" class="form-floating mb-6">
                                 <input class="form-control" id="searchCustomerNic"
                                        placeholder="SearchNic" name="nic" type="text">
                                 <label for="searchNic">Search NIC No</label>
                                 <span class="control-error"></span>
                             </div>
                             <div class="form-floating mb-6">
-                                <button id="btnSearchBooking" class="btn btn-primary" type="button">Search NIC</button>
+                                <button id="btnSearchBooking"  type="button">Search NIC</button>
 
                             </div>
                             <div class="card-body">
                                 <div>
 
                                 </div>
-                                <div class="table-responsive">
                                     <table id="tblBookingDeatils"
                                            class="table table-head-bg-success table-striped table-hover">
                                         <thead>
@@ -527,37 +521,31 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
+    </div>
+    </section>
+
+<section id="requstStatus">
 
         <div class="container-fluid">
-                < <h2 class="page-title">Request Status</h2>
                 <hr>
                 <div class="row">
                     <div class="col-md">
-                        <div class="card">
-                            <div class="card-header ">
-                                <h4 class="card-title">Table #1</h4>
-                            </div>
-                            <div class="form-floating mb-6">
+                            <div id="bsin1" class="form-floating mb-6">
                                 <input class="form-control" id="searchCusNic"
                                        placeholder="SearchNic" name="nic" type="text">
                                 <label for="searchNic">Search NIC No</label>
                                 <span class="control-error"></span>
                             </div>
                             <div class="form-floating mb-6">
-                                <button id="btnSearchStatus" class="btn btn-primary" type="button">Search NIC</button>
+                                <button id="btnSearchStatus"  type="button">Search NIC</button>
 
                             </div>
                             <div class="card-body">
                                 <div>
 
                                 </div>
-                                <div class="table-responsive">
                                     <table id="tblStatus"
                                            class="table table-head-bg-success table-striped table-hover">
                                         <thead>
@@ -576,9 +564,7 @@
                                         <tbody id="tbodyStatus">
                                         </tbody>
                                     </table>
-                                </div>
                             </div>
-                        </div>
                     </div>
                 </div>
 
@@ -707,22 +693,32 @@
     $("#viewCar_panel").css("display", "block");
     $("#mybooking_panel").css("display", "none");
     $("#setting_panel").css("display", "none");
+    $("#requstStatus").css("display", "none");
 
     $("#mb").click(function () {
         $("#mybooking_panel").css("display", "block");
         $("#viewCar_panel").css("display", "none");
         $("#setting_panel").css("display", "none");
+        $("#requstStatus").css("display", "none");
     });
     $("#sp").click(function () {
         $("#setting_panel").css("display", "block");
         $("#mybooking_panel").css("display", "none");
         $("#viewCar_panel").css("display", "none");
+        $("#requstStatus").css("display", "none");
     });
 
     $("#vc").click(function () {
         $("#viewCar_panel").css("display", "block");
         $("#mybooking_panel").css("display", "none");
         $("#setting_panel").css("display", "none");
+        $("#requstStatus").css("display", "none");
+    });
+ $("#rq").click(function () {
+        $("#requstStatus").css("display", "block");
+        $("#mybooking_panel").css("display", "none");
+        $("#setting_panel").css("display", "none");
+        $("#viewCar_panel").css("display", "none");
     });
 
 

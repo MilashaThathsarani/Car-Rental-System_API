@@ -183,6 +183,43 @@
     top: -25px;
 }
 
+#bsin1{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+    border: black;
+    top: 100px;
+}
+#bsin2 {
+    position: relative;
+    width: 500px;
+    height: 50px;
+    left: 200px;
+    border: black;
+    top:50px;
+}
+#btnSearchBooking{
+    position:relative;
+    top: 20px;
+    left:800px;
+}
+
+#btnSearchStatus{
+    position:relative;
+    top: 70px;
+    left:800px;
+
+}
+#tblBookingDeatils{
+    position:relative;
+    top:80px;
+}
+#tblStatus{
+    position:relative;
+    top:140px;
+}
+
 
 
 
