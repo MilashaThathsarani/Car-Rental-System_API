@@ -43,8 +43,8 @@
     </div>
 </nav>
 
-
-<div id="customer_panel" class="main-panel">
+<section id="customer_panel">
+<div class="main-panel">
     <h1>Customer Details</h1>
     <div  class="content">
         <div class="container-fluid">
@@ -154,10 +154,11 @@
         </div>
     </div>
 </div>
+</section>
 
 <!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-<section>
-    <div id="manageCar_panel" class="main-panel">
+<section id="manageCar_panel">
+    <div class="main-panel">
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -292,8 +293,8 @@
 </section>
 
 <!--/////////////////////////////////////////////////Driver Panel////////////////////////////////////////////////////-->
-<section>
-    <div id="driver_panel" class="main-panel">
+<section id="driver_panel">
+    <div  class="main-panel">
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -422,10 +423,20 @@
 
     $("#mc").click(function () {
         $("#manageCar_panel").css("display", "block");
+        $("#customer_panel").css("display", "none");
+        $("#driver_panel").css("display", "none");
+    });
+    $("#dp").click(function () {
+        $("#manageCar_panel").css("display", "none");
+        $("#customer_panel").css("display", "none");
+        $("#driver_panel").css("display", "block");
+    });
+
+    $("#cu").click(function () {
+        $("#manageCar_panel").css("display", "none");
         $("#customer_panel").css("display", "block");
         $("#driver_panel").css("display", "none");
     });
-
 
 
     function checkvalidationDriver() {

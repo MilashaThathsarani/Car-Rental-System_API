@@ -24,8 +24,8 @@
         </div>
         <div id="mainListDiv" class="main_list">
             <ul class="navlinks">
-                <li><a href="#schedule_panel">Driver Schedule</a></li>
-                <li><a href="#setting_panel">Driver</a></li>
+                <li><a id="sp" href="#schedule_panel">Driver Schedule</a></li>
+                <li><a id="sp2" href="#setting_panel">Driver</a></li>
 
             </ul>
         </div>
@@ -34,7 +34,8 @@
 
 
 <!--my booking-->
-    <div id="schedule_panel" class="main-panel">
+<section id="schedule_panel">
+    <div  class="main-panel">
         <div class="content">
             <div class="container-fluid">
                 <h2 class="page-title">Driver Schedule</h2>
@@ -79,9 +80,11 @@
             </div>
         </div>
     </div>
+</section>
 
     <!--Setting-->
-    <div id="setting_panel" class="main-panel">
+<section id="setting_panel">
+    <div  class="main-panel">
         <div class="content">
             <div class="container-fluid">
                 <h4 class="page-title">Setting</h4>
@@ -180,13 +183,30 @@
     </div>
 
 </div>
+</section>
 
 
 
 <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
 
+
 <script src="assets/js/jquery-3.6.0.min.js"></script>
 <script src="assets/bootsrap/js/bootstrap.min.js"></script>
+<script>
+    $("#schedule_panel").css("display", "block");
+    $("#setting_panel").css("display", "none");
+
+    $("#sp2").click(function () {
+        $("#setting_panel").css("display", "block");
+        $("#schedule_panel").css("display", "none");
+
+    });
+    $("#sp").click(function () {
+        $("#schedule_panel").css("display", "block");
+        $("#setting_panel").css("display", "none");
+
+    });
+</script>
 </body>
 </html>
