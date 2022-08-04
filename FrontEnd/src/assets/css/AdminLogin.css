@@ -123,7 +123,7 @@ form .input__group .field::after{
     right: 0;
     width: 100%;
     height: 2px;
-    background-color: var(--primary-color);
+    background-color: #60a3bc;
     transform: translateX(-100%);
     transition: 0.3s ease-in-out;
 }
@@ -144,11 +144,11 @@ form .input__group input[type="password"]{
 }
 /* Form Error */
 form .formError .field input{
-    border-color: var(--error-color);
+    border-color: #60a3bc;
 }
 /* FormSuccess */
 form .formSuccess .field input{
-    border-color: var(--success-color);
+    border-color: #60a3bc;
 }
 /* For Input Autofill */
 form .input__group input:-webkit-autofill,
@@ -168,7 +168,7 @@ form .input__group > span{
 }
 form .input__group input[type="text"]:focus ~ span,
 form .input__group input[type="password"]:focus ~ span{
-    color: var(--primary-color);
+    color: #60a3bc;
 }
 /* Input Icon */
 form .input__group .input__icon{
@@ -185,12 +185,12 @@ form .input__group .showHide__Icon{
     cursor: pointer;
 }
 form .input__group .showHide__Icon:hover{
-    color: var(--primary-color);
+    color: #60a3bc;
 }
 /* Error Message */
 form .input__group .input__error_message{
     display: block;
-    color:  var(--error-color);
+    color:  #60a3bc;
     margin: 0 10px;
     opacity: 0;
     pointer-events: none;
@@ -257,7 +257,7 @@ form  .form__actions > div:hover{
     top: 2px;
     width: 3px;
     height: 8px;
-    border: solid var(--primary-color);
+    border: solid #60a3bc;
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg) scale(0);
     transform: rotate(45deg) scale(0);
@@ -265,10 +265,10 @@ form  .form__actions > div:hover{
 }
 /* When Input Checkbox Is Checked */
 .form__actions .remeber_me input:checked ~ .checkmark ~ span{
-    color: var(--primary-color);
+    color: #60a3bc;
 }
 .form__actions .remeber_me input:checked ~ .checkmark{
-    border-color: var(--primary-color);
+    border-color: #60a3bc;
 }
 .form__actions .remeber_me input:checked ~ .checkmark::after{
     opacity: 1;
@@ -281,7 +281,7 @@ form  .form__actions > div:hover{
     top: 4px;
     cursor: pointer;
     font-size: 15px;
-    color: var(--primary-color);
+    color: #60a3bc;
     transition: 0.3s ease-in-out;
     font-weight: 500;
 }
@@ -337,8 +337,8 @@ button.submit-button:active{
     color: var(--primary-light-gray);
 }
 .alternate-login .link:hover{
-    border-color: var(--primary-color);
-    color: var(--primary-color);
+    border-color: #60a3bc;
+    color: #60a3bc;
 }
 .alternate-login .link i{
     font-size: 18px;
@@ -457,7 +457,7 @@ form.sign-up__form{
     text-align: center;
     position: relative;
     width: 65%;
-    background-color: var(--primary-color);
+    background-color: #60a3bc;
     color: var(--white-color);
     cursor: pointer;
     padding: 16px 0;
