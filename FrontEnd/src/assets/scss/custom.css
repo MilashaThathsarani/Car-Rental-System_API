@@ -197,87 +197,108 @@
     height: 50px;
     left: 200px;
     border: black;
+    top:100px;
 }#ca2{
     position: relative;
     width: 500px;
     height: 50px;
     left: 200px;
     border: black;
+     top: 105px;
 }#ca3{
     position: relative;
     width: 500px;
     height: 50px;
     left: 200px;
     border: black;
+      top: 110px;
 }#ca4{
     position: relative;
     width: 500px;
     height: 50px;
     left: 200px;
     border: black;
+       top: 115px;
 }#ca5{
     position: relative;
     width: 500px;
     height: 50px;
     left: 200px;
     border: black;
+        top: 120px;
 }#ca6{
     position: relative;
     width: 500px;
     height: 50px;
     left: 200px;
     border: black;
+         top: 125px;
 }#ca7{
     position: relative;
     width: 500px;
     height: 50px;
     left: 200px;
     border: black;
+          top: 130px;
 }#ca8{
     position: relative;
     width: 500px;
     height: 50px;
     left: 200px;
     border: black;
+           top: 135px;
 }
 #ca9{
     position: relative;
     width: 500px;
     height: 50px;
     right: 30px;
+    top: 100px;
 }#ca10{
     position: relative;
     width: 500px;
     height: 50px;
     right: 30px;
+     top: 105px;
 
 }#ca11{
     position: relative;
     width: 500px;
     height: 50px;
     right: 30px;
+      top: 110px;
 
 }#ca12{
     position: relative;
     width: 500px;
     height: 50px;
     right: 30px;
+       top: 115px;
 
 }#ca13{
     position: relative;
     width: 500px;
     height: 50px;
     right: 30px;
-}#ca14{
+        top: 120px;
+}
+/*#ca14{*/
+/*    position: relative;*/
+/*    width: 500px;*/
+/*    height: 50px;*/
+/*    right: 30px;*/
+/*         top: 45px;*/
+/*}*/
+#ca15{
     position: relative;
     width: 500px;
     height: 50px;
     right: 30px;
-}#ca15{
+    top: 125px;
+}
+#tblMain_Car{
     position: relative;
-    width: 500px;
-    height: 50px;
-    right: 30px;
+    top: 170px;
 }
 
 #btnAddCar{
@@ -289,6 +310,7 @@
     left: 530px;
     border: darkgreen;
     font-weight: bold;
+    top: 140px;
 }
 #btnUpdateCar{
     position: relative;
@@ -299,6 +321,7 @@
     left: 550px;
     border: darkorange;
     font-weight: bold;
+    top: 140px;
 
 }
 #btnDeleteCar{
@@ -310,6 +333,7 @@
     left: 570px;
     border:  darkred;
     font-weight: bold;
+    top: 140px;
 }
 #btnGetAllCar{
     position: relative;
@@ -320,6 +344,7 @@
     border: darkblue;
     background-color:#5352ed;
     font-weight: bold;
+    top: 140px;
 }
 #btnClearCar{
     position: relative;
@@ -330,6 +355,7 @@
     background-color: #7f8c8d;
     border: black;
     font-weight: bold;
+    top: 140px;
 }
 
 /*-----------------------------------------------------driver-------------------------------------------------------*/

@@ -239,9 +239,9 @@
                                                placeholder="Color" name="color" type="text">
                                         <label for="color">Color</label>
                                     </div>
-                                    <div id="ca14" class="form-floating mb-3">
-                                        <input id="file" name="file" type="file" />
-                                    </div>
+<!--                                    <div id="ca14" class="form-floating mb-3">-->
+<!--                                        <input id="file" name="file" type="file" />-->
+<!--                                    </div>-->
                                     <div id="ca15" class="form-floating mb-3">
                                         <input class="form-control" id="carQuantity"
                                                placeholder="CarQuantity" name="carQuantity" type="text">
@@ -279,7 +279,6 @@
                                         <th scope="col">Price per extra KM</th>
                                         <th scope="col">Registration number</th>
                                         <th scope="col">Color</th>
-                                        <th scope="col">Image</th>
                                         <th scope="col">Number of cars available</th>
                                     </tr>
                                     </thead>
@@ -567,22 +566,24 @@
 
     //Save Customer
     function saveDriver() {
-        var data = $("#driverform").serialize(); // return query string of form with name:type-value
-        $.ajax({
-            url:"http://localhost:8080/BackEnd_war/api/v1/driver",
-            method: "POST",
-            data: data,// if we send data with the request
-            success: function (res) {
-                if (res.code == 200) {
-                    alert("Successfully Customer Registered");
-                    loadAllDrivers();
-                    clearForm();
+        if (checkvalidationDriver()) {
+            var data = $("#driverform").serialize(); // return query string of form with name:type-value
+            $.ajax({
+                url: "http://localhost:8080/BackEnd_war/api/v1/driver",
+                method: "POST",
+                data: data,// if we send data with the request
+                success: function (res) {
+                    if (res.code == 200) {
+                        alert("Successfully Customer Registered");
+                        loadAllDrivers();
+                        clearForm();
+                    }
+                },
+                error: function (ob) {
+                    alert(ob.message);
                 }
-            },
-            error: function (ob) {
-                alert(ob.message);
-            }
-        });
+            });
+        }
     }
 
 
@@ -712,6 +713,216 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Methods
     //----------car input field validations----------------------
+
+    $("#carNumber").on("keypress", function (e) {
+        if (e.key == "Enter") {
+            searchCar();
+        }
+    });
+
+    //Get All Customers Event
+    $("#btnGetAllCar").click(function () {
+        loadAllCars();
+    });
+
+    $("#btnAddCar").click(function () {
+        saveCar();
+    });
+
+    //Delete Customer Event
+    $("#btnDeleteCar").click(function () {
+        deleteDriver();
+    });
+
+    //Update Customer Event
+    $("#btnUpdateCar").click(function () {
+        updateDriver();
+    });
+
+    //Bind click events to the table rows
+    function bindClickEvents() {
+        $("#tblMain_Car>tr").click(function () {
+
+            let cr_carNumber = $("#carNumber").eq(0).text();
+            let cr_brand = $("#brand").eq(1).text();
+            let cr_type = $("#type").eq(2).text();
+            let cr_passengers = $("#passengers").eq(3).text();
+            let cr_transmission = $("#transmission").eq(4).text();
+            let cr_fuel = $("#fuel").eq(5).text();
+            let cr_dailyRate = $("#dailyRate").eq(6).text();
+            let cr_monthlyRate = $("#monthlyRate").eq(7).text();
+            let cr_freeKmForDay = $("#freeKmForDay").eq(8).text();
+            let cr_freeKmForMonth = $("#freeKmForMonth").eq(9).text();
+            let cr_pricePerExtraKm = $("#pricePerExtraKm").eq(10).text();
+            let cr_regNumber = $("#regNumber").eq(11).text();
+            let cr_color = $("#color").eq(12).text();
+           // let cr_carImage = $("#file").eq(0).text();
+            let cr_quantity = $("#carQuantity").eq(13).text();
+
+            //Set values to the text-fields
+            $("#carNumber").val(cr_carNumber);
+            $("#brand").val(cr_brand);
+            $("#type").val(cr_type);
+            $("#passengers").val(cr_passengers);
+            $("#transmission").val(cr_transmission);
+            $("#fuel").val(cr_fuel);
+            $("#dailyRate").val(cr_dailyRate);
+            $("#monthlyRate").val(cr_monthlyRate);
+            $("#freeKmForDay").val(cr_freeKmForDay);
+            $("#pricePerExtraKm").val(cr_freeKmForMonth);
+            $("#regNumber").val(cr_regNumber);
+            $("#color").val(cr_color);
+            $("#carQuantity").val(cr_quantity);
+        });
+    }
+
+
+    // Methods
+    loadAllCars();
+
+    //Save Customer
+    function saveCar() {
+            var data = $("#car_formId").serialize(); // return query string of form with name:type-value
+            $.ajax({
+                url: "http://localhost:8080/BackEnd_war/api/v1/vehicle",
+                method: "POST",
+                data: data,// if we send data with the request
+                success: function (res) {
+                    if (res.code == 200) {
+                        alert("Successfully Customer Registered");
+                         loadAllCars();
+                        // clearForm();
+                    }
+                },
+                error: function (ob) {
+                    alert(ob.message);
+                }
+            });
+    }
+
+
+    function loadAllCars() {
+        $("#tblCar").empty();
+        $.ajax({
+            url:"http://localhost:8080/BackEnd_war/api/v1/vehicle",
+            method: "GET",
+            // dataType:"json", // please convert the response into JSON
+            success: function (resp) {
+
+                for (let i of resp.data) {
+                    var row = `<tr><td>${i.carNumber}</td><td>${i.brand}</td><td>${i.type}</td><td>${i.passengers}</td><td>${i.transmission}</td><td>${i.fuel}</td><td>${i.dailyRate}</td><td>${i.monthlyRate}</td><td>${i.freeKmForDay}</td><td>${i.freeKmForMonth}</td><td>${i.pricePerExtraKm}</td><td>${i.regNumber}</td><td>${i.color}</td><td>${i.carQuantity}</td></tr>`;
+                    $("#tblCar").append(row);
+                }
+                bindClickEvents();
+                //clearForm();
+            },
+            error: function (ob) {
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Update Driver
+    function updateDriver() {
+        //creating a js object with relevant data which you wanna send to the server
+        var cusOb = {
+            driverId: $("#did").val(),
+            name:$("#d_name").val(),
+            address:$("#d_address").val(),
+            age:$("#d_age").val(),
+            contact:$("#d_contactNo").val(),
+            gender:$("#d_gender").val(),
+            nic:$("#driver_nic").val(),
+            drivingLicenseNo:$("#driver_license").val(),
+            email:$("#d_email").val(),
+            password: $("#d_password").val()
+        }
+
+        $.ajax({
+            url:"http://localhost:8080/BackEnd_war/api/v1/driver" ,
+            method: "PUT",
+            contentType: "application/json", //You should state request's content type using MIME types
+            data: JSON.stringify(cusOb), // format js object to valid json string
+            success: function (res) {
+                if (res.code == 200) { // process is  ok
+                    alert("Successfully Updated");
+                    loadAllDrivers();
+                    clearForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Delete Customer
+    function deleteDriver() {
+        // Get the customer id
+        let driverId = $("#did").val();
+
+        // initiate the request
+        $.ajax({
+            url: "http://localhost:8080/BackEnd_war/api/v1/driver" + "?id=" + driverId,// viya query string
+            method: "DELETE",
+            //data:data,// application/x-www-form-urlencoded
+            success: function (res) {
+                if (res.code == 200) {
+                    alert("Customer Successfully Deleted");
+                    loadAllDrivers();
+                    clearForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Search Customer
+    function searchDriver() {
+        var driverId = $("#did").val();
+
+        $.ajax({
+            url:  "http://localhost:8080/BackEnd_war/api/v1/driver" + "/" + driverId,
+            method: "GET",
+            success: function (res) {
+                if (res.code = 200) {
+                    var driver = res.data;
+                    $("#did").val(driver.driverId);
+                    $("#d_name").val(driver.name);
+                    $("#d_email").val(driver.email);
+                    $("#d_password").val(driver.password);
+                    $("#driver_nic").val(driver.nic);
+                    $("#driver_license").val(driver.drivingLicenseNo);
+                    $("#d_address").val(driver.address);
+                    $("#d_contactNo").val(driver.contact);
+                    $("#d_age").val(driver.age);
+                    $("#d_gender").val(driver.gender);
+                } else {
+                    clearForm();
+                }
+            },
+            error:function (ob){
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Clear Customer Input Fields
+    function clearForm() {
+        $("#did").focus();
+        $("#d_name").val();
+        $("#d_email").val();
+        $("#d_password").val();
+        $("#driver_nic").val();
+        $("#driver_license").val();
+        $("#d_address").val();
+        $("#d_contactNo").val();
+        $("#d_age").val();
+        $("#d_gender").val();
+        $("#did").focus();
+    }
 
     function checkvalidationCar() {
 

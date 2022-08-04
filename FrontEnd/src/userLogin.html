@@ -79,11 +79,11 @@
                 <!--                <span class="input__icon"><i class="bx bx-at"></i></span>-->
                 <small class="input__error_message"></small>
             </div>
-            <div class="input__group">
-                <div class="form-floating mb-3">
-                    <input id="nicImage" name="nicImage" type="file" />
-                </div>
-            </div>
+<!--            <div class="input__group">-->
+<!--                <div class="form-floating mb-3">-->
+<!--                    <input id="nicImage" name="nicImage" type="file" />-->
+<!--                </div>-->
+<!--            </div>-->
 
             <div class="input__group">
                 <label class="field">
@@ -93,11 +93,11 @@
                 <small class="input__error_message"></small>
             </div>
 
-            <div class="input__group">
-                <div class="form-floating mb-3">
-                    <input id="dLicenseImage" name="dlicenseImage" type="file" />
-                </div>
-            </div>
+<!--            <div class="input__group">-->
+<!--                <div class="form-floating mb-3">-->
+<!--                    <input id="dLicenseImage" name="dlicenseImage" type="file" />-->
+<!--                </div>-->
+<!--            </div>-->
 
             <div class="input__group">
                 <label class="field">
@@ -145,91 +145,206 @@
 
     //-----------------add user--------------------
 
-
-    $("#signUpSubmitBtn").click(()=>{
-
-        if (checkvalidationUser()){
-            //-----upload nic image file----------------------
-            var fileObject = $("#nicImage")[0].files[0];//access file object from input field
-            var fileName = $("#nicImage")[0].files[0].name; //get file name
-            var data = new FormData(); //setup form data object to send file data
-            data.append("myFile", fileObject, fileName); //append data
-            $.ajax({
-                url: "http://localhost:8080/BackEnd_war/api/v1/customer",
-                method: "POST",
-                async: true,
-                processData: false, //stop processing data of request body
-                contentType: false, // stop setting content type by jQuery
-                data: data,
-                success: function () {
-                    alert("File Uploaded");
-
-                    //-----upload lic image file----------------------
-
-                    var fileObjectL = $("#dLicenseImage")[0].files[0];//access file object from input field
-                    var fileNameL = $("#dLicenseImage")[0].files[0].name; //get file name
-                    var dataL = new FormData(); //setup form data object to send file data
-                    dataL.append("myFile", fileObjectL, fileNameL); //append data
-                    $.ajax({
-                        url: "http://localhost:8080/BackEnd_war/api/v1/customer",
-                        method: "POST",
-                        async: true,
-                        processData: false, //stop processing data of request body
-                        contentType: false, // stop setting content type by jQuery
-                        data: dataL,
-                        success: function () {
-
-                            alert("File Uploaded");
-
-                            let email = $("#signUpEmail").val();
-                            let password = $("#signUpPassword").val();
-                            let nic = $("#nic_number").val();
-                            let nicImage = $("#nicImage").val();
-                            let dlicense = $("#dr_License").val();
-                            let dlicenseImage = $("#dLicenseImage").val();
-                            let address = $("#u_address").val();
-                            let  contactNo = $("#cntct_num").val();
-
-                            $.ajax({
-                                method: "POST",
-                                url: "http://localhost:8080/BackEnd_war/api/v1/customer",
-                                contentType: 'application/json',
-                                async: true,
-                                data: JSON.stringify({
-                                    email: email,
-                                    password: password,
-                                    nic: nic,
-                                    nicImage: nicImage,
-                                    dlicense: dlicense,
-                                    dlicenseImage: dlicenseImage,
-                                    address: address,
-                                    contactNo: contactNo,
-
-                                }),
-
-
-                                success: function (data) {
-                                    if(data.message=='Success'){
-                                        alert('Registration Successful');
-                                    }
-                                    console.log(data);
-                                    //loadAllRegistrations();
-                                },
-                                // error: function (data) {
-                                //     console.log("error from : " + data);
-                                //     if(data.message!='Success'){
-                                //         alert('Registration UnSuccessful! Try again');
-                                //     }
-                                // }
-                            });
-
-                        }
-                    });
-                }
-            });
-        }
-
+    $("#signUpSubmitBtn").click(function () {
+        saveCustomer();
     });
+
+    function saveCustomer() {
+        var data = $("#signUpForm").serialize(); // return query string of form with name:type-value
+        $.ajax({
+            url:"http://localhost:8080/BackEnd_war/api/v1/customer",
+            method: "POST",
+            data: data,// if we send data with the request
+            success: function (res) {
+                if (res.code == 200) {
+                    alert("Successfully Customer Registered");
+                    // loadAllDrivers();
+                    // clearForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.message);
+            }
+        });
+    }
+    // function updateCustomer() {
+    //     //creating a js object with relevant data which you wanna send to the server
+    //     var cusOb = {
+    //         email:$("#signUpEmail").val(),
+    //     password :$("#signUpPassword").val(),
+    //     nic : $("#nic_number").val(),
+    //     dlicense : $("#dr_License").val(),
+    //     address : $("#u_address").val(),
+    //         contactNo :$("#cntct_num").val()
+    //     }
+    //
+    //     $.ajax({
+    //         url:"http://localhost:8080/BackEnd_war/api/v1/cutomer" ,
+    //         method: "PUT",
+    //         contentType: "application/json", //You should state request's content type using MIME types
+    //         data: JSON.stringify(cusOb), // format js object to valid json string
+    //         success: function (res) {
+    //             if (res.code == 200) { // process is  ok
+    //                 alert("Successfully Updated");
+    //                 // loadAllDrivers();
+    //                 // clearForm();
+    //             }
+    //         },
+    //         error: function (ob) {
+    //             alert(ob.message);
+    //         }
+    //     });
+    // }
+    //
+    // function deleteDriver() {
+    //     let email = $("#signUpEmail").val();
+    //
+    //     // initiate the request
+    //     $.ajax({
+    //         url: "http://localhost:8080/BackEnd_war/api/v1/customer" + "?id=" + email,// viya query string
+    //         method: "DELETE",
+    //         //data:data,// application/x-www-form-urlencoded
+    //         success: function (res) {
+    //             if (res.code == 200) {
+    //                 alert("Customer Successfully Deleted");
+    //                 // loadAllDrivers();
+    //                 // clearForm();
+    //             }
+    //         },
+    //         error: function (ob) {
+    //             alert(ob.message);
+    //         }
+    //     });
+    // }
+    //
+    // //Search Customer
+    // function searchCustomer() {
+    //     var email = $("#signUpEmail").val();
+    //
+    //     $.ajax({
+    //         url:  "http://localhost:8080/BackEnd_war/api/v1/customer" + "/" + email,
+    //         method: "GET",
+    //         success: function (res) {
+    //             if (res.code = 200) {
+    //                 var customer = res.data;
+    //
+    //                 $("#signUpEmail").val(customer.email),
+    //                     $("#signUpPassword").val(customer.password),
+    //                     $("#nic_number").val(customer.nic),
+    //                     $("#dr_License").val(customer.dlicense),
+    //                     $("#u_address").val(customer.address),
+    //                     $("#cntct_num").val(customer.contactNo)
+    //             } else {
+    //                 //clearForm();
+    //             }
+    //         },
+    //         error:function (ob){
+    //             alert(ob.message);
+    //         }
+    //     });
+    // }
+
+    // //Clear Customer Input Fields
+    // function clearForm() {
+    //     $("#did").focus();
+    //     $("#d_name").val();
+    //     $("#d_email").val();
+    //     $("#d_password").val();
+    //     $("#driver_nic").val();
+    //     $("#driver_license").val();
+    //     $("#d_address").val();
+    //     $("#d_contactNo").val();
+    //     $("#d_age").val();
+    //     $("#d_gender").val();
+    //     $("#did").focus();
+    // }
+
+
+
+    // $("#signUpSubmitBtn").click(()=>{
+    //
+    //     if (checkvalidationUser()){
+    //         //-----upload nic image file----------------------
+    //         var fileObject = $("#nicImage")[0].files[0];//access file object from input field
+    //         var fileName = $("#nicImage")[0].files[0].name; //get file name
+    //         var data = new FormData(); //setup form data object to send file data
+    //         data.append("myFile", fileObject, fileName); //append data
+    //         $.ajax({
+    //             url: "http://localhost:8080/BackEnd_war/api/v1/customer",
+    //             method: "POST",
+    //             async: true,
+    //             processData: false, //stop processing data of request body
+    //             contentType: false, // stop setting content type by jQuery
+    //             data: data,
+    //             success: function () {
+    //                 alert("File Uploaded");
+    //
+    //                 //-----upload lic image file----------------------
+    //
+    //                 var fileObjectL = $("#dLicenseImage")[0].files[0];//access file object from input field
+    //                 var fileNameL = $("#dLicenseImage")[0].files[0].name; //get file name
+    //                 var dataL = new FormData(); //setup form data object to send file data
+    //                 dataL.append("myFile", fileObjectL, fileNameL); //append data
+    //                 $.ajax({
+    //                     url: "http://localhost:8080/BackEnd_war/api/v1/customer",
+    //                     method: "POST",
+    //                     async: true,
+    //                     processData: false, //stop processing data of request body
+    //                     contentType: false, // stop setting content type by jQuery
+    //                     data: dataL,
+    //                     success: function () {
+    //
+    //                         alert("File Uploaded");
+    //
+    //                         let email = $("#signUpEmail").val();
+    //                         let password = $("#signUpPassword").val();
+    //                         let nic = $("#nic_number").val();
+    //                         let nicImage = $("#nicImage").val();
+    //                         let dlicense = $("#dr_License").val();
+    //                         let dlicenseImage = $("#dLicenseImage").val();
+    //                         let address = $("#u_address").val();
+    //                         let  contactNo = $("#cntct_num").val();
+    //
+    //                         $.ajax({
+    //                             method: "POST",
+    //                             url: "http://localhost:8080/BackEnd_war/api/v1/customer",
+    //                             contentType: 'application/json',
+    //                             async: true,
+    //                             data: JSON.stringify({
+    //                                 email: email,
+    //                                 password: password,
+    //                                 nic: nic,
+    //                                 nicImage: nicImage,
+    //                                 dlicense: dlicense,
+    //                                 dlicenseImage: dlicenseImage,
+    //                                 address: address,
+    //                                 contactNo: contactNo,
+    //
+    //                             }),
+    //
+    //
+    //                             success: function (data) {
+    //                                 if(data.message=='Success'){
+    //                                     alert('Registration Successful');
+    //                                 }
+    //                                 console.log(data);
+    //                                 //loadAllRegistrations();
+    //                             },
+    //                             // error: function (data) {
+    //                             //     console.log("error from : " + data);
+    //                             //     if(data.message!='Success'){
+    //                             //         alert('Registration UnSuccessful! Try again');
+    //                             //     }
+    //                             // }
+    //                         });
+    //
+    //                     }
+    //                 });
+    //             }
+    //         });
+    //     }
+    //
+    // });
 
     // $(cusSaveBtnInCustomer).off('click');
     // $(cusSaveBtnInCustomer).click(function () {
@@ -291,7 +406,7 @@
             }),
             success: function (data) {
                 if (data.code == "200") {
-                    window.location.href = "http://localhost:63342/Car_Rental_System/FrontEnd/userPage.html?_ijt=7cvc1bef7gai473t32vd69760s"
+                    window.location.href = "http://localhost:63342/Car_Rental_System/FrontEnd/userPage.html?_ijt=sk27tmc4msdmf4qlac68da5q1v"
                 }
             }
         });
@@ -300,25 +415,25 @@
 
     //-----------get all registration--------------------------------------
 
-    loadAllRegistrations();
-
-    function loadAllRegistrations() {
-        $("#tblUser").empty();
-        $.ajax({
-            url: "http://localhost:8080/BackEnd_war/api/v1/registration",
-            method: "GET",
-            async: true,
-            dataType: "json",
-            success: function (data, textState, xhr) {
-
-                for (let i of data.data) {
-                    var row = `<tr><td>${i.email}</td><td>${i.password}</td><td>${i.nic}</td><td>${i.nicImage}</td><td>${i.dLicense}</td><td>${i.dLicenseImage}</td><td>${i.address}</td><td>${i.contactNo}</td></tr>`;
-
-                    $("#tblUser").append(row);
-                }
-            }
-        });
-    }
+    // loadAllRegistrations();
+    //
+    // function loadAllRegistrations() {
+    //     $("#tblUser").empty();
+    //     $.ajax({
+    //         url: "http://localhost:8080/BackEnd_war/api/v1/registration",
+    //         method: "GET",
+    //         async: true,
+    //         dataType: "json",
+    //         success: function (data, textState, xhr) {
+    //
+    //             for (let i of data.data) {
+    //                 var row = `<tr><td>${i.email}</td><td>${i.password}</td><td>${i.nic}</td><td>${i.nicImage}</td><td>${i.dLicense}</td><td>${i.dLicenseImage}</td><td>${i.address}</td><td>${i.contactNo}</td></tr>`;
+    //
+    //                 $("#tblUser").append(row);
+    //             }
+    //         }
+    //     });
+    // }
 
     //---------validation-------------
 

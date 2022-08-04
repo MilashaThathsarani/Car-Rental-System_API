@@ -28,6 +28,6 @@ public class Vehicle {
     private double pricePerExtraKm;
     private String regNumber;
     private String color;
-    private String file;
+    //private String file;
     private int carQuantity;
 }
